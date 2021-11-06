@@ -221,7 +221,6 @@ main .main-container .links .link-groups .link .icon .icon-border {
 
 main .main-container .links .link-groups .link .icon .icon-border svg {
   width: 100%;
-  fill: orange;
   position: relative;
   -webkit-filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
           filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
@@ -249,6 +248,30 @@ main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i {
 
 main .main-container .links .link-groups .link .icon .icon-border .icon-pic0 {
   top: 0px;
+}
+
+main .main-container .links .link-groups .link .icon .icon-border-1 svg {
+  fill: #FF734B;
+}
+
+main .main-container .links .link-groups .link .icon .icon-border-2 svg {
+  fill: #FFC32D;
+}
+
+main .main-container .links .link-groups .link .icon .icon-border-3 svg {
+  fill: #5F8BEE;
+}
+
+main .main-container .links .link-groups .link .icon .icon-border-4 svg {
+  fill: #ABDC45;
+}
+
+main .main-container .links .link-groups .link .icon .icon-border-5 svg {
+  fill: #FB8C3B;
+}
+
+main .main-container .links .link-groups .link .icon .icon-border-6 svg {
+  fill: #5DDFC7;
 }
 
 main .main-container .links .link-groups1 {
@@ -307,6 +330,8 @@ main .main-container .links .link-groups1 .link .icon .icon-border {
 main .main-container .links .link-groups1 .link .icon .icon-border svg {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+  -webkit-filter: drop-shadow(0px -4px 10px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px -4px 10px rgba(0, 0, 0, 0.25));
 }
 
 main .main-container .links .link-groups1 .link .icon .icon-pic1 {
