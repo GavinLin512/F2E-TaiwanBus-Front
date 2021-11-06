@@ -1,3 +1,5 @@
+.dataTables_length{display: none;}
+
 .main-container {
     display: flex;
     .country-list {
@@ -12,6 +14,29 @@
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 38px;
+                .select-country{
+                    display: flex;
+                    span:nth-child(1){
+                        display: block;
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 50%;
+                        position: relative;
+                        background-color: #BE3D3D;
+                    }
+                    span:nth-child(1)::before{
+                        content: '';
+                        position: absolute;
+                        width: 25px;
+                        height: 25px;
+                        border-bottom: 5px solid whitesmoke;
+                        border-left: 5px solid whitesmoke;
+                        border-radius: 5px;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
             }
             .newsTitle>div{
                 display: flex;
