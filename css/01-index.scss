@@ -115,7 +115,7 @@ main{
         padding: 8px 142px;
         position: relative;
 
-        background-color: blue;
+        // background-color: blue;
         @media screen and(max-width:1920px) {
             padding: 8px 7.5vw;
 
@@ -146,7 +146,7 @@ main{
             // transform: translate(-50%,-50%);
             // padding: 8px 142px;
 
-            background-color: lavender;
+            // background-color: lavender;
             @media screen and(max-width:1920px) {
                 max-width: 100%;
                 width: 100%;
@@ -237,8 +237,7 @@ main{
                             }
                             .icon-pic{
                                 position: absolute;
-                                top: 0px;
-                                left: 0px;
+                                // left: 0px;
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
@@ -252,6 +251,9 @@ main{
                                 .i{
                                     font-size: 130px;
                                 }
+                            }
+                            .icon-pic0{
+                                top: 0px;
                             }
                         }
                       
@@ -294,11 +296,21 @@ main{
                         }
                     }
                     .icon{
+                        position: relative;
                         margin-top: 0px;
-                        margin-bottom: 16px;
+                        margin-bottom: 0px;
                         // margin-left: auto;
                         .icon-border{
                             margin-left: auto;
+                            // position: relative;
+                            svg{
+                                transform: rotate(180deg);
+                            }
+                        }
+                        .icon-pic1{
+                          
+                            bottom: 0px;
+                            
                         }
                        
                       

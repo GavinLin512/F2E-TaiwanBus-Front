@@ -95,7 +95,6 @@ main .main-container {
   min-height: calc(100vh - 200px);
   padding: 8px 142px;
   position: relative;
-  background-color: blue;
 }
 
 @media screen and (max-width: 1920px) {
@@ -129,7 +128,6 @@ main .main-container .line svg {
 
 main .main-container .links {
   width: 100%;
-  background-color: lavender;
 }
 
 @media screen and (max-width: 1920px) {
@@ -231,8 +229,6 @@ main .main-container .links .link-groups .link .icon .icon-border svg {
 
 main .main-container .links .link-groups .link .icon .icon-border .icon-pic {
   position: absolute;
-  top: 0px;
-  left: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -249,6 +245,10 @@ main .main-container .links .link-groups .link .icon .icon-border .icon-pic {
 
 main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i {
   font-size: 130px;
+}
+
+main .main-container .links .link-groups .link .icon .icon-border .icon-pic0 {
+  top: 0px;
 }
 
 main .main-container .links .link-groups1 {
@@ -295,11 +295,21 @@ main .main-container .links .link-groups1 .link .link-texts .bottom-text {
 }
 
 main .main-container .links .link-groups1 .link .icon {
+  position: relative;
   margin-top: 0px;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
 }
 
 main .main-container .links .link-groups1 .link .icon .icon-border {
   margin-left: auto;
+}
+
+main .main-container .links .link-groups1 .link .icon .icon-border svg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+main .main-container .links .link-groups1 .link .icon .icon-pic1 {
+  bottom: 0px;
 }
 /*# sourceMappingURL=01-index.css.map */
