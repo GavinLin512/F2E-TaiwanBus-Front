@@ -1,0 +1,24 @@
+.main-container {
+    display: flex;
+    .country-list {
+        width: 140px;
+        height: calc(100vh - 97px);
+    }
+    .news {
+        width: 100%;
+        background-color: chocolate;
+        .newsContainer {
+            padding: 48px 72px;
+            .newsNAV{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 38px;
+            }
+            .newsTitle>div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}

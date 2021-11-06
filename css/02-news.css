@@ -1,0 +1,42 @@
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-container .country-list {
+  width: 140px;
+  height: calc(100vh - 97px);
+}
+
+.main-container .news {
+  width: 100%;
+  background-color: chocolate;
+}
+
+.main-container .news .newsContainer {
+  padding: 48px 72px;
+}
+
+.main-container .news .newsContainer .newsNAV {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 38px;
+}
+
+.main-container .news .newsContainer .newsTitle > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=02-news.css.map */
