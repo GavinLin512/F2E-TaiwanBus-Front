@@ -96,10 +96,14 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 28px;
 }
 
 .main-container .news .newsContainer .newsTitle > div span:nth-child(1):before {
   content: '\f0a1';
+  font-family: "Font Awesome 5 Pro";
   font-weight: 400;
+  margin-right: 20px;
+  font-size: 36px;
 }
 /*# sourceMappingURL=02-news.css.map */

@@ -58,9 +58,13 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                font-size: 28px;
                 span:nth-child(1):before{
                     content: '\f0a1';
+                    font-family: "Font Awesome 5 Pro";
                     font-weight: 400;
+                    margin-right: 20px;
+                    font-size: 36px;
                 }
             }
         }
