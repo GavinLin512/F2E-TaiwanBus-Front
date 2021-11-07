@@ -16,6 +16,9 @@
     
     <!-- datatable -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <!-- slim selector -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/<version>/slimselect.min.css"> 
+        
 </head>
 
 <body>
@@ -41,7 +44,7 @@
                         </div>
                         <div class="select-rang">
                             <span>選擇區間</span>
-                            <select name="" id="">
+                            <select name="" id="single">
                                 <option value="7">一周內</option>
                                 <option value="1">一個月內</option>
                                 <option value="2">二個月內</option>
@@ -59,12 +62,12 @@
                         <table id="example" class="display" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>日期</th>
-                                    <th>標題</th>
+                                    <th>新聞</th>
                                     <th>Office</th>
                                     <th>Age</th>
                                     <th>Start date</th>
                                     <th>Salary</th>
+                                    <th>日期</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -118,6 +121,13 @@
         // title.value = country+'最新消息公告';
         
     </script>
+    <!-- slim select -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/<version>/slimselect.min.js"></script>
+    <script >
+        new SlimSelect({
+            select: '#single'
+        })
+    </script>        
 </body>
 
 </html>
