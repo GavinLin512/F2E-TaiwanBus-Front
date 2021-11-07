@@ -51,7 +51,8 @@
                     </div>
                     <div class="newsTitle">
                         <div>
-                            <span>台北公車</span> <span>最新消息公告</span>
+                            <span class="title">{title}最新消息公告</span>
+                            <!-- <span>台北公車</span> <span>最新消息公告</span> -->
                         </div>
                     </div>
                     <div class="datatable">
@@ -111,6 +112,11 @@
         $(document).ready(function () {
             $('#example').DataTable();
         });
+        // 塞title
+        // var title = document.querySelector('.title');
+        // var country = data.country;
+        // title.value = country+'最新消息公告';
+        
     </script>
 </body>
 
