@@ -16,6 +16,7 @@
                 margin-bottom: 38px;
                 .select-country{
                     display: flex;
+                    align-items: center;
                     span:nth-child(1){
                         display: block;
                         width: 48px;
@@ -23,18 +24,33 @@
                         border-radius: 50%;
                         position: relative;
                         background-color: #BE3D3D;
+                        i{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                            color: white;
+                            font-size: 25px;
+                        }
                     }
-                    span:nth-child(1)::before{
-                        content: '';
-                        position: absolute;
-                        width: 25px;
-                        height: 25px;
-                        border-bottom: 5px solid whitesmoke;
-                        border-left: 5px solid whitesmoke;
-                        border-radius: 5px;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%,-50%);
+                    span:nth-child(2){
+                        margin-left: 14px;
+                        font-size: 24px;
+                        font-weight: bold;
+                    }
+                }
+                .select-rang{
+                    display: flex;
+                    align-items: center;
+                    font-size: 20px;
+                    font-weight: bold;
+                    span{
+                        margin-right: 17px;
+                    }
+                    select{
+                        border-radius: 48px;
+                        font-size: 16px;
+                        padding: 4px 20px;
                     }
                 }
             }
@@ -42,6 +58,10 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                span:nth-child(1):before{
+                    content: '\f0a1';
+                    font-weight: 400;
+                }
             }
         }
     }
