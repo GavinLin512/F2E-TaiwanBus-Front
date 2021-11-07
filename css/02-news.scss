@@ -1,22 +1,72 @@
+.dataTables_length{display: none;}
+
 .main-container {
-    display: flex;
     .country-list {
-        width: 140px;
+        width: 0px;
+        // width: 140px;
         height: calc(100vh - 97px);
     }
     .news {
-        width: 100%;
         .newsContainer {
             padding: 48px 72px;
             .newsNAV{
-                display: flex;
-                justify-content: space-between;
                 margin-bottom: 38px;
+                .select-country{
+                    span:nth-child(1){
+                        display: block;
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 50%;
+                        position: relative;
+                        background-color: #BE3D3D;
+                        i{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                            color: white;
+                            font-size: 25px;
+                        }
+                    }
+                    span:nth-child(2){
+                        margin-left: 14px;
+                        font-size: 24px;
+                        font-weight: bold;
+                    }
+                }
+                .select-rang{
+
+                    font-size: 20px;
+                    font-weight: bold;
+                    select{
+                        border-radius: 48px;
+                        font-size: 16px;
+                        padding: 4px 20px;
+                    }
+                    .ss-main {
+                        .ss-single-selected {
+                            .placeholder {
+                                cursor: pointer;
+                                opacity: 1;
+                                background-color: transparent;
+                            }
+                        }
+                    }
+                    
+                }
             }
-            .newsTitle>div{
+            .newsTitle{
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                font-size: 28px;
+                span:nth-child(1):before{
+                    content: '\f0a1';
+                    font-family: "Font Awesome 5 Pro";
+                    font-weight: 400;
+                    margin-right: 20px;
+                    font-size: 36px;
+                }
             }
         }
     }
