@@ -1,0 +1,223 @@
+body{
+    margin: 0px auto;
+    padding: 0px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+// 黃色背景
+.bg{
+    max-width: 1920px;
+    width: 100%;
+    height: 100vh;
+
+    margin: 0px auto;
+
+    position: fixed;
+    left: 50%;
+    top: 0px;
+    transform: translateX(-50%);
+
+    background-color: rgba(245, 222, 179, 0.26);
+
+    opacity: 0;
+    &.show{
+        opacity: 1;
+
+        transition: .6s;
+    }
+}
+  
+nav{
+    max-width: 1920px;
+    width: 100%;
+
+    background-color: #004643;
+   
+    padding: 8px 0px;
+    margin: 0px auto;
+
+    position: sticky;
+    top: 0px;
+    z-index: 99;
+    .nav-container{
+        width: calc(100% - 80px);
+
+        margin: 0px auto;
+
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        // logo
+        .logo{
+            width: max-content;
+            max-width: 216px;
+
+            display: flex;
+            align-content: center;
+            .logo-pic-text{
+                margin-left: 16px;
+            }
+        }
+        .menu-btn{
+            width: 80px;
+            width: max-content;
+
+            position: absolute;
+            top: 24px;
+            right: 45px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px 0px;
+
+            z-index: 99;
+
+            transition: all 0.5s ease-in-out;
+
+            cursor: pointer;
+            .menu-btn_burgir {
+                width: 50px;
+                height: 6px;
+
+                background-color: #F9BC60;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+                transition: all 0.5s ease-in-out;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: 50px;
+                    height: 6px;
+                    background: white;
+                    background-color: #F9BC60;
+        
+                    border-radius: 5px;
+                    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+                    transition: all 0.5s ease-in-out;
+                    transform: translateY(-16px);
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 50px;
+                    height: 6px;
+                    background: white;
+                    background-color: #F9BC60;
+        
+                    border-radius: 5px;
+                    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+                    transition: all 0.5s ease-in-out;
+                    transform: translateY(16px);
+                }
+            }
+            &.open{
+                .menu-btn_burgir {
+                    transform: translateX(0px);
+                    background: transparent;
+                    box-shadow: none;
+                    transition:.1s;
+                    &::before{
+                        transform: rotate(45deg) translate(0px, 0px);
+                    }
+                    &::after {
+                        transform: rotate(-45deg) translate(0px, 0px);
+                      }
+                }
+            }
+        }
+    }
+    // 漢堡標選單
+    .hamburger-menu{
+        max-width: 1920px;
+        width: 100%;
+        height: calc(100vh - 98px);
+
+        position: fixed;
+        top: 98px;
+        display: flex;
+
+        overflow-x: hidden;
+       
+        background-color: transparent;
+        // 選單出現
+        &.show{
+            .menu-links{
+                transform: translateX(0%);
+                opacity: 1;
+                display: block;
+                transition: .6s ease-in;
+            }
+        }
+        // 選單消失
+        &.remove{
+            .menu-links{
+                transform: translateX(100%);
+                opacity: 0;
+                display: block;
+                transition: .6s ease-out;
+            }
+        }
+        // 漢堡標選單
+        .menu-links{
+            max-width: 593px;
+            width: 593px;
+            margin-left: auto;
+            min-height:calc(100vh - 98px);
+            max-height: calc(100vh - 98px);
+            height: calc(100vh - 98px);
+
+            transform: translateX(100%);
+
+            overflow-y:auto ;
+            padding: 0px;
+            margin: 0px;
+            margin-left: auto;
+            // 單個連結
+            li{
+                width: 280px;
+                width: 100%;
+                min-height: 60px;
+                height:calc(20vh - 19.6px);
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+             
+                background-color:#004643 ;
+                font-size: 36px;
+                font-weight: 600;
+                color: #F9BC60;
+
+                cursor: pointer;
+                &:hover{
+                    background-color:#F9BC60 ;
+                    color: #004643;
+
+                    transition: .6s ease-out;
+                }
+                i{
+                    font-size: 80px;
+                    margin-right: 45px;
+                }
+            }
+        }
+    }
+}  
+
+
+
+
+
+
+  
+
+  
+ 
+  
+  
+  
