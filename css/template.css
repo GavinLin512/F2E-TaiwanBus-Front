@@ -12,6 +12,7 @@ body {
   max-width: 1920px;
   width: 100%;
   height: 100vh;
+  display: none;
   margin: 0px auto;
   position: fixed;
   left: 50%;
@@ -24,6 +25,7 @@ body {
 
 .bg.show {
   opacity: 1;
+  display: block;
   -webkit-transition: .6s;
   transition: .6s;
 }
@@ -168,6 +170,10 @@ nav .hamburger-menu {
   background-color: transparent;
 }
 
+nav .hamburger-menu.show {
+  display: block;
+}
+
 nav .hamburger-menu.show .menu-links {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
@@ -177,11 +183,15 @@ nav .hamburger-menu.show .menu-links {
   transition: .6s ease-in;
 }
 
+nav .hamburger-menu.remove {
+  display: none;
+}
+
 nav .hamburger-menu.remove .menu-links {
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   opacity: 0;
-  display: block;
+  display: none;
   -webkit-transition: .6s ease-out;
   transition: .6s ease-out;
 }
@@ -232,5 +242,30 @@ nav .hamburger-menu .menu-links li:hover {
 nav .hamburger-menu .menu-links li i {
   font-size: 80px;
   margin-right: 45px;
+}
+
+main {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  min-height: calc(100vh - 136px);
+}
+
+footer {
+  width: 100%;
+  max-width: 1920px;
+  height: 38px;
+  background-color: #004643;
+  font-size: 14px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=template.css.map */
