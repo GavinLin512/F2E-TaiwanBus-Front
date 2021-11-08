@@ -53,7 +53,7 @@ body {
   display: block;
   -webkit-transition: .6s ease-in-out;
   transition: .6s ease-in-out;
-  z-index: 0;
+  z-index: -1;
 }
 
 nav {
