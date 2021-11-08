@@ -146,6 +146,8 @@ nav{
         overflow-x: hidden;
        
         background-color: transparent;
+
+        display: none;
         // 選單出現
         &.show{
             display: block;

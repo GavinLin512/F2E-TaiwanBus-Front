@@ -168,6 +168,7 @@ nav .hamburger-menu {
   display: flex;
   overflow-x: hidden;
   background-color: transparent;
+  display: none;
 }
 
 nav .hamburger-menu.show {
