@@ -1,5 +1,23 @@
 .main-container .bus_dynamic-list {
   width: 593px;
   height: 100%;
+  padding: 20px;
+  background-color: #F9BC60;
+}
+
+.main-container .bus_dynamic-list .tabs {
+  padding: 30px 0;
+}
+
+.main-container .bus_dynamic-list .tabs .tab {
+  width: 265px;
+  height: 46px;
+  background-color: #F9FCDE;
+}
+
+.main-container .bus_dynamic-list .info {
+  height: 790px;
+  background-color: #F9FCDE;
+  border-radius: 0 0 30px 30px;
 }
 /*# sourceMappingURL=03-bus_dynamic.css.map */
