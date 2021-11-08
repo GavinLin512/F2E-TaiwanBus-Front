@@ -170,6 +170,10 @@ nav .hamburger-menu {
   background-color: transparent;
 }
 
+nav .hamburger-menu.show {
+  display: block;
+}
+
 nav .hamburger-menu.show .menu-links {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
@@ -177,6 +181,10 @@ nav .hamburger-menu.show .menu-links {
   display: block;
   -webkit-transition: .6s ease-in;
   transition: .6s ease-in;
+}
+
+nav .hamburger-menu.remove {
+  display: none;
 }
 
 nav .hamburger-menu.remove .menu-links {

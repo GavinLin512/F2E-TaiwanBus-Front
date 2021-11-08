@@ -148,6 +148,7 @@ nav{
         background-color: transparent;
         // 選單出現
         &.show{
+            display: block;
             .menu-links{
                 transform: translateX(0%);
                 opacity: 1;
@@ -157,6 +158,7 @@ nav{
         }
         // 選單消失
         &.remove{
+            display: none;
             .menu-links{
                 transform: translateX(100%);
                 opacity: 0;
