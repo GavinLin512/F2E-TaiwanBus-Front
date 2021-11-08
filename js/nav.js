@@ -7,10 +7,16 @@ menuBtn.addEventListener("click", () => {
     if (!menuOpen) {
         show();
         hamburgermenu.classList.remove("remove");
+        bg.classList.remove("remove");
+        bg.classList.add("show");
+
         menuOpen = true;
     } else {
         show();
         hamburgermenu.classList.add("remove");
+        bg.classList.remove("add");
+        bg.classList.add("remove");
+
         menuOpen = false;
     }
 });
@@ -18,5 +24,5 @@ menuBtn.addEventListener("click", () => {
 function show() {
     menuBtn.classList.toggle("open");
     hamburgermenu.classList.toggle("show");
-    bg.classList.toggle("show");
+    // bg.classList.toggle("show");
 }
