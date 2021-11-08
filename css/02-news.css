@@ -7,8 +7,8 @@
   height: calc(100vh - 97px);
   background-color: wheat;
   padding-top: 13px;
-  -webkit-transition: 1.5s ease-out;
-  transition: 1.5s ease-out;
+  -webkit-transition: 1s cubic-bezier(0.23, 0.84, 0.61, 0.61);
+  transition: 1s cubic-bezier(0.23, 0.84, 0.61, 0.61);
   overflow-x: hidden;
 }
 
@@ -30,8 +30,8 @@
 
 .main-container .active {
   width: 160px;
-  -webkit-transition: 1.5s ease-out;
-  transition: 1.5s ease-out;
+  -webkit-transition: 1s cubic-bezier(0.23, 0.84, 0.61, 0.61);
+  transition: 1s cubic-bezier(0.23, 0.84, 0.61, 0.61);
   padding-right: 18px;
   overflow-y: auto;
   overflow-x: hidden;
