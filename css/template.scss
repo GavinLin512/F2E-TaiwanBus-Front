@@ -9,26 +9,28 @@ body{
 
 // 黃色背景
 .bg{
-    max-width: 1920px;
-    width: 100%;
+   width: 0px;
     height: 100vh;
 
-    display: none;
+    
 
     margin: 0px auto;
 
     position: fixed;
     left: 50%;
+    left: 0px;
     top: 0px;
-    transform: translateX(-50%);
+    // transform: translateX(-50%);
 
     background-color: rgba(245, 222, 179, 0.26);
 
     opacity: 0;
     &.show{
+        max-width: 1327px;
+        width:calc(100% - 593px) ;
         opacity: 1;
         display: block;
-        transition: .6s;
+        transition: .5s ease-in-out;
     }
 }
   
@@ -135,23 +137,30 @@ nav{
     }
     // 漢堡標選單
     .hamburger-menu{
-        max-width: 1920px;
-        width: 100%;
+       
+        width: 0px;
         height: calc(100vh - 98px);
 
         position: fixed;
         top: 98px;
+        left: 100%;
+        transform: translate(-100%,0%);
         display: flex;
 
         overflow-x: hidden;
        
         background-color: transparent;
 
-        display: none;
+        // display: none;
         // 選單出現
         &.show{
+            // max-width: 1920px;
+            // width: 100%;
+            width: max-content;
             display: block;
             .menu-links{
+                max-width: 593px;
+                width: 593px;
                 transform: translateX(0%);
                 opacity: 1;
                 display: block;
@@ -160,18 +169,24 @@ nav{
         }
         // 選單消失
         &.remove{
-            display: none;
+            // display: none;
+            width: max-content;
+            // left: calc(100% + 593px);
+            left: 200%;
             .menu-links{
-                transform: translateX(100%);
-                opacity: 0;
-                display: none;
+                width: max-content;
+                // width: 0px;
+                // max-width: 593px;
+                // width: 593px;
+                // transform: translateX(100%);
+                opacity: 1;
+                // display: none;
                 transition: .6s ease-out;
             }
         }
         // 漢堡標選單
         .menu-links{
-            max-width: 593px;
-            width: 593px;
+           
             margin-left: auto;
             min-height:calc(100vh - 98px);
             max-height: calc(100vh - 98px);
