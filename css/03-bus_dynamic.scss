@@ -2,7 +2,22 @@
     .bus_dynamic-list {
         width: 593px;
         height: 100%;
-    }
+        padding: 20px;
+        background-color: #F9BC60;
+        .tabs{
+            padding: 30px 0;
+            .tab{
+                width: 265px;
+                height: 46px;
+                background-color: #F9FCDE;
+            }
+        }
+        .info{
+            height: 790px;
+            background-color: #F9FCDE;
+            border-radius: 0 0 30px 30px;
+        }
+    } 
     .bus_dynamic {
     }
 }

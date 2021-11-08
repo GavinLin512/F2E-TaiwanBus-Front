@@ -15,7 +15,7 @@
     <!-- slim selector -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.css" rel="stylesheet">
     </link>
-
+    <link rel="stylesheet" href="./css/03-bus_dynamic.css">
 </head>
 
 <body>
@@ -73,14 +73,18 @@
 
     <main>
         <div class="main-container d-flex">
-            <div class="bus_dynamic-list">
+            <div class="bus_dynamic-list h-100">
                 <select name="" id="">
                     <option value="市區公車">市區公車</option>
                     <option value="公路公車">公路公車</option>
                 </select>
-                <div class="tabs">
-                    <div class="tab">去程</div>
-                    <div class="tab">回程</div>
+                <div class="tabs d-flex justify-content-between">
+                    <div class="tab d-flex justify-content-center align-items-center">去程</div>
+                    <div class="tab d-flex justify-content-center align-items-center">回程</div>
+                </div>
+                <div class="info w-100 position-relative">
+                    <span></span>
+                    <div class="bus-update">10秒後更新</div>
                 </div>
             </div>
             <div class="bus_dynamic w-100"></div>
