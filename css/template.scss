@@ -13,6 +13,8 @@ body{
     width: 100%;
     height: 100vh;
 
+    display: none;
+
     margin: 0px auto;
 
     position: fixed;
@@ -25,7 +27,7 @@ body{
     opacity: 0;
     &.show{
         opacity: 1;
-
+        display: block;
         transition: .6s;
     }
 }
@@ -158,7 +160,7 @@ nav{
             .menu-links{
                 transform: translateX(100%);
                 opacity: 0;
-                display: block;
+                display: none;
                 transition: .6s ease-out;
             }
         }
@@ -208,6 +210,23 @@ nav{
         }
     }
 }  
+
+main{
+    height: max-content;
+    min-height:calc(100vh - 136px);
+}
+
+footer{
+    width: 100%;
+    max-width: 1920px;
+    height: 38px;
+    background-color:#004643;
+    font-size: 14px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
