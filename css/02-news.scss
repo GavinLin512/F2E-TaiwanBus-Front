@@ -1,44 +1,80 @@
-.dataTables_length{display: none;}
+.dataTables_length {
+    display: none;
+}
 
 .main-container {
-    .country-list {
+    .county-list {
         width: 0px;
-        // width: 140px;
+        // width: 153px;
         height: calc(100vh - 97px);
+        background-color: wheat;
+        padding-top: 13px;
+        transition: 1.5s ease-out;
+        overflow-x: hidden;
+
+        .county-btn {
+            width: 130px;
+            height: 130px;
+            background-color: #f08080;
+            border-radius: 0px 30px 30px 0px;
+            margin-bottom: 30px;
+            .btn-bg-circle {
+                width: 100px;
+                height: 100px;
+                background-color: #ffffff;
+                border: 13px solid #f9bc60;
+                font-size: 24px;
+            }
+        }
+    }
+    .active {
+        width: 160px;
+        transition: 1.5s ease-out;
+        padding-right: 18px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        &::-webkit-scrollbar {
+            width: 10px;
+            background-color: wheat;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #004643;
+            border-radius: 5px;
+        }
     }
     .news {
         .newsContainer {
             padding: 48px 72px;
-            .newsNAV{
+            .newsNAV {
                 margin-bottom: 38px;
-                .select-country{
-                    span:nth-child(1){
+                .select-county {
+                    cursor: pointer;
+                    span:nth-child(1) {
                         display: block;
                         width: 48px;
                         height: 48px;
                         border-radius: 50%;
                         position: relative;
-                        background-color: #BE3D3D;
-                        i{
+                        background-color: #be3d3d;
+                        i {
                             position: absolute;
                             top: 50%;
                             left: 50%;
-                            transform: translate(-50%,-50%);
+                            transform: translate(-50%, -50%);
                             color: white;
                             font-size: 25px;
                         }
                     }
-                    span:nth-child(2){
+                    span:nth-child(2) {
                         margin-left: 14px;
                         font-size: 24px;
                         font-weight: bold;
                     }
                 }
-                .select-rang{
-
+                .select-rang {
                     font-size: 20px;
                     font-weight: bold;
-                    select{
+                    select {
                         border-radius: 48px;
                         font-size: 16px;
                         padding: 4px 20px;
@@ -52,16 +88,12 @@
                             }
                         }
                     }
-                    
                 }
             }
-            .newsTitle{
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .newsTitle {
                 font-size: 28px;
-                span:nth-child(1):before{
-                    content: '\f0a1';
+                span:nth-child(1):before {
+                    content: "\f0a1";
                     font-family: "Font Awesome 5 Pro";
                     font-weight: 400;
                     margin-right: 20px;

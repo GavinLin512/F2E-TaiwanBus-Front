@@ -34,11 +34,12 @@
 
     <main>
         <div class="main-container d-flex">
-            <div class="country-list"></div>
+            <div class="county-list"></div>
             <div class="news w-100">
                 <div class="newsContainer">
                     <div class="newsNAV row">
-                        <div class="select-country col-6 d-flex align-items-center">
+                        <div class="select-county col-6 d-flex align-items-center">
+
                             <span><i class="fas fa-chevron-left"></i></span>
                             <span>選擇縣市</span>
                         </div>
@@ -100,7 +101,6 @@
     </footer>
     <!-- JQ -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
         </script>
@@ -109,25 +109,69 @@
         </script>
     <!-- datatable -->
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <!-- slim select -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.js"></script>
+
     <script>
+
         $(document).ready(function () {
-            $('#example').DataTable();
+            // datatable
+            $('#example').DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/zh_Hant.json'
+                    // paginate: {
+                    //     next: '下一頁',
+                    //     previous: '上一頁',
+                    // },
+                    // processing: '處理中...',
+                    // info: '從第 _START_ 到第 _END_ 筆，共 _TOTAL_ 筆資料',
+                    // infoEmpty: '從第 0 到第 0 筆，共 0 筆資料',
+                    // zeroRecords: ''
+                },
+            });
+
+            // slim select
+            var select_during = document.querySelector('#single');
+            new SlimSelect({
+                select: select_during,
+                showSearch: false,
+            })
+            // select_during.slim.open();
+
+            county_list_create();
+            $('.select-county').on('click',function () {
+                toggle_list();
+            })
         });
+
         // 塞title
         // var title = document.querySelector('.title');
         // var country = data.country;
         // title.value = country+'最新消息公告';
 
-    </script>
-    <!-- slim select -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.js"></script>
-    <script>
-        var select_during = document.querySelector('#single');
-        new SlimSelect({
-            select: select_during,
-            placeholder: '123',
-        })
-        // select_during.slim.open();
+        var county = [
+            '台北', '新北', '基隆', '桃園', '新竹', '苗栗', '台中', '彰化', '南投', '雲林'
+        ];
+        function county_list_create() {
+            for (let i = 0; i < 10; i++) {
+                var county_btn =
+                    `<div class="county-btn d-flex justify-content-center align-items-center">
+                    <div class="btn-bg-circle rounded-circle d-flex justify-content-center align-items-center">
+                        <p class="mb-0">${county[i]}</p>
+                    </div>
+                    </div>`;
+                $('.county-list').append(county_btn);
+            };
+        }
+        function toggle_list() {
+            $('.county-list').toggleClass('active');
+            $('.btn-bg-circle').each(function () {
+                $(this).children.val('123');
+            })
+        }
+
+
+
     </script>
 </body>
 

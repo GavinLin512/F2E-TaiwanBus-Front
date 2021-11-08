@@ -2,9 +2,49 @@
   display: none;
 }
 
-.main-container .country-list {
+.main-container .county-list {
   width: 0px;
   height: calc(100vh - 97px);
+  background-color: wheat;
+  padding-top: 13px;
+  -webkit-transition: 1.5s ease-out;
+  transition: 1.5s ease-out;
+  overflow-x: hidden;
+}
+
+.main-container .county-list .county-btn {
+  width: 130px;
+  height: 130px;
+  background-color: #f08080;
+  border-radius: 0px 30px 30px 0px;
+  margin-bottom: 30px;
+}
+
+.main-container .county-list .county-btn .btn-bg-circle {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border: 13px solid #f9bc60;
+  font-size: 24px;
+}
+
+.main-container .active {
+  width: 160px;
+  -webkit-transition: 1.5s ease-out;
+  transition: 1.5s ease-out;
+  padding-right: 18px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.main-container .active::-webkit-scrollbar {
+  width: 10px;
+  background-color: wheat;
+}
+
+.main-container .active::-webkit-scrollbar-thumb {
+  background-color: #004643;
+  border-radius: 5px;
 }
 
 .main-container .news .newsContainer {
@@ -15,16 +55,20 @@
   margin-bottom: 38px;
 }
 
-.main-container .news .newsContainer .newsNAV .select-country span:nth-child(1) {
+.main-container .news .newsContainer .newsNAV .select-county {
+  cursor: pointer;
+}
+
+.main-container .news .newsContainer .newsNAV .select-county span:nth-child(1) {
   display: block;
   width: 48px;
   height: 48px;
   border-radius: 50%;
   position: relative;
-  background-color: #BE3D3D;
+  background-color: #be3d3d;
 }
 
-.main-container .news .newsContainer .newsNAV .select-country span:nth-child(1) i {
+.main-container .news .newsContainer .newsNAV .select-county span:nth-child(1) i {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -34,7 +78,7 @@
   font-size: 25px;
 }
 
-.main-container .news .newsContainer .newsNAV .select-country span:nth-child(2) {
+.main-container .news .newsContainer .newsNAV .select-county span:nth-child(2) {
   margin-left: 14px;
   font-size: 24px;
   font-weight: bold;
@@ -58,20 +102,11 @@
 }
 
 .main-container .news .newsContainer .newsTitle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   font-size: 28px;
 }
 
 .main-container .news .newsContainer .newsTitle span:nth-child(1):before {
-  content: '\f0a1';
+  content: "\f0a1";
   font-family: "Font Awesome 5 Pro";
   font-weight: 400;
   margin-right: 20px;
