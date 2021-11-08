@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-    <!--  -->
+    <!-- nav css -->
+    <link rel="stylesheet" href="./css/template.css">
+    <!-- news css -->
     <link rel="stylesheet" href="./css/02-news.css">
 
     <!-- datatable -->
@@ -23,13 +25,54 @@
 </head>
 
 <body>
-    <nav>
+    <div class="bg"></div>
+
+    <nav >
+
         <div class="nav-container">
             <div class="logo">
-                <img class="logo-pic" src="./image/logo.svg" alt="">
-                <img class="logo-pic-text" src="./image/logo-text.svg" alt="">
+                    <img class="logo-pic" src="./image/logo.svg" alt="">
+                    <img class="logo-pic-text" src="./image/logo-text.svg" alt="">
             </div>
+            <!-- 漢堡標 -->
+            <div class="menu-btn ">
+                <div class="menu-btn_burgir"></div>
+            </div>
+
         </div>
+
+        <!-- 漢堡標選單 -->
+        <section class="hamburger-menu ">
+            <!-- 漢堡標連結 -->
+            <ul class="menu-links">
+                <!-- 單個連結 -->
+                <li>
+                    <i class="fas fa-bus i"></i>
+                    <span>動態資訊</span>
+                </li>
+
+                <li>
+                    <i class="fas fa-route i"></i>
+                    <span>路線規劃</span>
+                </li>
+
+                <li>
+                    <i class="fas fa-map-marked-alt i"></i>
+                    <span>站點查詢</span>
+                </li>
+
+                <li>
+                    <i class="fas fa-bullhorn"></i>
+                    <span>消息公告</span>
+                </li>
+
+                <li>
+                    <i class="far fa-envelope"></i>
+                    <span>聯絡我們</span>
+                </li>
+
+            </ul>
+        </section>
     </nav>
 
     <main>
@@ -99,6 +142,8 @@
     <footer>
 
     </footer>
+    <!-- nav js -->
+    <script src="js/nav.js"></script>
     <!-- JQ -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
