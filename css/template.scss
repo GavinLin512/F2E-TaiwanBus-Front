@@ -12,51 +12,44 @@ body{
     width: 1920px;
     height: 100vh;
 
-    
-
     margin: 0px auto;
 
     position: fixed;
-    // left:50%;
     left: 0px;
     top: 0px;
     transform: translateX(-100%) ;
-    // transform: translateX(-100%);
 
     background-color: rgba(245, 222, 179, 0.26);
 
     opacity: 0;
     z-index: -1;
     &.show{
+        max-width: 1920px;
+        width: 100%;
+
         left: 50%;
         top: 0px;
         transform: translateX(-50%)  ;
-        max-width: 1327px;
-        max-width: 1920px;
-        width: 100%;
-        width:calc(100% - 593px) ;
-        width: 100%;
+      
         opacity: 1;
+
         display: block;
         transition: .6s ease-in-out;
-        z-index: 1;
+        z-index: 10;
     }
     &.remove{
+        max-width: 1920px;
+        width: 100%;
+
         left: 0%;
         top: 0px;
         transform: translateX(-100%)  ;
-        max-width: 1327px;
-        max-width: 1920px;
-        width: 100%;
-        width:calc(100% - 593px) ;
-        width: 100%;
+       
         opacity: 0;
         display: block;
         transition: .6s ease-in-out;
         z-index: -1;
     }
-    
-
 }
   
 nav{
@@ -155,14 +148,13 @@ nav{
                     }
                     &::after {
                         transform: rotate(-45deg) translate(0px, 0px);
-                      }
+                    }
                 }
             }
         }
     }
     // 漢堡標選單
     .hamburger-menu{
-       
         width: 0px;
         height: calc(100vh - 98px);
 
@@ -176,11 +168,8 @@ nav{
        
         background-color: transparent;
         z-index: -1;
-        // display: none;
         // 選單出現
         &.show{
-            // max-width: 1920px;
-            // width: 100%;
             width: max-content;
             display: block;
             z-index: 99;
@@ -195,28 +184,20 @@ nav{
         }
         // 選單消失
         &.remove{
-            // display: none;
             width: 593px;
             transform: translateX(100%);
             z-index: -1;
 
             transition: 1.5s ease-in-out;
-            // left: calc(100% + 593px);
-            // left: 200%;
+        
             .menu-links{
                 width: max-content;
-                // width: 0px;
-                // max-width: 593px;
-                // width: 593px;
-                // transform: translateX(100%);
                 opacity: 0;
-                // display: none;
                 transition: .6s ease-out;
             }
         }
         // 漢堡標選單
         .menu-links{
-           
             margin-left: auto;
             min-height:calc(100vh - 98px);
             max-height: calc(100vh - 98px);

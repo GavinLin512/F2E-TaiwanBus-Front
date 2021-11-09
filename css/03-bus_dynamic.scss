@@ -17,7 +17,6 @@ main{
     width: 100%;
     .main-container {
         width: 100%;
-        
         max-height: calc(100vh - 136px);
         height:max-content;
         .bus_dynamic-list {
@@ -90,29 +89,32 @@ main{
         .map {
             height: 100%;
             height: calc(100vh - 136px);
+            position: relative;
             .county-list {
                 width: 0px;
                 // width: 153px;
                 height: max-content;
                 max-height: calc(100vh - 136px);
-                height: max-content;
                 background-color: wheat;
                 padding-top: 13px;
                 transition: 1s ease-in-out;
                 overflow-y: auto;
-        
+                overflow-x: hidden;
+                position: absolute;
                 .county-btn {
                     width: 130px;
                     height: 130px;
                     background-color: #f08080;
                     border-radius: 0px 30px 30px 0px;
                     margin-bottom: 30px;
+                    cursor: pointer;
                     .btn-bg-circle {
                         width: 100px;
                         height: 100px;
                         background-color: #ffffff;
                         border: 13px solid #f9bc60;
                         font-size: 24px;
+                        animation: line 10s;
                     }
                 }
             }
@@ -130,6 +132,10 @@ main{
                     background-color: #004643;
                     border-radius: 5px;
                 }
+            }
+            .select-county {
+                margin-top: 10px;
+                margin-left: 170px;
             }
         }
     }
