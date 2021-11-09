@@ -8,79 +8,101 @@ body{
     flex-direction: column;
     align-items: center;
     margin: 0px auto;
+
+    background-color: blue;
 }
 
-.main-container {
-    max-height: calc(100vh - 136px);
-    height:max-content;
-    .bus_dynamic-list {
-        width: 593px;
-        padding: 20px;
-        background-color: #F9BC60;
-        .tabs{
-            padding: 30px 0;
-            .tab{
-                width: 265px;
-                height: 46px;
-                background-color: #F9FCDE;
-            }
-        }
-        .info{
-            height: max-content;
-            max-height: calc(100vh - 312px);
-            background-color: #F9FCDE;
-            border-radius: 0 0 0px 30px;
-
-            position: relative;
-            overflow-y: auto;
-            .bus-update{
-                height: 300vh;
-            }
-        }
-    } 
-    .map {
-        height: 100%;
-        height: calc(100vh - 136px);
-        .county-list {
-            width: 0px;
-            // width: 153px;
-            height: max-content;
-            max-height: calc(100vh - 136px);
-            height: max-content;
-            background-color: wheat;
-            padding-top: 13px;
-            transition: 1s ease-in-out;
-            overflow-y: auto;
-    
-            .county-btn {
-                width: 130px;
-                height: 130px;
-                background-color: #f08080;
-                border-radius: 0px 30px 30px 0px;
-                margin-bottom: 30px;
-                .btn-bg-circle {
-                    width: 100px;
-                    height: 100px;
-                    background-color: #ffffff;
-                    border: 13px solid #f9bc60;
-                    font-size: 24px;
+main{
+    max-width: 1920px;
+    width: 100%;
+    .main-container {
+        width: 100%;
+        
+        max-height: calc(100vh - 136px);
+        height:max-content;
+        .bus_dynamic-list {
+            max-width: 593px;
+            width: 100%;
+         
+            padding: 20px;
+            background-color: #F9BC60;
+            .tabs{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 30px 0;
+                .tab{
+                    width: calc(50% - 10px);
+                    height: 46px;
+                    background-color: #F9FCDE;
+                    border-radius: 5px;
                 }
             }
-        }
-        .active {
-            width: 160px;
-            transition: 1s ease-in-out;
-            padding-right: 18px;
-            overflow-y: auto;
-            overflow-x: hidden;
-            &::-webkit-scrollbar {
-                width: 10px;
-                background-color: wheat;
+            .info{
+                height: max-content;
+                position: relative;
+                min-height: calc(100vh - 312px);
+                max-height: calc(100vh - 312px);
+                background-color: #F9FCDE;
+                border-radius: 5px 0px 0px 30px;
+                padding-bottom: 35px;
+                position: relative;
+                overflow-y: auto;
+                .bus-update{
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0px;
+                    display: flex;
+                    padding-left: 30px;
+                    background-color: white;
+                }
             }
-            &::-webkit-scrollbar-thumb {
-                background-color: #004643;
-                border-radius: 5px;
+        } 
+        .map {
+            height: 100%;
+            height: calc(100vh - 136px);
+            .county-list {
+                width: 0px;
+                // width: 153px;
+                height: max-content;
+                max-height: calc(100vh - 136px);
+                height: max-content;
+                background-color: wheat;
+                padding-top: 13px;
+                transition: 1s ease-in-out;
+                overflow-y: auto;
+        
+                .county-btn {
+                    width: 130px;
+                    height: 130px;
+                    background-color: #f08080;
+                    border-radius: 0px 30px 30px 0px;
+                    margin-bottom: 30px;
+                    .btn-bg-circle {
+                        width: 100px;
+                        height: 100px;
+                        background-color: #ffffff;
+                        border: 13px solid #f9bc60;
+                        font-size: 24px;
+                    }
+                }
+            }
+            .active {
+                width: 160px;
+                transition: 1s ease-in-out;
+                padding-right: 18px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                &::-webkit-scrollbar {
+                    width: 10px;
+                    background-color: wheat;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: #004643;
+                    border-radius: 5px;
+                }
             }
         }
     }
 }
+
