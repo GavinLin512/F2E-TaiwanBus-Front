@@ -61,23 +61,25 @@ main{
         .map {
             height: 100%;
             height: calc(100vh - 136px);
+            position: relative;
             .county-list {
                 width: 0px;
                 // width: 153px;
                 height: max-content;
                 max-height: calc(100vh - 136px);
-                height: max-content;
                 background-color: wheat;
                 padding-top: 13px;
                 transition: 1s ease-in-out;
                 overflow-y: auto;
-        
+                overflow-x: hidden;
+                position: absolute;
                 .county-btn {
                     width: 130px;
                     height: 130px;
                     background-color: #f08080;
                     border-radius: 0px 30px 30px 0px;
                     margin-bottom: 30px;
+                    cursor: pointer;
                     .btn-bg-circle {
                         width: 100px;
                         height: 100px;

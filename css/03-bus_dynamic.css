@@ -83,6 +83,7 @@ main .main-container .bus_dynamic-list .info .bus-update {
 main .main-container .map {
   height: 100%;
   height: calc(100vh - 136px);
+  position: relative;
 }
 
 main .main-container .map .county-list {
@@ -91,12 +92,13 @@ main .main-container .map .county-list {
   height: -moz-max-content;
   height: max-content;
   max-height: calc(100vh - 136px);
-  height: max-content;
   background-color: wheat;
   padding-top: 13px;
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
   overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
 }
 
 main .main-container .map .county-list .county-btn {
@@ -105,6 +107,7 @@ main .main-container .map .county-list .county-btn {
   background-color: #f08080;
   border-radius: 0px 30px 30px 0px;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 main .main-container .map .county-list .county-btn .btn-bg-circle {
