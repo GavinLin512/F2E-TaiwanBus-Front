@@ -1,10 +1,30 @@
+body {
+  width: 100%;
+  max-width: 1920px;
+  position: relative;
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px auto;
+}
+
 .main-container {
-  height: calc(100% - 38px);
+  max-height: calc(100vh - 136px);
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .main-container .bus_dynamic-list {
   width: 593px;
-  height: 100%;
   padding: 20px;
   background-color: #F9BC60;
 }
@@ -20,20 +40,31 @@
 }
 
 .main-container .bus_dynamic-list .info {
-  height: 790px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  max-height: calc(100vh - 312px);
   background-color: #F9FCDE;
-  border-radius: 0 0 30px 30px;
+  border-radius: 0 0 0px 30px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.main-container .bus_dynamic-list .info .bus-update {
+  height: 300vh;
 }
 
 .main-container .map {
   height: 100%;
+  height: calc(100vh - 136px);
 }
 
 .main-container .map .county-list {
   width: 0px;
-  max-height: calc(100vh - 129px);
   height: -webkit-max-content;
   height: -moz-max-content;
+  height: max-content;
+  max-height: calc(100vh - 136px);
   height: max-content;
   background-color: wheat;
   padding-top: 13px;
