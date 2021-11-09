@@ -1,3 +1,7 @@
+.main-container {
+  height: calc(100% - 38px);
+}
+
 .main-container .bus_dynamic-list {
   width: 593px;
   height: 100%;
@@ -19,5 +23,57 @@
   height: 790px;
   background-color: #F9FCDE;
   border-radius: 0 0 30px 30px;
+}
+
+.main-container .map {
+  height: 100%;
+}
+
+.main-container .map .county-list {
+  width: 0px;
+  max-height: calc(100vh - 129px);
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: wheat;
+  padding-top: 13px;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  overflow-y: auto;
+}
+
+.main-container .map .county-list .county-btn {
+  width: 130px;
+  height: 130px;
+  background-color: #f08080;
+  border-radius: 0px 30px 30px 0px;
+  margin-bottom: 30px;
+}
+
+.main-container .map .county-list .county-btn .btn-bg-circle {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border: 13px solid #f9bc60;
+  font-size: 24px;
+}
+
+.main-container .map .active {
+  width: 160px;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  padding-right: 18px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.main-container .map .active::-webkit-scrollbar {
+  width: 10px;
+  background-color: wheat;
+}
+
+.main-container .map .active::-webkit-scrollbar-thumb {
+  background-color: #004643;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=03-bus_dynamic.css.map */

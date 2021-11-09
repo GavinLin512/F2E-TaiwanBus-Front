@@ -73,8 +73,8 @@
 
     <main>
         <div class="main-container d-flex">
-            <div class="bus_dynamic-list h-100">
-                <select name="" id="">
+            <div class="bus_dynamic-list ">
+                <select name="" id="single">
                     <option value="市區公車">市區公車</option>
                     <option value="公路公車">公路公車</option>
                 </select>
@@ -87,7 +87,10 @@
                     <div class="bus-update">10秒後更新</div>
                 </div>
             </div>
-            <div class="bus_dynamic w-100"></div>
+            <div class="map w-100 d-flex bg-danger">
+                <div class="county-list"></div>
+                <div class="select-county btn btn-info mb-auto ms-3">縣市選單</div>
+            </div>
         </div>
     </main>
 
@@ -118,7 +121,34 @@
                 select: select_during,
                 showSearch: false,
             })
+
+            county_list_create();
+            $('.select-county').on('click',function () {
+                toggle_list();
+            })
         });
+
+        var county = [
+            '台北', '新北', '基隆', '桃園', '新竹', '苗栗', '台中', '彰化', '南投', '雲林'
+        ];
+        function county_list_create() {
+            for (let i = 0; i < 10; i++) {
+                var county_btn =
+                    `<div class="county-btn d-flex justify-content-center align-items-center">
+                    <div class="btn-bg-circle rounded-circle d-flex justify-content-center align-items-center">
+                        <p class="mb-0">${county[i]}</p>
+                    </div>
+                    </div>`;
+                $('.county-list').append(county_btn);
+            };
+        }
+        function toggle_list() {
+            $('.county-list').toggleClass('active');
+            // $('.btn-bg-circle').each(function () {
+            //     $(this).children.val('123');
+            // })
+        }
+        
     </script>
 </body>
 

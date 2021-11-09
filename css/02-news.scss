@@ -9,7 +9,7 @@
         height: calc(100vh - 97px);
         background-color: wheat;
         padding-top: 13px;
-        transition: 1s cubic-bezier(.23,.84,.61,.61);
+        transition: 1s ease-in-out;
         overflow-x: hidden;
 
         .county-btn {
@@ -29,7 +29,7 @@
     }
     .active {
         width: 160px;
-        transition: 1s cubic-bezier(.23,.84,.61,.61);
+        transition: 1s ease-in-out;
         padding-right: 18px;
         overflow-y: auto;
         overflow-x: hidden;

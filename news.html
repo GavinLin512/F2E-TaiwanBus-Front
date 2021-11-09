@@ -82,7 +82,6 @@
                 <div class="newsContainer">
                     <div class="newsNAV row">
                         <div class="select-county col-6 d-flex align-items-center">
-
                             <span><i class="fas fa-chevron-left"></i></span>
                             <span>選擇縣市</span>
                         </div>
@@ -105,33 +104,15 @@
                             <thead>
                                 <tr>
                                     <th>新聞</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
-                                    <th>日期</th>
+                                    <th style="width: 20%;">日期</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
                                     <td>$320,800</td>
                                 </tr>
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                 </div>
@@ -164,14 +145,6 @@
             $('#example').DataTable({
                 language: {
                     url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/zh_Hant.json'
-                    // paginate: {
-                    //     next: '下一頁',
-                    //     previous: '上一頁',
-                    // },
-                    // processing: '處理中...',
-                    // info: '從第 _START_ 到第 _END_ 筆，共 _TOTAL_ 筆資料',
-                    // infoEmpty: '從第 0 到第 0 筆，共 0 筆資料',
-                    // zeroRecords: ''
                 },
             });
 
@@ -210,9 +183,9 @@
         }
         function toggle_list() {
             $('.county-list').toggleClass('active');
-            $('.btn-bg-circle').each(function () {
-                $(this).children.val('123');
-            })
+            // $('.btn-bg-circle').each(function () {
+            //     $(this).children.val('123');
+            // })
         }
 
     </script>
