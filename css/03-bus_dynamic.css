@@ -102,8 +102,8 @@ main .main-container .bus_dynamic-list .info .bus-update span:nth-child(1) {
   width: 100%;
   height: 5px;
   background-color: #F08080;
-  -webkit-animation: line 10s ease infinite;
-          animation: line 10s ease infinite;
+  -webkit-animation: line 10s linear infinite;
+          animation: line 10s linear infinite;
 }
 
 @-webkit-keyframes line {
