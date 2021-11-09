@@ -23,32 +23,26 @@ body {
 }
 
 .bg.show {
+  max-width: 1920px;
+  width: 100%;
   left: 50%;
   top: 0px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  max-width: 1327px;
-  max-width: 1920px;
-  width: 100%;
-  width: calc(100% - 593px);
-  width: 100%;
   opacity: 1;
   display: block;
   -webkit-transition: .6s ease-in-out;
   transition: .6s ease-in-out;
-  z-index: 1;
+  z-index: 10;
 }
 
 .bg.remove {
+  max-width: 1920px;
+  width: 100%;
   left: 0%;
   top: 0px;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-  max-width: 1327px;
-  max-width: 1920px;
-  width: 100%;
-  width: calc(100% - 593px);
-  width: 100%;
   opacity: 0;
   display: block;
   -webkit-transition: .6s ease-in-out;
