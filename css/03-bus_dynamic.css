@@ -101,9 +101,21 @@ main .main-container .bus_dynamic-list .info .bus-update {
 main .main-container .bus_dynamic-list .info .bus-update span:nth-child(1) {
   width: 100%;
   height: 5px;
-  background-color: goldenrod;
-  -webkit-animation: line 10s;
-          animation: line 10s;
+  background-color: #F08080;
+  -webkit-animation: line 10s linear infinite;
+          animation: line 10s linear infinite;
+}
+
+@-webkit-keyframes line {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes line {
+  from {
+    width: 0;
+  }
 }
 
 main .main-container .bus_dynamic-list .info .bus-update span:nth-child(2) {
