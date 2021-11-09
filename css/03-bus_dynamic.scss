@@ -72,8 +72,13 @@ main{
                         &:nth-child(1){
                             width: 100%;
                             height: 5px;
-                            background-color: goldenrod;
-                            animation: line 10s;
+                            background-color: #F08080;
+                            animation: line 10s ease infinite;
+                            @keyframes line {
+                                from{
+                                    width: 0;
+                                }
+                            }
                         }
                         &:nth-child(2){
                             padding-left: 30px;
