@@ -17,7 +17,6 @@ main{
     width: 100%;
     .main-container {
         width: 100%;
-        
         max-height: calc(100vh - 136px);
         height:max-content;
         .bus_dynamic-list {
@@ -110,6 +109,7 @@ main{
                         background-color: #ffffff;
                         border: 13px solid #f9bc60;
                         font-size: 24px;
+                        animation: line 10s;
                     }
                 }
             }
@@ -127,6 +127,10 @@ main{
                     background-color: #004643;
                     border-radius: 5px;
                 }
+            }
+            .select-county {
+                margin-top: 10px;
+                margin-left: 170px;
             }
         }
     }
