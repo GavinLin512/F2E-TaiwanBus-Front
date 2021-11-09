@@ -146,6 +146,8 @@ main .main-container .map .county-list .county-btn .btn-bg-circle {
   background-color: #ffffff;
   border: 13px solid #f9bc60;
   font-size: 24px;
+  -webkit-animation: line 10s;
+          animation: line 10s;
 }
 
 main .main-container .map .active {
@@ -165,5 +167,10 @@ main .main-container .map .active::-webkit-scrollbar {
 main .main-container .map .active::-webkit-scrollbar-thumb {
   background-color: #004643;
   border-radius: 5px;
+}
+
+main .main-container .map .select-county {
+  margin-top: 10px;
+  margin-left: 170px;
 }
 /*# sourceMappingURL=03-bus_dynamic.css.map */
