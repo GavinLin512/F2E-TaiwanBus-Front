@@ -150,6 +150,13 @@ main .main-container .map .county-list .county-btn {
   border-radius: 0px 30px 30px 0px;
   margin-bottom: 30px;
   cursor: pointer;
+  -webkit-box-shadow: -3px -3px 8px inset #f73030;
+          box-shadow: -3px -3px 8px inset #f73030;
+}
+
+main .main-container .map .county-list .county-btn:active {
+  -webkit-box-shadow: 3px 3px 8px inset #f73030;
+          box-shadow: 3px 3px 8px inset #f73030;
 }
 
 main .main-container .map .county-list .county-btn .btn-bg-circle {
@@ -158,8 +165,6 @@ main .main-container .map .county-list .county-btn .btn-bg-circle {
   background-color: #ffffff;
   border: 13px solid #f9bc60;
   font-size: 24px;
-  -webkit-animation: line 10s;
-          animation: line 10s;
 }
 
 main .main-container .map .active {
