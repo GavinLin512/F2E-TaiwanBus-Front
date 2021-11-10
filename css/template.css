@@ -1,6 +1,7 @@
 body {
   margin: 0px auto;
   padding: 0px;
+  background-color: blue;
 }
 
 * {
@@ -244,8 +245,7 @@ nav .hamburger-menu .menu-links {
 }
 
 nav .hamburger-menu .menu-links li {
-  width: 280px;
-  width: 100%;
+  width: 593px;
   min-height: 60px;
   height: calc(20vh - 19.6px);
   display: -webkit-box;
