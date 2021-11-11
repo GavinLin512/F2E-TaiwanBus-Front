@@ -108,13 +108,16 @@ main{
                     border-radius: 0px 30px 30px 0px;
                     margin-bottom: 30px;
                     cursor: pointer;
+                    box-shadow: -3px -3px 8px inset #f73030;
+                    &:active {
+                        box-shadow: 3px 3px 8px inset #f73030;
+                    }
                     .btn-bg-circle {
                         width: 100px;
                         height: 100px;
                         background-color: #ffffff;
                         border: 13px solid #f9bc60;
                         font-size: 24px;
-                        animation: line 10s;
                     }
                 }
             }
