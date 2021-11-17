@@ -85,21 +85,33 @@ object:hover mask {
 main {
   max-width: 1920px;
   width: 100%;
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 98px);
+  height: calc(100vh - 98px);
   background-color: #F9FCDE;
   margin: 0px auto;
 }
 
 main .main-container {
   width: 100%;
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 98px);
+  height: calc(100vh - 98px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 8px 142px;
   position: relative;
 }
 
 @media screen and (max-width: 1920px) {
   main .main-container {
-    padding: 8px 7.5vw;
+    padding: 0px 7.3958vw;
   }
 }
 
@@ -119,28 +131,80 @@ main .main-container .line svg {
 
 main .main-container .links {
   width: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media screen and (max-width: 1920px) {
   main .main-container .links {
-    max-width: 100%;
     width: 100%;
+    margin: 0px auto;
+    padding: 0px 7.3958vw;
   }
 }
 
 main .main-container .links .link-groups {
   width: 100%;
+  max-width: 1577px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding-bottom: 56px;
+}
+
+@media screen and (max-width: 1920px) {
+  main .main-container .links .link-groups {
+    max-width: unset;
+    width: 100%;
+    margin: 0px auto;
+  }
 }
 
 main .main-container .links .link-groups .link {
   max-width: 452px;
-  width: calc(33.33% - 73.33px);
+  width: 452px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin-right: 128px;
+}
+
+main .main-container .links .link-groups .link:nth-last-child(1) {
+  margin-right: 0px;
+}
+
+@media screen and (max-width: 1920px) {
+  main .main-container .links .link-groups .link {
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    width: calc(33.33% - 5vw);
+    margin-right: 0px;
+  }
 }
 
 main .main-container .links .link-groups .link .link-texts {
@@ -164,8 +228,23 @@ main .main-container .links .link-groups .link .link-texts {
   margin-left: auto;
 }
 
+@media screen and (max-width: 1920px) {
+  main .main-container .links .link-groups .link .link-texts {
+    padding-left: 5.885vw;
+    margin-left: auto;
+  }
+}
+
 main .main-container .links .link-groups .link .link-texts .link-line {
   width: 100%;
+}
+
+@media screen and (max-width: 1920px) {
+  main .main-container .links .link-groups .link .link-texts .link-line {
+    width: 16.25vw;
+    padding-left: 0px;
+    margin-left: auto;
+  }
 }
 
 main .main-container .links .link-groups .link .link-texts .link-text {
@@ -182,8 +261,8 @@ main .main-container .links .link-groups .link .link-texts .link-text {
 
 @media screen and (max-width: 1920px) {
   main .main-container .links .link-groups .link .link-texts .link-text {
-    max-width: 270px;
-    max-width: 86.26%;
+    max-width: unset;
+    width: 14vw;
   }
 }
 
@@ -193,7 +272,7 @@ main .main-container .links .link-groups .link .link-texts .top-text {
 }
 
 main .main-container .links .link-groups .link .link-texts .bottom-text {
-  font-size: 30px;
+  font-size: 28px;
   margin-top: -32px;
   color: #FF8484;
 }
@@ -203,11 +282,26 @@ main .main-container .links .link-groups .link .icon {
   margin-top: 16px;
 }
 
+@media screen and (max-width: 1920px) {
+  main .main-container .links .link-groups .link .icon {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+}
+
 main .main-container .links .link-groups .link .icon .icon-border {
   max-width: 226px;
   width: 226px;
   height: auto;
   position: relative;
+}
+
+@media screen and (max-width: 1920px) {
+  main .main-container .links .link-groups .link .icon .icon-border {
+    max-width: unset;
+    width: 11.77vw;
+  }
 }
 
 main .main-container .links .link-groups .link .icon .icon-border svg {
@@ -233,8 +327,55 @@ main .main-container .links .link-groups .link .icon .icon-border .icon-pic {
   border-radius: 50%;
 }
 
+@media screen and (max-width: 1920px) {
+  main .main-container .links .link-groups .link .icon .icon-border .icon-pic {
+    width: 11.77vw;
+    height: 11.77vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main .main-container .links .link-groups .link .icon .icon-border .icon-pic {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i {
-  font-size: 130px;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i svg {
+  width: 60%;
+  height: 60%;
+}
+
+@media screen and (max-width: 1920px) {
+  main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i {
+    font-size: 4.5rem;
+  }
+}
+
+main .main-container .links .link-groups .link .icon .icon-border .icon-pic .phone-texts {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  main .main-container .links .link-groups .link .icon .icon-border .icon-pic .phone-texts {
+    display: block;
+  }
 }
 
 main .main-container .links .link-groups .link .icon .icon-border .icon-pic0 {
@@ -266,7 +407,8 @@ main .main-container .links .link-groups .link .icon .icon-border-6 svg {
 }
 
 main .main-container .links .link-groups1 {
-  padding-top: 118px;
+  padding-bottom: 0px;
+  padding-top: 56px;
 }
 
 main .main-container .links .link-groups1 .link {
@@ -291,7 +433,6 @@ main .main-container .links .link-groups1 .link .link-texts {
 }
 
 main .main-container .links .link-groups1 .link .link-texts .link-line {
-  width: 86.26%;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   margin-top: -32px;
@@ -300,12 +441,18 @@ main .main-container .links .link-groups1 .link .link-texts .link-line {
 main .main-container .links .link-groups1 .link .link-texts .top-text {
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
+  font-size: 36px;
 }
 
 main .main-container .links .link-groups1 .link .link-texts .bottom-text {
   position: relative;
-  font-size: 30px;
+  font-size: 28px;
   margin-top: 0px;
+}
+
+main .main-container .links .link-groups1 .link .link-texts .link-text {
+  max-width: unset;
+  width: 14vw;
 }
 
 main .main-container .links .link-groups1 .link .icon {
@@ -327,5 +474,30 @@ main .main-container .links .link-groups1 .link .icon .icon-border svg {
 
 main .main-container .links .link-groups1 .link .icon .icon-pic1 {
   bottom: 0px;
+}
+
+main .main-container .links .link-groups1 .link .icon .icon-pic1 .i {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .main-container .links .link-groups1 .link .icon .icon-pic1 .i svg {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+@media screen and (max-width: 1920px) {
+  main .main-container .links .link-groups1 .link .icon .icon-pic1 .i {
+    font-size: 4.5rem;
+  }
 }
 /*# sourceMappingURL=01-index.css.map */
