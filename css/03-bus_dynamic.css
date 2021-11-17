@@ -31,10 +31,9 @@ main .main-container {
 }
 
 main .main-container .bus_dynamic-list {
-  max-width: 593px;
-  width: 30.9%;
+  min-width: 593px;
   padding: 20px;
-  background-color: #F9BC60;
+  background-color: #f9bc60;
 }
 
 main .main-container .bus_dynamic-list select {
@@ -52,6 +51,32 @@ main .main-container .bus_dynamic-list .ss-main .ss-single-selected .placeholder
   background-color: transparent;
 }
 
+main .main-container .bus_dynamic-list .select-county {
+  padding: 8px 20px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 20px;
+  background-color: #f08080;
+  border: 0;
+  color: #F9FCDE;
+}
+
+main .main-container .bus_dynamic-list .list-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+main .main-container .bus_dynamic-list .list-btn img {
+  -webkit-filter: invert(22%) sepia(13%) saturate(4436%) hue-rotate(138deg) brightness(89%) contrast(102%);
+          filter: invert(22%) sepia(13%) saturate(4436%) hue-rotate(138deg) brightness(89%) contrast(102%);
+}
+
+main .main-container .bus_dynamic-list .bus-search {
+  padding-top: 14px;
+}
+
 main .main-container .bus_dynamic-list .tabs {
   width: 100%;
   display: -webkit-box;
@@ -60,31 +85,80 @@ main .main-container .bus_dynamic-list .tabs {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 30px 0;
+  padding-top: 14px;
 }
 
 main .main-container .bus_dynamic-list .tabs .tab {
-  width: calc(50% - 10px);
-  height: 46px;
-  background-color: #F9FCDE;
-  border-radius: 5px;
+  width: 50%;
+  height: 36px;
+  background-color: #f9fcde;
+  border-radius: 8px 8px 0 0;
+  border: 0;
+}
+
+main .main-container .bus_dynamic-list .tabs .active {
+  background-color: #004643;
+  color: #f9fcde;
 }
 
 main .main-container .bus_dynamic-list .info {
+  border-top: 1px solid #c4c4c4;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   position: relative;
   min-height: calc(100vh - 312px);
   max-height: calc(100vh - 312px);
-  background-color: #F9FCDE;
+  background-color: #f9fcde;
   border-radius: 5px 0px 0px 30px;
   padding-bottom: 35px;
   position: relative;
   overflow-y: auto;
 }
 
-main .main-container .bus_dynamic-list .info .bus-update {
+main .main-container .bus_dynamic-list .info table {
+  text-align: center;
+}
+
+main .main-container .bus_dynamic-list .info table thead {
+  background-color: #004643;
+  color: #f9bc60;
+  font-size: 18px;
+}
+
+main .main-container .bus_dynamic-list .info table thead tr th:nth-child(1) {
+  width: 10%;
+}
+
+main .main-container .bus_dynamic-list .info table thead tr th:nth-child(2) {
+  width: 30%;
+}
+
+main .main-container .bus_dynamic-list .info table thead tr th:nth-child(3) {
+  width: 20%;
+}
+
+main .main-container .bus_dynamic-list .info table thead tr th:nth-child(4) {
+  width: 19%;
+}
+
+main .main-container .bus_dynamic-list .info table tbody .arrive-time {
+  margin: 8px 0;
+  border-radius: 20px;
+  padding: 4px 0;
+  cursor: unset;
+  background-color: #F08080;
+  color: #F9FCDE;
+  border: 0;
+}
+
+main .main-container .bus_dynamic-list .info table tbody .arrive-time:hover {
+  color: #F9FCDE;
+  background-color: #F08080;
+  border: unset;
+}
+
+main .main-container .bus_dynamic-list .bus-update {
   width: 100%;
   position: absolute;
   bottom: 0px;
@@ -98,10 +172,10 @@ main .main-container .bus_dynamic-list .info .bus-update {
   background-color: white;
 }
 
-main .main-container .bus_dynamic-list .info .bus-update span:nth-child(1) {
+main .main-container .bus_dynamic-list .bus-update span:nth-child(1) {
   width: 100%;
   height: 5px;
-  background-color: #F08080;
+  background-color: #f08080;
   -webkit-animation: line 10s linear infinite;
           animation: line 10s linear infinite;
 }
@@ -118,17 +192,17 @@ main .main-container .bus_dynamic-list .info .bus-update span:nth-child(1) {
   }
 }
 
-main .main-container .bus_dynamic-list .info .bus-update span:nth-child(2) {
+main .main-container .bus_dynamic-list .bus-update span:nth-child(2) {
   padding-left: 30px;
 }
 
-main .main-container .map {
+main .map {
   height: 100%;
   height: calc(100vh - 136px);
   position: relative;
 }
 
-main .main-container .map .county-list {
+main .map .county-list {
   width: 0px;
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -143,7 +217,7 @@ main .main-container .map .county-list {
   position: absolute;
 }
 
-main .main-container .map .county-list .county-btn {
+main .map .county-list .county-btn {
   width: 130px;
   height: 130px;
   background-color: #f08080;
@@ -154,12 +228,12 @@ main .main-container .map .county-list .county-btn {
           box-shadow: -3px -3px 8px inset #f73030;
 }
 
-main .main-container .map .county-list .county-btn:active {
+main .map .county-list .county-btn:active {
   -webkit-box-shadow: 3px 3px 8px inset #f73030;
           box-shadow: 3px 3px 8px inset #f73030;
 }
 
-main .main-container .map .county-list .county-btn .btn-bg-circle {
+main .map .county-list .county-btn .btn-bg-circle {
   width: 100px;
   height: 100px;
   background-color: #ffffff;
@@ -167,7 +241,7 @@ main .main-container .map .county-list .county-btn .btn-bg-circle {
   font-size: 24px;
 }
 
-main .main-container .map .active {
+main .map .active {
   width: 160px;
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
@@ -176,18 +250,13 @@ main .main-container .map .active {
   overflow-x: hidden;
 }
 
-main .main-container .map .active::-webkit-scrollbar {
+main .map .active::-webkit-scrollbar {
   width: 10px;
   background-color: wheat;
 }
 
-main .main-container .map .active::-webkit-scrollbar-thumb {
+main .map .active::-webkit-scrollbar-thumb {
   background-color: #004643;
   border-radius: 5px;
-}
-
-main .main-container .map .select-county {
-  margin-top: 10px;
-  margin-left: 170px;
 }
 /*# sourceMappingURL=03-bus_dynamic.css.map */
