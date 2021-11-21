@@ -109,7 +109,6 @@ main .main-container .bus_dynamic-list .info {
   height: max-content;
   position: relative;
   min-height: calc(100vh - 335px);
-  max-height: calc(100vh - 312px);
   background-color: #f9fcde;
   border-radius: 0px 0px 30px 30px;
   padding-bottom: 35px;
