@@ -29,28 +29,30 @@ main .main-container {
   height: max-content;
 }
 
-main .main-container .bus_dynamic-list {
+main .main-container .bus-dynamic-list {
   min-width: 593px;
   padding: 20px;
   background-color: #f9bc60;
+  -webkit-transition: .6s ease-in-out;
+  transition: .6s ease-in-out;
 }
 
-main .main-container .bus_dynamic-list select {
+main .main-container .bus-dynamic-list select {
   height: 50px;
 }
 
-main .main-container .bus_dynamic-list .ss-main .ss-single-selected {
+main .main-container .bus-dynamic-list .ss-main .ss-single-selected {
   height: 36px;
   padding: 0 20px;
 }
 
-main .main-container .bus_dynamic-list .ss-main .ss-single-selected .placeholder {
+main .main-container .bus-dynamic-list .ss-main .ss-single-selected .placeholder {
   cursor: pointer;
   opacity: 1;
   background-color: transparent;
 }
 
-main .main-container .bus_dynamic-list .select-county {
+main .main-container .bus-dynamic-list .select-county {
   padding: 8px 20px;
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -61,24 +63,24 @@ main .main-container .bus_dynamic-list .select-county {
   color: #F9FCDE;
 }
 
-main .main-container .bus_dynamic-list .list-btn {
+main .main-container .bus-dynamic-list .list-btn {
   width: 60px;
   height: 60px;
   border-radius: 50%;
 }
 
-main .main-container .bus_dynamic-list .list-btn img {
+main .main-container .bus-dynamic-list .list-btn img {
   -webkit-filter: invert(22%) sepia(13%) saturate(4436%) hue-rotate(138deg) brightness(89%) contrast(102%);
           filter: invert(22%) sepia(13%) saturate(4436%) hue-rotate(138deg) brightness(89%) contrast(102%);
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
-main .main-container .bus_dynamic-list .bus-search {
+main .main-container .bus-dynamic-list .bus-search {
   padding-top: 14px;
 }
 
-main .main-container .bus_dynamic-list .tabs {
+main .main-container .bus-dynamic-list .tabs {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -89,7 +91,7 @@ main .main-container .bus_dynamic-list .tabs {
   padding-top: 14px;
 }
 
-main .main-container .bus_dynamic-list .tabs .tab {
+main .main-container .bus-dynamic-list .tabs .tab {
   width: 50%;
   height: 36px;
   background-color: #f9fcde;
@@ -97,12 +99,12 @@ main .main-container .bus_dynamic-list .tabs .tab {
   border: 0;
 }
 
-main .main-container .bus_dynamic-list .tabs .active {
+main .main-container .bus-dynamic-list .tabs .active {
   background-color: #004643;
   color: #f9fcde;
 }
 
-main .main-container .bus_dynamic-list .info {
+main .main-container .bus-dynamic-list .info {
   border-top: 1px solid #f9fcde;
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -116,33 +118,33 @@ main .main-container .bus_dynamic-list .info {
   overflow-y: auto;
 }
 
-main .main-container .bus_dynamic-list .info table {
+main .main-container .bus-dynamic-list .info table {
   text-align: center;
 }
 
-main .main-container .bus_dynamic-list .info table thead {
+main .main-container .bus-dynamic-list .info table thead {
   background-color: #004643;
   color: #f9bc60;
   font-size: 18px;
 }
 
-main .main-container .bus_dynamic-list .info table thead tr th:nth-child(1) {
+main .main-container .bus-dynamic-list .info table thead tr th:nth-child(1) {
   width: 10%;
 }
 
-main .main-container .bus_dynamic-list .info table thead tr th:nth-child(2) {
+main .main-container .bus-dynamic-list .info table thead tr th:nth-child(2) {
   width: 30%;
 }
 
-main .main-container .bus_dynamic-list .info table thead tr th:nth-child(3) {
+main .main-container .bus-dynamic-list .info table thead tr th:nth-child(3) {
   width: 20%;
 }
 
-main .main-container .bus_dynamic-list .info table thead tr th:nth-child(4) {
+main .main-container .bus-dynamic-list .info table thead tr th:nth-child(4) {
   width: 19%;
 }
 
-main .main-container .bus_dynamic-list .info table tbody .arrive-time {
+main .main-container .bus-dynamic-list .info table tbody .arrive-time {
   margin: 8px 0;
   border-radius: 20px;
   padding: 4px 0;
@@ -152,13 +154,13 @@ main .main-container .bus_dynamic-list .info table tbody .arrive-time {
   border: 0;
 }
 
-main .main-container .bus_dynamic-list .info table tbody .arrive-time:hover {
+main .main-container .bus-dynamic-list .info table tbody .arrive-time:hover {
   color: #F9FCDE;
   background-color: #F08080;
   border: unset;
 }
 
-main .main-container .bus_dynamic-list .bus-update {
+main .main-container .bus-dynamic-list .bus-update {
   width: 100%;
   position: absolute;
   bottom: 0px;
@@ -172,7 +174,7 @@ main .main-container .bus_dynamic-list .bus-update {
   background-color: white;
 }
 
-main .main-container .bus_dynamic-list .bus-update span:nth-child(1) {
+main .main-container .bus-dynamic-list .bus-update span:nth-child(1) {
   width: 100%;
   height: 5px;
   background-color: #f08080;
@@ -192,8 +194,14 @@ main .main-container .bus_dynamic-list .bus-update span:nth-child(1) {
   }
 }
 
-main .main-container .bus_dynamic-list .bus-update span:nth-child(2) {
+main .main-container .bus-dynamic-list .bus-update span:nth-child(2) {
   padding-left: 30px;
+}
+
+main .main-container .active-list {
+  margin-left: -593px;
+  -webkit-transition: .6s ease-in-out;
+  transition: .6s ease-in-out;
 }
 
 main .map {
@@ -210,8 +218,8 @@ main .map .county-list {
   max-height: calc(100vh - 136px);
   background-color: wheat;
   padding-top: 13px;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+  -webkit-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
   overflow-y: auto;
   overflow-x: hidden;
   position: absolute;
@@ -244,8 +252,8 @@ main .map .county-list .county-btn .btn-bg-circle {
 
 main .map .active {
   width: 160px;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+  -webkit-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
   padding-right: 18px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -268,4 +276,4 @@ main .map .leaflet-pane {
 main .map .leaflet-top, main .map .leaflet-bottom {
   z-index: 0 !important;
 }
-/*# sourceMappingURL=03-bus_dynamic.css.map */
+/*# sourceMappingURL=03-bus-dynamic.css.map */
