@@ -6,28 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>公車動態</title>
+    <!-- BootStrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- GoogleFont -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Voces&display=swap" rel="stylesheet">
+    <!-- StyleGuide -->
+    <link rel="stylesheet" href="./css/00-styleguide.css">
     <!-- nav css -->
     <link rel="stylesheet" href="./css/template.css">
     <!-- slim selector -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.css" rel="stylesheet">
     </link>
     <link rel="stylesheet" href="./css/03-bus_dynamic.css">
+    <!-- leaflet -->
+    <link rel="stylesheet" href="./css/leaflet/leaflet.css">
+    <!-- mapbox -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+
 </head>
 
 <body>
     <!-- 背景 -->
     <div class="bg"></div>
 
-    <nav >
+    <nav>
 
         <div class="nav-container">
             <div class="logo">
-                    <img class="logo-pic" src="./image/logo.svg" alt="">
-                    <img class="logo-pic-text" src="./image/logo-text.svg" alt="">
+                <img class="logo-pic" src="./image/logo.svg" alt="">
+                <img class="logo-pic-text" src="./image/logo-text.svg" alt="">
             </div>
             <!-- 漢堡標 -->
             <div class="menu-btn ">
@@ -74,24 +87,146 @@
     <main>
         <div class="main-container d-flex">
             <div class="bus_dynamic-list ">
-                <select name="" id="single">
-                    <option value="市區公車">市區公車</option>
-                    <option value="公路公車">公路公車</option>
-                </select>
+                <div class="row">
+                    <div class="col-6 d-flex align-items-center">
+                        <select name="" id="bus-type">
+                            <option value="市區公車">市區公車</option>
+                            <option value="公路公車">公路公車</option>
+                        </select>
+                    </div>
+                    <div class="col-6 d-flex justify-content-between align-items-center">
+                        <div class="select-county btn btn-info ">縣市選單</div>
+                        <div class="list-btn">
+                            <img src="./image/next-svgrepo-com.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="bus-search">
+                    <select name="" id="search_bus">
+                    </select>
+                </div>
                 <div class="tabs d-flex justify-content-between">
-                    <button class="tab d-flex justify-content-center align-items-center">去程</button>
+                    <button class="tab d-flex justify-content-center align-items-center active">去程</button>
                     <button class="tab d-flex justify-content-center align-items-center">回程</button>
                 </div>
                 <div class="info w-100 position-relative">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>站序</th>
+                                <th>站名</th>
+                                <th>車牌號碼</th>
+                                <th>預計到達時間</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>39</td>
+                                <td>with two columns</td>
+                                <td>555-AAA</td>
+                                <td>
+                                    <div class="btn btn-primary w-75 arrive-time">15:30</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td>with two columns</td>
+                                <td>555-AAA</td>
+                                <td>
+                                    <div class="btn btn-primary w-75 arrive-time">15:30</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td>with two columns</td>
+                                <td>555-AAA</td>
+                                <td>
+                                    <div class="btn btn-primary w-75 arrive-time">15:30</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td>with two columns</td>
+                                <td>555-AAA</td>
+                                <td>
+                                    <div class="btn btn-primary w-75 arrive-time">15:30</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td>with two columns</td>
+                                <td>555-AAA</td>
+                                <td>
+                                    <div class="btn btn-primary w-75 arrive-time">15:30</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td>with two columns</td>
+                                <td>555-AAA</td>
+                                <td>
+                                    <div class="btn btn-primary w-75 arrive-time">15:30</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td>with two columns</td>
+                                <td>555-AAA</td>
+                                <td>
+                                    <div class="btn btn-primary w-75 arrive-time">15:30</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td>with two columns</td>
+                                <td>555-AAA</td>
+                                <td>
+                                    <div class="btn btn-primary w-75 arrive-time">15:30</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td>with two columns</td>
+                                <td>555-AAA</td>
+                                <td>
+                                    <div class="btn btn-primary w-75 arrive-time">15:30</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td>with two columns</td>
+                                <td>555-AAA</td>
+                                <td>
+                                    <div class="btn btn-primary w-75 arrive-time">15:30</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td>with two columns</td>
+                                <td>555-AAA</td>
+                                <td>
+                                    <div class="btn btn-primary w-75 arrive-time">15:30</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td>with two columns</td>
+                                <td>555-AAA</td>
+                                <td>
+                                    <div class="btn btn-primary w-75 arrive-time">15:30</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                     <div class="bus-update">
                         <span></span>
                         <span>10秒後更新</span>
                     </div>
                 </div>
             </div>
-            <div class="map w-100 d-flex bg-danger">
-                <div class="county-list"></div>
-                <div class="select-county btn btn-lg btn-info mb-auto">縣市選單</div>
+            <div class="map w-100 d-flex" id="map">
+                <div class="county-list" id="county-list"></div>
             </div>
         </div>
     </main>
@@ -99,10 +234,10 @@
     <footer>
 
     </footer>
-    
+
     <!-- nsv js -->
     <script src="./js/nav.js"></script>
-    
+
     <!-- JQ -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
@@ -115,24 +250,91 @@
 
     <!-- slim select -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.js"></script>
-    
+    <!-- leaflet -->
+    <script src="./js/leaflet/leaflet.js"></script>
+    <!-- mapbox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
     <script>
         $(document).ready(function () {
-            var select_during = document.querySelector('#single');
             new SlimSelect({
-                select: select_during,
+                select: '#bus-type',
                 showSearch: false,
+                placeholder:'請選擇類別',
+                allowDeselectOption: true
+            })
+
+            new SlimSelect({
+                select: '#search_bus',
+                placeholder:'請選擇路線',
+                searchingText: '尋找路線中...', // Optional - Will show during ajax request
+                searchPlaceholder:'請輸入路線名稱',
+                ajax: function (search, callback) {
+                    // Check search value. If you dont like it callback(false) or callback('Message String')
+                    if (search.length < 3) {
+                        callback('Need 3 characters')
+                        return
+                    }
+
+                    // Perform your own ajax request here
+                    fetch('https://jsonplaceholder.typicode.com/users')
+                        .then(function (response) {
+                            return response.json()
+                        })
+                        .then(function (json) {
+                            console.log(json);
+                            let data = []
+                            for (let i = 0; i < json.length; i++) {
+                                data.push({
+                                    text: json[i].name
+                                })
+                            }
+
+                            // Upon successful fetch send data to callback function.
+                            // Be sure to send data back in the proper format.
+                            // Refer to the method setData for examples of proper format.
+                            callback(data)
+                        })
+                        .catch(function (error) {
+                            // If any erros happened send false back through the callback
+                            callback(false)
+                        })
+                }
             })
 
             county_list_create();
-            $('.select-county').on('click',function () {
+            $('.select-county').on('click', function () {
                 toggle_list();
             })
+            // 防止區域元素觸發 leaflet map event
+            L.DomEvent.disableClickPropagation(L.DomUtil.get('county-list'));
+            L.DomEvent.disableScrollPropagation(L.DomUtil.get('county-list'));
+
+            // leaflet
+            var map = L.map('map', {
+                zoomControl: false
+            })
+            map.setView(new L.LatLng(23.794082453027436, 120.97790316609922), 8);
+            var accessToken = 'pk.eyJ1IjoiZ3JheXNvbmxpbjUxMiIsImEiOiJja3c3emlhMGE3aWsyMm5tdHo5bjA3ZmV5In0.JL6wR5AnmWuiWlVEzBoB2w';
+            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 20,
+                id: 'graysonlin512/ckw8gvwxpaeph15rz66cxjm09', // 在 mapbox studio 設定語系
+                tileSize: 512,
+                zoomOffset: -1,
+                accessToken: accessToken
+            }).addTo(map);
+            // mapbox://styles/graysonlin512/ckw8gvwxpaeph15rz66cxjm09
+            // 設定 zoom btn 位置
+            L.control.zoom({
+                position: 'bottomright'
+            }).addTo(map);
         });
+
 
         var county = [
             '台北', '新北', '基隆', '桃園', '新竹', '苗栗', '台中', '彰化', '南投', '雲林'
         ];
+
         function county_list_create() {
             for (let i = 0; i < 10; i++) {
                 var county_btn =
@@ -144,13 +346,13 @@
                 $('.county-list').append(county_btn);
             };
         }
+
         function toggle_list() {
             $('.county-list').toggleClass('active');
             // $('.btn-bg-circle').each(function () {
             //     $(this).children.val('123');
             // })
         }
-        
     </script>
 </body>
 
