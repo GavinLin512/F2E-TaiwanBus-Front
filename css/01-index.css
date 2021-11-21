@@ -125,6 +125,14 @@ main .main-container .line {
           transform: translate(-50%, -50%);
 }
 
+@media screen and (max-width: 1000px) {
+  main .main-container .line {
+    -webkit-transform: translate(-50%, -50%) rotate(90deg);
+            transform: translate(-50%, -50%) rotate(90deg);
+    width: calc(100vh - 98px);
+  }
+}
+
 main .main-container .line svg {
   width: 100%;
 }
@@ -158,6 +166,19 @@ main .main-container .links {
   }
 }
 
+@media screen and (max-width: 1000px) {
+  main .main-container .links {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    width: 768px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 main .main-container .links .link-groups {
   width: 100%;
   max-width: 1577px;
@@ -184,6 +205,19 @@ main .main-container .links .link-groups {
   }
 }
 
+@media screen and (max-width: 1000px) {
+  main .main-container .links .link-groups {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    height: calc(100vh - 82px);
+  }
+}
+
 main .main-container .links .link-groups .link {
   max-width: 452px;
   width: 452px;
@@ -205,6 +239,12 @@ main .main-container .links .link-groups .link:nth-last-child(1) {
     width: calc(33.33% - 5vw);
     margin-right: 0px;
   }
+}
+
+main .main-container .links .link-groups .link a {
+  display: block;
+  text-decoration: none;
+  color: initial;
 }
 
 main .main-container .links .link-groups .link .link-texts {
@@ -232,6 +272,12 @@ main .main-container .links .link-groups .link .link-texts {
   main .main-container .links .link-groups .link .link-texts {
     padding-left: 5.885vw;
     margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  main .main-container .links .link-groups .link .link-texts {
+    display: none;
   }
 }
 
@@ -271,10 +317,52 @@ main .main-container .links .link-groups .link .link-texts .top-text {
   color: #004643;
 }
 
+@media screen and (max-width: 1600px) {
+  main .main-container .links .link-groups .link .link-texts .top-text {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  main .main-container .links .link-groups .link .link-texts .top-text {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  main .main-container .links .link-groups .link .link-texts .top-text {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  main .main-container .links .link-groups .link .link-texts .top-text {
+    font-size: 20px;
+  }
+}
+
 main .main-container .links .link-groups .link .link-texts .bottom-text {
   font-size: 28px;
   margin-top: -32px;
   color: #FF8484;
+}
+
+@media screen and (max-width: 1600px) {
+  main .main-container .links .link-groups .link .link-texts .bottom-text {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  main .main-container .links .link-groups .link .link-texts .bottom-text {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  main .main-container .links .link-groups .link .link-texts .bottom-text {
+    font-size: 16px;
+  }
 }
 
 main .main-container .links .link-groups .link .icon {
@@ -311,6 +399,13 @@ main .main-container .links .link-groups .link .icon .icon-border svg {
           filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
 }
 
+@media screen and (max-width: 1000px) {
+  main .main-container .links .link-groups .link .icon .icon-border svg {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
 main .main-container .links .link-groups .link .icon .icon-border .icon-pic {
   position: absolute;
   display: -webkit-box;
@@ -334,7 +429,7 @@ main .main-container .links .link-groups .link .icon .icon-border .icon-pic {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   main .main-container .links .link-groups .link .icon .icon-border .icon-pic {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -368,11 +463,18 @@ main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i s
   }
 }
 
+@media screen and (max-width: 1000px) {
+  main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+
 main .main-container .links .link-groups .link .icon .icon-border .icon-pic .phone-texts {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   main .main-container .links .link-groups .link .icon .icon-border .icon-pic .phone-texts {
     display: block;
   }
@@ -441,12 +543,10 @@ main .main-container .links .link-groups1 .link .link-texts .link-line {
 main .main-container .links .link-groups1 .link .link-texts .top-text {
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
-  font-size: 36px;
 }
 
 main .main-container .links .link-groups1 .link .link-texts .bottom-text {
   position: relative;
-  font-size: 28px;
   margin-top: 0px;
 }
 
@@ -472,6 +572,13 @@ main .main-container .links .link-groups1 .link .icon .icon-border svg {
           filter: drop-shadow(0px -4px 10px rgba(0, 0, 0, 0.25));
 }
 
+@media screen and (max-width: 1000px) {
+  main .main-container .links .link-groups1 .link .icon .icon-border svg {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+
 main .main-container .links .link-groups1 .link .icon .icon-pic1 {
   bottom: 0px;
 }
@@ -493,6 +600,13 @@ main .main-container .links .link-groups1 .link .icon .icon-pic1 .i {
 main .main-container .links .link-groups1 .link .icon .icon-pic1 .i svg {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
+}
+
+@media screen and (max-width: 1000px) {
+  main .main-container .links .link-groups1 .link .icon .icon-pic1 .i svg {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
 }
 
 @media screen and (max-width: 1920px) {
