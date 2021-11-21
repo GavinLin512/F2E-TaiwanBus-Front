@@ -8,8 +8,6 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0px auto;
-
-    background-color: blue;
 }
 
 main {
@@ -52,6 +50,7 @@ main {
                 border-radius: 50%;
                 img {
                     filter: invert(22%) sepia(13%) saturate(4436%) hue-rotate(138deg) brightness(89%) contrast(102%);
+                    transform: rotate(180deg);
                 }
             }
             .bus-search {
@@ -75,13 +74,13 @@ main {
                 }
             }
             .info {
-                border-top: 1px solid #c4c4c4;
+                border-top: 1px solid #f9fcde;
                 height: max-content;
                 position: relative;
-                min-height: calc(100vh - 312px);
+                min-height: calc(100vh - 335px);
                 max-height: calc(100vh - 312px);
                 background-color: #f9fcde;
-                border-radius: 5px 0px 0px 30px;
+                border-radius: 0px 0px 30px 30px;
                 padding-bottom: 35px;
                 position: relative;
                 overflow-y: auto;
@@ -156,6 +155,8 @@ main {
         height: 100%;
         height: calc(100vh - 136px);
         position: relative;
+        // position: absolute;
+        // z-index: 0;
         .county-list {
             width: 0px;
             // width: 153px;
@@ -167,6 +168,7 @@ main {
             overflow-y: auto;
             overflow-x: hidden;
             position: absolute;
+            z-index: 399;
             .county-btn {
                 width: 130px;
                 height: 130px;
@@ -201,6 +203,12 @@ main {
                 background-color: #004643;
                 border-radius: 5px;
             }
+        }
+        .leaflet-pane {
+            z-index: 0 !important; // 蓋過預設的 400
+        }
+        .leaflet-top, .leaflet-bottom {
+            z-index: 0 !important; // 蓋過預設的 1000
         }
     }
 }

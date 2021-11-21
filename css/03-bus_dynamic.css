@@ -14,7 +14,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin: 0px auto;
-  background-color: blue;
 }
 
 main {
@@ -71,6 +70,8 @@ main .main-container .bus_dynamic-list .list-btn {
 main .main-container .bus_dynamic-list .list-btn img {
   -webkit-filter: invert(22%) sepia(13%) saturate(4436%) hue-rotate(138deg) brightness(89%) contrast(102%);
           filter: invert(22%) sepia(13%) saturate(4436%) hue-rotate(138deg) brightness(89%) contrast(102%);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 main .main-container .bus_dynamic-list .bus-search {
@@ -102,15 +103,15 @@ main .main-container .bus_dynamic-list .tabs .active {
 }
 
 main .main-container .bus_dynamic-list .info {
-  border-top: 1px solid #c4c4c4;
+  border-top: 1px solid #f9fcde;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   position: relative;
-  min-height: calc(100vh - 312px);
+  min-height: calc(100vh - 335px);
   max-height: calc(100vh - 312px);
   background-color: #f9fcde;
-  border-radius: 5px 0px 0px 30px;
+  border-radius: 0px 0px 30px 30px;
   padding-bottom: 35px;
   position: relative;
   overflow-y: auto;
@@ -215,6 +216,7 @@ main .map .county-list {
   overflow-y: auto;
   overflow-x: hidden;
   position: absolute;
+  z-index: 399;
 }
 
 main .map .county-list .county-btn {
@@ -258,5 +260,13 @@ main .map .active::-webkit-scrollbar {
 main .map .active::-webkit-scrollbar-thumb {
   background-color: #004643;
   border-radius: 5px;
+}
+
+main .map .leaflet-pane {
+  z-index: 0 !important;
+}
+
+main .map .leaflet-top, main .map .leaflet-bottom {
+  z-index: 0 !important;
 }
 /*# sourceMappingURL=03-bus_dynamic.css.map */
