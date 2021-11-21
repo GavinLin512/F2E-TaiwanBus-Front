@@ -57,31 +57,6 @@ nav .nav-container .logo .logo-pic-text {
   margin-left: 16px;
 }
 
-object:hover mask {
-  fill: yellowgreen;
-}
-
-.img {
-  width: 200px;
-}
-
-.img:hover {
-  background-color: orchid;
-}
-
-.a {
-  width: 200px;
-  cursor: pointer;
-}
-
-.a svg g path {
-  fill: palegoldenrod;
-}
-
-.a:hover svg g path {
-  fill: orchid;
-}
-
 main {
   max-width: 1920px;
   width: 100%;
@@ -323,7 +298,7 @@ main .main-container .links .link-groups .link .link-texts .top-text {
   }
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
   main .main-container .links .link-groups .link .link-texts .top-text {
     font-size: 28px;
   }
@@ -349,13 +324,13 @@ main .main-container .links .link-groups .link .link-texts .bottom-text {
 
 @media screen and (max-width: 1600px) {
   main .main-container .links .link-groups .link .link-texts .bottom-text {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1300px) {
   main .main-container .links .link-groups .link .link-texts .bottom-text {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -389,6 +364,12 @@ main .main-container .links .link-groups .link .icon .icon-border {
   main .main-container .links .link-groups .link .icon .icon-border {
     max-width: unset;
     width: 11.77vw;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  main .main-container .links .link-groups .link .icon .icon-border {
+    width: 8vw;
   }
 }
 
@@ -429,6 +410,13 @@ main .main-container .links .link-groups .link .icon .icon-border .icon-pic {
   }
 }
 
+@media screen and (max-width: 1600px) {
+  main .main-container .links .link-groups .link .icon .icon-border .icon-pic {
+    width: 8vw;
+    height: 8vw;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   main .main-container .links .link-groups .link .icon .icon-border .icon-pic {
     -webkit-box-orient: vertical;
@@ -460,6 +448,12 @@ main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i s
 @media screen and (max-width: 1920px) {
   main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i {
     font-size: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i {
+    width: 8vw;
   }
 }
 

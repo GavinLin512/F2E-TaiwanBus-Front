@@ -5,7 +5,6 @@ body{
     flex-direction: column;
     align-content: center;
     width: 100%;
-
     
     position: relative;
 
@@ -42,60 +41,6 @@ nav{
             .logo-pic-text{
                 margin-left: 16px;
             }
-        }
-    }
-}
-// .text{
-//     background-color: wheat;
-//     border: 2px solid gainsboro;
-//     clip-path: polygon(100% 0, 0 0, 47% 100%);
-//     width: 100px;
-//     height: 100px;
-//     border-radius: 30px;
-// }
-
-.text{
-   
-}
-
-object{
-    &:hover{
-       mask{
-           fill: yellowgreen;
-       }
-
-    }
-}
-
-// .test{
-//     width: 200px;
-//     height: 280px;
-//     margin: 50px;
-//     text-align: center;
-//     font-size: 100px;
-//     line-height: 420px;
-//     float: left;
-//     // background-image: url("android-logo.svg");
-//     background-size: cover;
-// }
-.img{
-    width: 200px;
-    // height: 1000px;
-    &:hover{
-        background-color: orchid;
-    }
-}
-
-.a{
-    width: 200px;
-
-    cursor: pointer;
-    svg g path{
-        fill: palegoldenrod;
-    }
-    &:hover{
-        svg g path{
-            fill: orchid;
         }
     }
 }
@@ -275,7 +220,7 @@ main{
                             @media screen and(max-width:1600px) {
                                 font-size: 32px;
                             }
-                            @media screen and(max-width:1300px) {
+                            @media screen and(max-width:1400px) {
                                 font-size: 28px;
                             }
                             @media screen and(max-width:1200px) {
@@ -290,10 +235,10 @@ main{
                             margin-top: -32px;
                             color: #FF8484;
                             @media screen and(max-width:1600px) {
-                                font-size: 24px;
-                            }
-                            @media screen and(max-width:1400px) {
                                 font-size: 20px;
+                            }
+                            @media screen and(max-width:1300px) {
+                                font-size: 18px;
                             }
                             @media screen and(max-width:1000px) {
                                 font-size: 16px;
@@ -306,6 +251,9 @@ main{
                         @media screen and(max-width:1920px) {
                             height: max-content;
                         }
+                        @media screen and(max-width:1600px) {
+                             
+                        }
                         .icon-border{
                             max-width: 226px;
                             width: 226px;
@@ -315,6 +263,9 @@ main{
                             @media screen and(max-width:1920px) {
                                 max-width: unset;
                                 width: 11.77vw;
+                            }
+                            @media screen and(max-width:1600px) {
+                                width: 8vw;
                             }
                             svg{
                                 width: 100%;
@@ -326,6 +277,7 @@ main{
                                 @media screen and(max-width:1000px) {
                                     transform: rotate(90deg);
                                 }
+                              
                                 
                             }
                             .icon-pic{
@@ -340,6 +292,10 @@ main{
                                 @media screen and(max-width:1920px) {
                                     width: 11.77vw;
                                     height: 11.77vw;
+                                }
+                                @media screen and(max-width:1600px) {
+                                    width: 8vw;
+                                    height: 8vw;
                                 }
                                 @media screen and(max-width:1000px) {
                                     flex-direction: column;
@@ -357,6 +313,9 @@ main{
                                     }
                                     @media screen and(max-width:1920px) {
                                         font-size: 4.5rem;
+                                    }
+                                    @media screen and(max-width:1600px) {
+                                        width: 8vw;
                                     }
                                     @media screen and(max-width:1000px) {
                                         transform: rotate(-90deg);
