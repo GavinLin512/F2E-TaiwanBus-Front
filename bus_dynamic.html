@@ -90,6 +90,7 @@
                 <div class="row">
                     <div class="col-6 d-flex align-items-center">
                         <select name="" id="bus-type">
+                            <option data-placeholder="true" style="color: dimgray;"></option>
                             <option value="市區公車">市區公車</option>
                             <option value="公路公車">公路公車</option>
                         </select>
@@ -171,15 +172,16 @@
             new SlimSelect({
                 select: '#bus-type',
                 showSearch: false,
-                placeholder:'請選擇類別',
+                placeholder: '請選擇類別',
                 allowDeselectOption: true
             })
 
             new SlimSelect({
                 select: '#search_bus',
-                placeholder:'請選擇路線',
+                placeholder: '請選擇路線',
                 searchingText: '尋找路線中...', // Optional - Will show during ajax request
-                searchPlaceholder:'請輸入路線名稱',
+                searchPlaceholder: '請輸入路線名稱',
+                searchText: '查無此路線',
                 ajax: function (search, callback) {
                     // Check search value. If you dont like it callback(false) or callback('Message String')
                     if (search.length < 3) {
@@ -225,6 +227,7 @@
             var map = L.map('map', {
                 zoomControl: false
             })
+            // 原始點定位及縮放大小
             map.setView(new L.LatLng(23.794082453027436, 120.97790316609922), 8);
             var accessToken = 'pk.eyJ1IjoiZ3JheXNvbmxpbjUxMiIsImEiOiJja3c3emlhMGE3aWsyMm5tdHo5bjA3ZmV5In0.JL6wR5AnmWuiWlVEzBoB2w';
             L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
