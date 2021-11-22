@@ -225,7 +225,7 @@
                 </div>
             </div>
             <div class="map w-100 d-flex" id="map">
-                <div class="list-btn-map">
+                <div id="list-btn-map" class="list-btn-map">
                     <img src="./image/next-svgrepo-com.svg" alt="">
                 </div>
                 <div class="county-list" id="county-list"></div>
@@ -364,17 +364,23 @@
         // 選單出現
         var BusDynamicList = document.querySelector('.bus-dynamic-list')
         var listBtn = document.querySelector('.list-btn')
+        var listBtnMap = document.querySelector('.list-btn-map')
+
+        L.DomEvent.disableClickPropagation(L.DomUtil.get('list-btn-map'));
+        L.DomEvent.disableScrollPropagation(L.DomUtil.get('list-btn-map'));
+
         listBtn.addEventListener('click', function () {
             BusDynamicList.classList.add('active-list')
-            // console.log(map);
+            listBtnMap.classList.add('list-btn-map-active')
             setTimeout(function () {
                 window.map.invalidateSize();
             },600);
         })
         // 選單回來
-        var listBtnMap = document.querySelector('.list-btn-map')
+        
         listBtnMap.addEventListener('click', function () {
-            listBtnMap.classList.remove('active-list')
+            BusDynamicList.classList.remove('active-list')
+            listBtnMap.classList.remove('list-btn-map-active')
         })
 
 
