@@ -16,8 +16,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Voces&display=swap" rel="stylesheet">
-    <!-- StyleGuide -->
-    <link rel="stylesheet" href="./css/00-styleguide.css">
     <!-- nav css -->
     <link rel="stylesheet" href="./css/template.css">
     <!-- slim selector -->
@@ -256,6 +254,9 @@
     <!-- mapbox -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
     <script>
+        var map = L.map('map', {
+                zoomControl: false
+            })
         $(document).ready(function () {
             new SlimSelect({
                 select: '#bus-type',
@@ -312,9 +313,9 @@
             L.DomEvent.disableScrollPropagation(L.DomUtil.get('county-list'));
 
             // leaflet
-            var map = L.map('map', {
-                zoomControl: false
-            })
+            // var map = L.map('map', {
+            //     zoomControl: false
+            // })
             // 原始點定位及縮放大小
             map.setView(new L.LatLng(23.794082453027436, 120.97790316609922), 8);
             var accessToken = 'pk.eyJ1IjoiZ3JheXNvbmxpbjUxMiIsImEiOiJja3c3emlhMGE3aWsyMm5tdHo5bjA3ZmV5In0.JL6wR5AnmWuiWlVEzBoB2w';
@@ -324,7 +325,7 @@
                 id: 'graysonlin512/ckw8gvwxpaeph15rz66cxjm09', // 在 mapbox studio 設定語系
                 tileSize: 512,
                 zoomOffset: -1,
-                accessToken: accessToken
+                accessToken: accessToken 
             }).addTo(map);
             // mapbox://styles/graysonlin512/ckw8gvwxpaeph15rz66cxjm09
             // 設定 zoom btn 位置
@@ -361,11 +362,10 @@
         var listBtn = document.querySelector('.list-btn')
         listBtn.addEventListener('click', function () {
             BusDynamicList.classList.add('active-list')
-            
-            L.tileLayer({
-                tileSize: 1024,
-                zoomOffset: -2,
-            })
+            // console.log(map);
+            setTimeout(function () {
+                window.map.invalidateSize();
+            },600);
         })
 
 

@@ -1,3 +1,4 @@
+@import "00-styleguide.scss";
 body{
     margin: 0px auto;
     padding: 0px;
@@ -56,7 +57,7 @@ nav{
     max-width: 1920px;
     width: 100%;
 
-    background-color: #004643;
+    background-color: $theme-darkgreen;
    
     padding: 8px 0px;
     margin: 0px auto;

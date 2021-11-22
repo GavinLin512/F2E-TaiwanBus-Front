@@ -1,3 +1,48 @@
-body{
-    font-family: 'Noto Sans TC', sans-serif, 'Voces', cursive;
+// font
+$cht-font: 'Noto Sans TC', sans-serif;
+$eng-font: 'Voces', cursive;
+
+// color
+$theme-darkgreen: #004643;
+$theme-lightgreen: #ABD1C6;
+$theme-pink: #F08080;
+$theme-yellow: #F9BC60;
+$theme-white: #F5F5F5;
+
+$main-darkorange: #FF734B;
+$main-lightorange: #FB8C3B;
+$main-yellow: #FFC32D;
+$main-yellowgreen: #ABDC45;
+$main-aqua: #5DDFC7;
+$main-blue: #5F8BEE;
+$main-lightgray: #D6E2E2;
+$main-icon: #444444;
+$main-bg: #F9FCDE;
+
+$county-list-bg: #FFD89D;
+
+$map-lightgray: #E5E5E5;
+$map-darkgray: #5C636A;
+$map-green: #3E8380;
+
+body {
+    font-family: $cht-font;
+}
+h1 {
+    font-size: 36px;
+}
+h2 {
+    font-size: 28px;
+}
+h3 {
+    font-size: 20px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 12px;
 }

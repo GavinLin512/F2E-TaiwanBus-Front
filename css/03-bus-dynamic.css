@@ -223,7 +223,7 @@ main .map .county-list {
   overflow-y: auto;
   overflow-x: hidden;
   position: absolute;
-  z-index: 399;
+  z-index: 2;
 }
 
 main .map .county-list .county-btn {
