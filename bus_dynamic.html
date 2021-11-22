@@ -387,6 +387,9 @@
             BusDynamicList.classList.remove('active-list')
             listBtnMap.classList.remove('list-btn-map-active')
             listBtn.classList.remove('list-btn-active')
+            setTimeout(function () {
+                window.map.invalidateSize();
+            },600);
         })
 
 
