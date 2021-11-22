@@ -22,34 +22,13 @@ img{
     display: block;
 }
 
-nav{
-    max-width: 1920px;
-    width: 100%;
 
-    background-color: #004643;
-   
-    padding: 8px 40px;
-    margin: 0px auto;
-    .nav-container{
-        display: flex;
-
-        .logo{
-            width: max-content;
-            max-width: 216px;
-            display: flex;
-            align-content: center;
-            .logo-pic-text{
-                margin-left: 16px;
-            }
-        }
-    }
-}
 
 main{
     max-width: 1920px;
     width: 100%;
-    min-height: calc(100vh - 98px);
-    height:calc(100vh - 98px) ;
+    min-height: calc(100vh - 136px);
+    height:calc(100vh - 136px) ;
     background-color: #F9FCDE;
     margin: 0px auto;
     @media screen and(max-width:1920px) {
@@ -59,8 +38,8 @@ main{
     .main-container{
         width: 100%;
         
-        min-height: calc(100vh - 98px);
-        height: calc(100vh - 98px);
+        min-height: calc(100vh - 136px);
+        height: calc(100vh - 136px);
 
         display: flex;
         flex-direction: column;
