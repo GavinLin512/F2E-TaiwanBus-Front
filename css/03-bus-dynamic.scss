@@ -48,6 +48,7 @@ main {
                 width: 60px;
                 height: 60px;
                 border-radius: 50%;
+                cursor: pointer;
                 img {
                     filter: invert(22%) sepia(13%) saturate(4436%) hue-rotate(138deg) brightness(89%) contrast(102%);
                     transform: rotate(180deg);
@@ -165,11 +166,19 @@ main {
             top: 20px;
             left: 20px;
             z-index: 400;
-            width: 60px;
+            width: 0px;
             height: 60px;
+            cursor: pointer;
+            opacity: 0;
+            transition: 1s ease-in-out;
             img{
                 filter: invert(22%) sepia(13%) saturate(4436%) hue-rotate(138deg) brightness(89%) contrast(102%);
             }
+        }
+        .list-btn-map-active{
+            width: 60px;
+            opacity: 1;
+            transition: 1s ease-in-out;
         }
         .county-list {
             width: 0px;
