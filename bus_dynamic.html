@@ -256,6 +256,8 @@
     <script src="./js/leaflet/leaflet.js"></script>
     <!-- mapbox -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <!-- header -->
+    <script src="./js/header.js"></script>
     <script>
         var map = L.map('map', {
                 zoomControl: false
@@ -335,6 +337,7 @@
             L.control.zoom({
                 position: 'bottomright'
             }).addTo(map);
+            
         });
 
 
