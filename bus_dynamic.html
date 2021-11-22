@@ -372,6 +372,8 @@
         listBtn.addEventListener('click', function () {
             BusDynamicList.classList.add('active-list')
             listBtnMap.classList.add('list-btn-map-active')
+            listBtn.classList.add('list-btn-active')
+            
             setTimeout(function () {
                 window.map.invalidateSize();
             },600);
@@ -381,6 +383,7 @@
         listBtnMap.addEventListener('click', function () {
             BusDynamicList.classList.remove('active-list')
             listBtnMap.classList.remove('list-btn-map-active')
+            listBtn.classList.remove('list-btn-active')
         })
 
 
