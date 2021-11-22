@@ -226,6 +226,9 @@
                 </div>
             </div>
             <div class="map w-100 d-flex" id="map">
+                <div class="list-btn-map">
+                    <img src="./image/next-svgrepo-com.svg" alt="">
+                </div>
                 <div class="county-list" id="county-list"></div>
             </div>
         </div>
@@ -354,15 +357,20 @@
             // })
         }
 
+        // 選單出現
         var BusDynamicList = document.querySelector('.bus-dynamic-list')
         var listBtn = document.querySelector('.list-btn')
         listBtn.addEventListener('click', function () {
             BusDynamicList.classList.add('active-list')
-            
             L.tileLayer({
                 tileSize: 1024,
                 zoomOffset: -2,
             })
+        })
+        // 選單回來
+        var listBtnMap = document.querySelector('.list-btn-map')
+        listBtnMap.addEventListener('click', function () {
+            listBtnMap.classList.remove('active-list')
         })
 
 
