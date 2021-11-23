@@ -121,12 +121,10 @@ main .main-container .bus-dynamic-list .info {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  position: relative;
-  min-height: calc(100vh - 335px);
+  max-height: calc(100vh - 335px);
   background-color: #f9fcde;
   border-radius: 0px 0px 30px 30px;
   padding-bottom: 35px;
-  position: relative;
   overflow-y: auto;
 }
 
@@ -154,6 +152,14 @@ main .main-container .bus-dynamic-list .info table thead tr th:nth-child(3) {
 
 main .main-container .bus-dynamic-list .info table thead tr th:nth-child(4) {
   width: 19%;
+}
+
+main .main-container .bus-dynamic-list .info table tbody {
+  overflow-y: auto;
+}
+
+main .main-container .bus-dynamic-list .info table tbody tr {
+  width: 100%;
 }
 
 main .main-container .bus-dynamic-list .info table tbody .arrive-time {

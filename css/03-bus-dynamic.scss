@@ -84,12 +84,10 @@ main {
             .info {
                 border-top: 1px solid #f9fcde;
                 height: max-content;
-                position: relative;
-                min-height: calc(100vh - 335px);
+                max-height: calc(100vh - 335px);
                 background-color: #f9fcde;
                 border-radius: 0px 0px 30px 30px;
                 padding-bottom: 35px;
-                position: relative;
                 overflow-y: auto;
                 table {
                     text-align: center;
@@ -115,9 +113,13 @@ main {
                         }
                     }
                     tbody {
+                        overflow-y: auto;
+                        tr{
+                            width: 100%;
+                        }
                         .arrive-time {
                             margin: 8px 0;
-                            border-radius: 20px;
+                            border-radius: 20px; 
                             padding: 4px 0;
                             cursor: unset;
                             background-color: #F08080;
