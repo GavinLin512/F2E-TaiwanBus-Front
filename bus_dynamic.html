@@ -258,10 +258,35 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
     <!-- header -->
     <script src="./js/header.js"></script>
+    <script src="./js/sha1.js"></script>
     <script>
         var map = L.map('map', {
-                zoomControl: false
-            })
+            zoomControl: false
+        })
+        const cityData = [
+            { "CityName": "臺北市", "City": "Taipei", },
+            { "CityName": "新北市", "City": "NewTaipei", },
+            { "CityName": "桃園市", "City": "Taoyuan", },
+            { "CityName": "臺中市", "City": "Taichung", },
+            { "CityName": "臺南市", "City": "Tainan", },
+            { "CityName": "高雄市", "City": "Kaohsiung", },
+            { "CityName": "基隆市", "City": "Keelung", },
+            { "CityName": "新竹市", "City": "Hsinchu", },
+            { "CityName": "新竹縣", "City": "HsinchuCounty", },
+            { "CityName": "苗栗縣", "City": "MiaoliCounty", },
+            { "CityName": "彰化縣", "City": "ChanghuaCounty", },
+            { "CityName": "南投縣", "City": "NantouCounty", },
+            { "CityName": "雲林縣", "City": "YunlinCounty", },
+            { "CityName": "嘉義縣", "City": "ChiayiCounty", },
+            { "CityName": "嘉義市", "City": "Chiayi", },
+            { "CityName": "屏東縣", "City": "PingtungCounty", },
+            { "CityName": "宜蘭縣", "City": "YilanCounty", },
+            { "CityName": "花蓮縣", "City": "HualienCounty", },
+            { "CityName": "臺東縣", "City": "TaitungCounty", },
+            { "CityName": "金門縣", "City": "KinmenCounty", },
+            { "CityName": "澎湖縣", "City": "PenghuCounty", },
+            { "CityName": "連江縣", "City": "LienchiangCounty", }
+        ]
         $(document).ready(function () {
             new SlimSelect({
                 select: '#bus-type',
@@ -309,10 +334,6 @@
                 }
             })
 
-            county_list_create();
-            $('.select-county').on('click', function () {
-                toggle_list();
-            })
             // 防止區域元素觸發 leaflet map event
             L.DomEvent.disableClickPropagation(L.DomUtil.get('county-list'));
             L.DomEvent.disableScrollPropagation(L.DomUtil.get('county-list'));
@@ -330,34 +351,43 @@
                 id: 'graysonlin512/ckw8gvwxpaeph15rz66cxjm09', // 在 mapbox studio 設定語系
                 tileSize: 512,
                 zoomOffset: -1,
-                accessToken: accessToken 
+                accessToken: accessToken
             }).addTo(map);
             // mapbox://styles/graysonlin512/ckw8gvwxpaeph15rz66cxjm09
             // 設定 zoom btn 位置
             L.control.zoom({
                 position: 'bottomright'
             }).addTo(map);
-            
+
+            // 縣市選單
+            getCity();
         });
 
-
-        var county = [
-            '台北', '新北', '基隆', '桃園', '新竹', '苗栗', '台中', '彰化', '南投', '雲林'
-        ];
-
-        function county_list_create() {
-            for (let i = 0; i < 10; i++) {
+        function countyListCreate() {
+            cityData.forEach((item) => {
                 var county_btn =
                     `<div class="county-btn d-flex justify-content-center align-items-center">
                     <div class="btn-bg-circle rounded-circle d-flex justify-content-center align-items-center">
-                        <p class="mb-0">${county[i]}</p>
+                        <p class="mb-0">
+                            <input type="hidden" value="${item.City}">${item.CityName}
+                        </p>
                     </div>
                     </div>`;
                 $('.county-list').append(county_btn);
-            };
+            })
+
+            // for (let i = 0; i < 10; i++) {
+            //     var county_btn =
+            //         `<div class="county-btn d-flex justify-content-center align-items-center">
+            //         <div class="btn-bg-circle rounded-circle d-flex justify-content-center align-items-center">
+            //             <p class="mb-0">${cityData.CityName[i]}</p>
+            //         </div>
+            //         </div>`;
+            //     $('.county-list').append(county_btn);
+            // };
         }
 
-        function toggle_list() {
+        function toggleList() {
             $('.county-list').toggleClass('active');
             // $('.btn-bg-circle').each(function () {
             //     $(this).children.val('123');
@@ -376,23 +406,28 @@
             BusDynamicList.classList.add('active-list')
             listBtnMap.classList.add('list-btn-map-active')
             listBtn.classList.add('list-btn-active')
-            
+
             setTimeout(function () {
                 window.map.invalidateSize();
-            },600);
+            }, 600);
         })
         // 選單回來
-        
+
         listBtnMap.addEventListener('click', function () {
             BusDynamicList.classList.remove('active-list')
             listBtnMap.classList.remove('list-btn-map-active')
             listBtn.classList.remove('list-btn-active')
             setTimeout(function () {
                 window.map.invalidateSize();
-            },600);
+            }, 600);
         })
 
-
+        function getCity() {
+            countyListCreate();
+            $('.select-county').on('click', function () {
+                toggleList();
+            })
+        }
     </script>
 </body>
 
