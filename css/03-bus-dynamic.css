@@ -214,6 +214,7 @@ main .main-container .active-list {
   margin-left: -593px;
   -webkit-transition: .6s ease-in-out;
   transition: .6s ease-in-out;
+  opacity: 0;
 }
 
 main .map {

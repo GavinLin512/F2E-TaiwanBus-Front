@@ -365,7 +365,8 @@
         var BusDynamicList = document.querySelector('.bus-dynamic-list')
         var listBtn = document.querySelector('.list-btn')
         var listBtnMap = document.querySelector('.list-btn-map')
-
+        var countyList = document.querySelector('.county-list')
+        
         L.DomEvent.disableClickPropagation(L.DomUtil.get('list-btn-map'));
         L.DomEvent.disableScrollPropagation(L.DomUtil.get('list-btn-map'));
 
@@ -373,17 +374,24 @@
             BusDynamicList.classList.add('active-list')
             listBtnMap.classList.add('list-btn-map-active')
             listBtn.classList.add('list-btn-active')
+            countyList.classList.remove('active')
+
             
+            var activeList = document.querySelector('.active-list')
             setTimeout(function () {
                 window.map.invalidateSize();
+                // activeList.style.display = 'none';
             },600);
         })
         // 選單回來
         
         listBtnMap.addEventListener('click', function () {
+            var activeList = document.querySelector('.active-list')
+            
             BusDynamicList.classList.remove('active-list')
             listBtnMap.classList.remove('list-btn-map-active')
             listBtn.classList.remove('list-btn-active')
+
             setTimeout(function () {
                 window.map.invalidateSize();
             },600);
