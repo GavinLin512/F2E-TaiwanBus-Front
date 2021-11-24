@@ -28,7 +28,8 @@ main{
     max-width: 1920px;
     width: 100%;
     min-height: calc(100vh - 136px);
-    height:calc(100vh - 136px) ;
+    max-height:calc(100vh - 136px) ;
+    height: max-content;
     background-color: #F9FCDE;
     margin: 0px auto;
     @media screen and(max-width:1920px) {
@@ -36,10 +37,10 @@ main{
 
     }
     @media screen and(max-width:550px) {        
-        height: initial;
-        height: unset;
-        min-height: calc(100vh - 82px);
-
+        height: max-content;
+        min-height: calc(100vh - 136px);
+        max-height: unset;
+        padding: 0px 16px;
         // height: auto;
     }
     
@@ -49,8 +50,8 @@ main{
         width: 100%;
         
         min-height: calc(100vh - 136px);
-        height: calc(100vh - 136px);
-
+        max-height:calc(100vh - 136px) ;
+        height: max-content;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -68,8 +69,8 @@ main{
             margin: 0px auto;
         }
         @media screen and(max-width:550px) {        
-            height: auto;
-       
+            height: 100%;
+            max-height: unset;
         }
 
         .line{
@@ -134,9 +135,18 @@ main{
             }
             @media screen and(max-width:768px) {
                 width: 100%;
+                margin: 0px auto;
                 height: calc(100vh - 136px);
                 // margin: 0px auto;
                 padding: 0px;
+            }
+            @media screen and(max-width:550px) {
+                position: relative;
+                height: unset;
+                // background-color: lawngreen;
+                padding: 0px;
+                // background-color: lawngreen;
+
             }
           
             .link-groups{
@@ -177,6 +187,12 @@ main{
                     
                     padding: 0px;
                 }
+                @media screen and(max-width:550px) {
+                    height: unset;
+                    height: max-content;  
+                    // margin-left: auto;
+                    margin: 0px auto;
+                }
                 
                 .link{
                     max-width: 452px;
@@ -196,6 +212,10 @@ main{
                     @media screen and(max-width:768px) {
                         width: 202px;
                         height: 182px;
+                    }
+                    @media screen and(max-width:550px) {
+                        transform: scale(.7);
+                        
                     }
                   
                     a{
@@ -441,12 +461,22 @@ main{
                 @media screen and(max-width:768px) {
                     padding: 0px;
                     transform: translateY(155px);
+                    
+                }
+                @media screen and(max-width:550px) {
+                    width: max-content;
+                    transform: translateY(0px);
+                    margin-top: 30px;
+                    
                 }
                
 
                 .link{
                     display: flex;
                     flex-direction: column-reverse;
+                    @media screen and(max-width:550px) {
+                        margin-right: auto;      
+                    }
                     .link-texts{
                         align-items: flex-start;
                         margin-left: 0px;
@@ -497,6 +527,7 @@ main{
                             @media screen and(max-width:768px) {
                                 left: 0px;
                             }
+                          
                             .i{
                                 width: 100%;
                                 height: 100%;
