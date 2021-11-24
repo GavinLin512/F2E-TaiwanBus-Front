@@ -118,10 +118,7 @@ main .main-container .bus-dynamic-list .tabs .active {
 
 main .main-container .bus-dynamic-list .info {
   border-top: 1px solid #f9fcde;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  min-height: calc(100vh - 336px);
+  height: calc(100vh - 336px);
   background-color: #f9fcde;
   border-radius: 0px 0px 30px 30px;
   padding-bottom: 35px;
