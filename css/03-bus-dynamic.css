@@ -68,13 +68,24 @@ main .main-container .bus-dynamic-list .list-btn {
   height: 60px;
   border-radius: 50%;
   cursor: pointer;
+  -webkit-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 main .main-container .bus-dynamic-list .list-btn img {
   -webkit-filter: invert(22%) sepia(13%) saturate(4436%) hue-rotate(138deg) brightness(89%) contrast(102%);
           filter: invert(22%) sepia(13%) saturate(4436%) hue-rotate(138deg) brightness(89%) contrast(102%);
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+}
+
+main .main-container .bus-dynamic-list .list-btn-active {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  opacity: 0;
+  -webkit-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
+  margin-right: -100px;
 }
 
 main .main-container .bus-dynamic-list .bus-search {
@@ -110,12 +121,10 @@ main .main-container .bus-dynamic-list .info {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  position: relative;
-  min-height: calc(100vh - 335px);
+  max-height: calc(100vh - 335px);
   background-color: #f9fcde;
   border-radius: 0px 0px 30px 30px;
   padding-bottom: 35px;
-  position: relative;
   overflow-y: auto;
 }
 
@@ -143,6 +152,14 @@ main .main-container .bus-dynamic-list .info table thead tr th:nth-child(3) {
 
 main .main-container .bus-dynamic-list .info table thead tr th:nth-child(4) {
   width: 19%;
+}
+
+main .main-container .bus-dynamic-list .info table tbody {
+  overflow-y: auto;
+}
+
+main .main-container .bus-dynamic-list .info table tbody tr {
+  width: 100%;
 }
 
 main .main-container .bus-dynamic-list .info table tbody .arrive-time {
@@ -203,6 +220,7 @@ main .main-container .active-list {
   margin-left: -593px;
   -webkit-transition: .6s ease-in-out;
   transition: .6s ease-in-out;
+  opacity: 0;
 }
 
 main .map {
@@ -214,14 +232,16 @@ main .map {
 main .map .list-btn-map {
   position: absolute;
   top: 20px;
-  left: 20px;
-  z-index: 400;
-  width: 0px;
+  left: -40px;
+  z-index: 1;
+  width: 60px;
   height: 60px;
   cursor: pointer;
   opacity: 0;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
 }
 
 main .map .list-btn-map img {
@@ -230,10 +250,12 @@ main .map .list-btn-map img {
 }
 
 main .map .list-btn-map-active {
-  width: 60px;
   opacity: 1;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+  -webkit-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
+  left: 20px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 main .map .county-list {

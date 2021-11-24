@@ -90,6 +90,7 @@
   font-weight: bold;
 }
 
+<<<<<<< Updated upstream
 .main-container .news .newsContainer .newsNAV .select-rang select {
   border-radius: 48px;
   font-size: 16px;
@@ -103,6 +104,22 @@
 }
 
 .main-container .news .newsContainer .newsTitle {
+=======
+.main-container .news .newsContainer .newsNAV .select-rang span {
+  margin-right: 17px;
+}
+
+.main-container .news .newsContainer .newsTitle > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+>>>>>>> Stashed changes
   font-size: 28px;
 }
 
