@@ -89,12 +89,26 @@ main {
                 border-radius: 0px 0px 30px 30px;
                 padding-bottom: 35px;
                 overflow-y: auto;
+                &::-webkit-scrollbar {
+                    width: 10px;
+                }
+                &::-webkit-scrollbar-track-piece{
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                    background-color: transparent; 
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: #004643;
+                    border-radius: 5px;
+                }
                 table {
                     text-align: center;
+                    margin-top: 28px;
                     thead {
                         background-color: #004643;
                         color: #f9bc60;
                         font-size: 18px;
+                        top: 0px;
                         tr {
                             th {
                                 &:nth-child(1) {
@@ -113,7 +127,6 @@ main {
                         }
                     }
                     tbody {
-                        overflow-y: auto;
                         tr{
                             width: 100%;
                         }
@@ -141,6 +154,7 @@ main {
                 display: flex;
                 flex-direction: column;
                 background-color: white;
+                border-radius: 0px 0px 30px 30px;
                 span {
                     &:nth-child(1) {
                         width: 100%;

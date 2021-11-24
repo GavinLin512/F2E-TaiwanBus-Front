@@ -128,14 +128,31 @@ main .main-container .bus-dynamic-list .info {
   overflow-y: auto;
 }
 
+main .main-container .bus-dynamic-list .info::-webkit-scrollbar {
+  width: 10px;
+}
+
+main .main-container .bus-dynamic-list .info::-webkit-scrollbar-track-piece {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: transparent;
+}
+
+main .main-container .bus-dynamic-list .info::-webkit-scrollbar-thumb {
+  background-color: #004643;
+  border-radius: 5px;
+}
+
 main .main-container .bus-dynamic-list .info table {
   text-align: center;
+  margin-top: 28px;
 }
 
 main .main-container .bus-dynamic-list .info table thead {
   background-color: #004643;
   color: #f9bc60;
   font-size: 18px;
+  top: 0px;
 }
 
 main .main-container .bus-dynamic-list .info table thead tr th:nth-child(1) {
@@ -152,10 +169,6 @@ main .main-container .bus-dynamic-list .info table thead tr th:nth-child(3) {
 
 main .main-container .bus-dynamic-list .info table thead tr th:nth-child(4) {
   width: 19%;
-}
-
-main .main-container .bus-dynamic-list .info table tbody {
-  overflow-y: auto;
 }
 
 main .main-container .bus-dynamic-list .info table tbody tr {
@@ -190,6 +203,7 @@ main .main-container .bus-dynamic-list .bus-update {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: white;
+  border-radius: 0px 0px 30px 30px;
 }
 
 main .main-container .bus-dynamic-list .bus-update span:nth-child(1) {

@@ -33,7 +33,7 @@ $(document).ready(function () {
         allowDeselectOption: true
     })
 
-    new SlimSelect({
+    var searchBus = new SlimSelect({
         select: '#search_bus',
         placeholder: '請選擇路線',
         searchingText: '尋找路線中...', // Optional - Will show during ajax request
@@ -41,34 +41,40 @@ $(document).ready(function () {
         searchText: '查無此路線',
         ajax: function (search, callback) {
             // Check search value. If you dont like it callback(false) or callback('Message String')
-            if (search.length < 3) {
-                callback('Need 3 characters')
+            if (search.length < 1) {
+                callback('請至少輸入一個字')
                 return
             }
 
             // Perform your own ajax request here
-            fetch('https://jsonplaceholder.typicode.com/users')
-                .then(function (response) {
-                    return response.json()
+            fetch('https://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/Taichung?$top=30&$format=JSON', {
+                headers: GetAuthorizationHeader(),
+            }).then(function (response) {
+                return response.json();
+            }).then(function (json) {
+                let data = []
+                json.forEach((item) => {
+                    console.log(item);
+                    data.push({
+                        text: '['+item.RouteID +'] '+ item.DepartureStopNameZh + ' - ' + item.DestinationStopNameZh
+                    })
                 })
-                .then(function (json) {
-                    console.log(json);
-                    let data = []
-                    for (let i = 0; i < json.length; i++) {
-                        data.push({
-                            text: json[i].name
-                        })
-                    }
+                // console.log(json);
+                // let data = []
+                // for (let i = 0; i < json.length; i++) {
+                //     data.push({
+                //         text: json[i].name
+                //     })
+                // }
 
-                    // Upon successful fetch send data to callback function.
-                    // Be sure to send data back in the proper format.
-                    // Refer to the method setData for examples of proper format.
-                    callback(data)
-                })
-                .catch(function (error) {
-                    // If any erros happened send false back through the callback
-                    callback(false)
-                })
+                // Upon successful fetch send data to callback function.
+                // Be sure to send data back in the proper format.
+                // Refer to the method setData for examples of proper format.
+                callback(data)
+            }).catch(function (error) {
+                // If any erros happened send false back through the callback
+                callback(false)
+            })
         }
     })
 
@@ -95,19 +101,33 @@ $(document).ready(function () {
     }).addTo(map);
 
     // 縣市選單
-    getCity();
+    getCounty();
+
+    $('.county-btn').each(function () {
+        // console.log($(this));
+        $(this).on('click', function () {
+            var city = $.trim($(this).find('p').text())
+            // console.log(city);
+            $('.select-county').text(city); // 顯示縣市
+            $('.county-list').removeClass('active');
+            // console.log(searchBus);
+            // searchBus.ajax({
+
+            // })
+        })
+    })
 });
 
 function countyListCreate() {
     cityData.forEach((item) => {
         var county_btn =
             `<div class="county-btn d-flex justify-content-center align-items-center">
-                    <div class="btn-bg-circle rounded-circle d-flex justify-content-center align-items-center">
-                        <p class="mb-0">
-                            <input type="hidden" value="${item.City}">${item.CityName}
-                        </p>
-                    </div>
-                    </div>`;
+                <div class="btn-bg-circle rounded-circle d-flex justify-content-center align-items-center">
+                    <p class="mb-0">
+                        <input class="county" type="hidden" value="${item.City}">${item.CityName}
+                    </p>
+                </div>
+            </div>`;
         $('.county-list').append(county_btn);
     })
 }
@@ -152,9 +172,14 @@ listBtnMap.addEventListener('click', function () {
     }, 600);
 })
 
-function getCity() {
+function getCounty() {
     countyListCreate();
     $('.select-county').on('click', function () {
         toggleList();
     })
 }
+
+function changeCounty() {
+
+}
+
