@@ -149,7 +149,7 @@ main .main-container .bus-dynamic-list .info table thead {
   background-color: #004643;
   color: #f9bc60;
   font-size: 18px;
-  top: 0px;
+  top: 1px;
 }
 
 main .main-container .bus-dynamic-list .info table thead tr th:nth-child(1) {
