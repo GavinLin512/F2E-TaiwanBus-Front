@@ -150,6 +150,12 @@ main .main-container .links .link-groups {
   }
 }
 
+@media screen and (max-width: 1400px) {
+  main .main-container .links .link-groups {
+    padding-bottom: 1.5vw;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   main .main-container .links .link-groups {
     -webkit-box-orient: vertical;
@@ -280,7 +286,7 @@ main .main-container .links .link-groups .link .link-texts .top-text {
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   main .main-container .links .link-groups .link .link-texts .top-text {
     font-size: 20px;
   }
@@ -295,6 +301,12 @@ main .main-container .links .link-groups .link .link-texts .bottom-text {
 @media screen and (max-width: 1600px) {
   main .main-container .links .link-groups .link .link-texts .bottom-text {
     font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  main .main-container .links .link-groups .link .link-texts .bottom-text {
+    margin-top: -28px;
   }
 }
 
@@ -320,6 +332,12 @@ main .main-container .links .link-groups .link .icon {
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  main .main-container .links .link-groups .link .icon {
+    margin-top: 8px;
   }
 }
 
@@ -477,6 +495,12 @@ main .main-container .links .link-groups1 {
   padding-top: 56px;
 }
 
+@media screen and (max-width: 1400px) {
+  main .main-container .links .link-groups1 {
+    padding-top: 1.5vw;
+  }
+}
+
 main .main-container .links .link-groups1 .link {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -498,10 +522,22 @@ main .main-container .links .link-groups1 .link .link-texts {
   padding-right: 113px;
 }
 
+@media screen and (max-width: 1400px) {
+  main .main-container .links .link-groups1 .link .link-texts {
+    margin-top: 8px;
+  }
+}
+
 main .main-container .links .link-groups1 .link .link-texts .link-line {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   margin-top: -32px;
+}
+
+@media screen and (max-width: 1400px) {
+  main .main-container .links .link-groups1 .link .link-texts .link-line {
+    margin-top: -28px;
+  }
 }
 
 main .main-container .links .link-groups1 .link .link-texts .top-text {
