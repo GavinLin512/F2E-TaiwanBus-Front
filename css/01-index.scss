@@ -28,19 +28,30 @@ main{
     max-width: 1920px;
     width: 100%;
     min-height: calc(100vh - 136px);
-    height:calc(100vh - 136px) ;
+    max-height:calc(100vh - 136px) ;
+    height: max-content;
     background-color: #F9FCDE;
     margin: 0px auto;
     @media screen and(max-width:1920px) {
         // height: max-content;
 
     }
+    @media screen and(max-width:550px) {        
+        height: max-content;
+        min-height: calc(100vh - 136px);
+        max-height: unset;
+        padding: 0px 16px;
+        // height: auto;
+    }
+    
+    
+
     .main-container{
         width: 100%;
         
         min-height: calc(100vh - 136px);
-        height: calc(100vh - 136px);
-
+        max-height:calc(100vh - 136px) ;
+        height: max-content;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -52,6 +63,16 @@ main{
             padding: 0px 7.3958vw;
 
         }
+        @media screen and(max-width:768px) {
+            max-width: 500px;
+            padding: 0px;
+            margin: 0px auto;
+        }
+        @media screen and(max-width:550px) {        
+            height: 100%;
+            max-height: unset;
+        }
+
         .line{
             max-width: 1920px;
             width: 100%;
@@ -68,8 +89,12 @@ main{
             @media screen and(max-width:1000px) {
                 // max-width: 1920px;
                 transform: translate(-50%,-50%) rotate(90deg);
-                width: calc(100vh - 98px);
+                width: calc(100vh - 136px);
             }
+            @media screen and(max-width:550px) {        
+                width: 560px;
+            }
+
             svg{
                 width: 100%;
             }
@@ -108,6 +133,21 @@ main{
                 // background-color: khaki;
 
             }
+            @media screen and(max-width:768px) {
+                width: 100%;
+                margin: 0px auto;
+                height: calc(100vh - 136px);
+                // margin: 0px auto;
+                padding: 0px;
+            }
+            @media screen and(max-width:550px) {
+                position: relative;
+                height: unset;
+                // background-color: lawngreen;
+                padding: 0px;
+                // background-color: lawngreen;
+
+            }
           
             .link-groups{
                 width: 100%;
@@ -126,6 +166,9 @@ main{
                     // background-color: coral;
 
                 }
+                @media screen and(max-width:1600px) {
+                    padding-bottom: 1.3vw;
+                }
                 @media screen and(max-width:1400px) {
                     padding-bottom: 1.5vw;
                 }
@@ -136,6 +179,21 @@ main{
                     width: max-content;
                     height: calc(100vh - 82px);
                 }
+                @media screen and(max-width:768px) {
+                    width: 202px;
+                    height: 733px;
+                    // background-color: #5BEE;  
+                    justify-content: space-between;  
+                    
+                    padding: 0px;
+                }
+                @media screen and(max-width:550px) {
+                    height: unset;
+                    height: max-content;  
+                    // margin-left: auto;
+                    margin: 0px auto;
+                }
+                
                 .link{
                     max-width: 452px;
                     width: 452px;
@@ -150,6 +208,14 @@ main{
                         margin-right: 0px;
 
 
+                    }
+                    @media screen and(max-width:768px) {
+                        width: 202px;
+                        height: 182px;
+                    }
+                    @media screen and(max-width:550px) {
+                        transform: scale(.7);
+                        
                     }
                   
                     a{
@@ -239,6 +305,10 @@ main{
                         @media screen and(max-width:1400px) {
                              margin-top: 8px;
                         }
+                        @media screen and(max-width:768px) {
+                            width: 202px;
+                            height: 182px;
+                        }
                         .icon-border{
                             max-width: 226px;
                             width: 226px;
@@ -252,8 +322,14 @@ main{
                             @media screen and(max-width:1600px) {
                                 width: 8vw;
                             }
+                            @media screen and(max-width:768px) {
+                                width: 202px;
+                                max-width: 202px;
+                                height: 182px;
+                            }
                             svg{
                                 width: 100%;
+                                height: 100%;
                                 position: relative;
                                 // box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
                                 filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25)) ;
@@ -285,17 +361,17 @@ main{
                                 @media screen and(max-width:1000px) {
                                     flex-direction: column;
                                 }
+                                @media screen and(max-width:768px) {
+                                    width: 182px;
+                                    height: 182px;
+                                    right: 0px;
+                                }
                                 .i{
                                     width: 100%;
                                     height: 100%;
                                     display: flex;
                                     align-items: center;
                                     justify-content: center;
-                                    
-                                    svg{
-                                        width: 60%;
-                                        height: 60%;
-                                    }
                                     @media screen and(max-width:1920px) {
                                         font-size: 4.5rem;
                                     }
@@ -305,12 +381,45 @@ main{
                                     @media screen and(max-width:1000px) {
                                         transform: rotate(-90deg);
                                     }
+                                    @media screen and(max-width:768px) {
+                                        width: 60px;
+                                        height: 60px;
+                                    }
+                                    svg{
+                                        width: 60%;
+                                        height: 60%;
+                                        @media screen and(max-width:768px) {
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+                                    }
+                                 
+                                  
+                                   
+                                }
+                                .hightway{
+                                    @media screen and(max-width:768px) {
+                                        width: 69px;
+                                        height: 69px;
+                                    }
                                 }
                                 .phone-texts{
                                     display: none;
                                     @media screen and(max-width:1000px) {
                                         display: block;
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
                                     }
+                                    .big-text{
+                                        font-size: 20px;
+                                        color: #004643;
+                                    }
+                                    .small-text{
+                                        font-size: 16px;
+                                        color: #FF8484;
+                                    }
+                                   
                                 }
                             }
                             .icon-pic0{
@@ -343,13 +452,31 @@ main{
                 padding-bottom: 0px;
                 padding-top: 56px;
                 // padding-bottom: 56px;
+                @media screen and(max-width:1600px) {
+                    padding-top: 1.3vw;
+                }
                 @media screen and(max-width:1400px) {
                     padding-top: 1.5vw;
                 }
+                @media screen and(max-width:768px) {
+                    padding: 0px;
+                    transform: translateY(155px);
+                    
+                }
+                @media screen and(max-width:550px) {
+                    width: max-content;
+                    transform: translateY(0px);
+                    margin-top: 30px;
+                    
+                }
+               
 
                 .link{
                     display: flex;
                     flex-direction: column-reverse;
+                    @media screen and(max-width:550px) {
+                        margin-right: auto;      
+                    }
                     .link-texts{
                         align-items: flex-start;
                         margin-left: 0px;
@@ -397,6 +524,10 @@ main{
                        
                         .icon-pic1{
                             bottom: 0px;
+                            @media screen and(max-width:768px) {
+                                left: 0px;
+                            }
+                          
                             .i{
                                 width: 100%;
                                 height: 100%;

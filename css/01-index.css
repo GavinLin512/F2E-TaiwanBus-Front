@@ -31,15 +31,32 @@ main {
   max-width: 1920px;
   width: 100%;
   min-height: calc(100vh - 136px);
-  height: calc(100vh - 136px);
+  max-height: calc(100vh - 136px);
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   background-color: #F9FCDE;
   margin: 0px auto;
+}
+
+@media screen and (max-width: 550px) {
+  main {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    min-height: calc(100vh - 136px);
+    max-height: unset;
+    padding: 0px 16px;
+  }
 }
 
 main .main-container {
   width: 100%;
   min-height: calc(100vh - 136px);
-  height: calc(100vh - 136px);
+  max-height: calc(100vh - 136px);
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,6 +77,21 @@ main .main-container {
   }
 }
 
+@media screen and (max-width: 768px) {
+  main .main-container {
+    max-width: 500px;
+    padding: 0px;
+    margin: 0px auto;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  main .main-container {
+    height: 100%;
+    max-height: unset;
+  }
+}
+
 main .main-container .line {
   max-width: 1920px;
   width: 100%;
@@ -74,7 +106,13 @@ main .main-container .line {
   main .main-container .line {
     -webkit-transform: translate(-50%, -50%) rotate(90deg);
             transform: translate(-50%, -50%) rotate(90deg);
-    width: calc(100vh - 98px);
+    width: calc(100vh - 136px);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  main .main-container .line {
+    width: 560px;
   }
 }
 
@@ -124,6 +162,23 @@ main .main-container .links {
   }
 }
 
+@media screen and (max-width: 768px) {
+  main .main-container .links {
+    width: 100%;
+    margin: 0px auto;
+    height: calc(100vh - 136px);
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  main .main-container .links {
+    position: relative;
+    height: unset;
+    padding: 0px;
+  }
+}
+
 main .main-container .links .link-groups {
   width: 100%;
   max-width: 1577px;
@@ -150,6 +205,12 @@ main .main-container .links .link-groups {
   }
 }
 
+@media screen and (max-width: 1600px) {
+  main .main-container .links .link-groups {
+    padding-bottom: 1.3vw;
+  }
+}
+
 @media screen and (max-width: 1400px) {
   main .main-container .links .link-groups {
     padding-bottom: 1.5vw;
@@ -166,6 +227,27 @@ main .main-container .links .link-groups {
     width: -moz-max-content;
     width: max-content;
     height: calc(100vh - 82px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main .main-container .links .link-groups {
+    width: 202px;
+    height: 733px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  main .main-container .links .link-groups {
+    height: unset;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    margin: 0px auto;
   }
 }
 
@@ -189,6 +271,20 @@ main .main-container .links .link-groups .link:nth-last-child(1) {
     max-width: max-content;
     width: calc(33.33% - 5vw);
     margin-right: 0px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main .main-container .links .link-groups .link {
+    width: 202px;
+    height: 182px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  main .main-container .links .link-groups .link {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
   }
 }
 
@@ -341,6 +437,13 @@ main .main-container .links .link-groups .link .icon {
   }
 }
 
+@media screen and (max-width: 768px) {
+  main .main-container .links .link-groups .link .icon {
+    width: 202px;
+    height: 182px;
+  }
+}
+
 main .main-container .links .link-groups .link .icon .icon-border {
   max-width: 226px;
   width: 226px;
@@ -361,8 +464,17 @@ main .main-container .links .link-groups .link .icon .icon-border {
   }
 }
 
+@media screen and (max-width: 768px) {
+  main .main-container .links .link-groups .link .icon .icon-border {
+    width: 202px;
+    max-width: 202px;
+    height: 182px;
+  }
+}
+
 main .main-container .links .link-groups .link .icon .icon-border svg {
   width: 100%;
+  height: 100%;
   position: relative;
   -webkit-filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
           filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
@@ -414,6 +526,14 @@ main .main-container .links .link-groups .link .icon .icon-border .icon-pic {
   }
 }
 
+@media screen and (max-width: 768px) {
+  main .main-container .links .link-groups .link .icon .icon-border .icon-pic {
+    width: 182px;
+    height: 182px;
+    right: 0px;
+  }
+}
+
 main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i {
   width: 100%;
   height: 100%;
@@ -426,11 +546,6 @@ main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i svg {
-  width: 60%;
-  height: 60%;
 }
 
 @media screen and (max-width: 1920px) {
@@ -452,6 +567,32 @@ main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i s
   }
 }
 
+@media screen and (max-width: 768px) {
+  main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i svg {
+  width: 60%;
+  height: 60%;
+}
+
+@media screen and (max-width: 768px) {
+  main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main .main-container .links .link-groups .link .icon .icon-border .icon-pic .hightway {
+    width: 69px;
+    height: 69px;
+  }
+}
+
 main .main-container .links .link-groups .link .icon .icon-border .icon-pic .phone-texts {
   display: none;
 }
@@ -459,7 +600,27 @@ main .main-container .links .link-groups .link .icon .icon-border .icon-pic .pho
 @media screen and (max-width: 1000px) {
   main .main-container .links .link-groups .link .icon .icon-border .icon-pic .phone-texts {
     display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
+}
+
+main .main-container .links .link-groups .link .icon .icon-border .icon-pic .phone-texts .big-text {
+  font-size: 20px;
+  color: #004643;
+}
+
+main .main-container .links .link-groups .link .icon .icon-border .icon-pic .phone-texts .small-text {
+  font-size: 16px;
+  color: #FF8484;
 }
 
 main .main-container .links .link-groups .link .icon .icon-border .icon-pic0 {
@@ -495,9 +656,34 @@ main .main-container .links .link-groups1 {
   padding-top: 56px;
 }
 
+@media screen and (max-width: 1600px) {
+  main .main-container .links .link-groups1 {
+    padding-top: 1.3vw;
+  }
+}
+
 @media screen and (max-width: 1400px) {
   main .main-container .links .link-groups1 {
     padding-top: 1.5vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main .main-container .links .link-groups1 {
+    padding: 0px;
+    -webkit-transform: translateY(155px);
+            transform: translateY(155px);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  main .main-container .links .link-groups1 {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    margin-top: 30px;
   }
 }
 
@@ -509,6 +695,12 @@ main .main-container .links .link-groups1 .link {
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
+}
+
+@media screen and (max-width: 550px) {
+  main .main-container .links .link-groups1 .link {
+    margin-right: auto;
+  }
 }
 
 main .main-container .links .link-groups1 .link .link-texts {
@@ -581,6 +773,12 @@ main .main-container .links .link-groups1 .link .icon .icon-border svg {
 
 main .main-container .links .link-groups1 .link .icon .icon-pic1 {
   bottom: 0px;
+}
+
+@media screen and (max-width: 768px) {
+  main .main-container .links .link-groups1 .link .icon .icon-pic1 {
+    left: 0px;
+  }
 }
 
 main .main-container .links .link-groups1 .link .icon .icon-pic1 .i {

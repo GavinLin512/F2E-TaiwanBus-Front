@@ -114,6 +114,13 @@ listBtnMap.addEventListener('click', function () {
     }, 600);
 })
 
+// 切換去回程
+function tab(btn) {
+    btn.classList.add('active')
+    $(btn).siblings('.tab').removeClass('active')
+}
+ 
+
 function getCounty() {
     countyListCreate();
     $('.select-county').on('click', function () {
