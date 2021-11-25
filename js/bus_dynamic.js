@@ -25,57 +25,13 @@ const cityData = [
     { "CityName": "澎湖縣", "City": "PenghuCounty", },
     { "CityName": "連江縣", "City": "LienchiangCounty", }
 ]
+var City = '';
 $(document).ready(function () {
     new SlimSelect({
         select: '#bus-type',
         showSearch: false,
         placeholder: '請選擇類別',
         allowDeselectOption: true
-    })
-
-    var searchBus = new SlimSelect({
-        select: '#search_bus',
-        placeholder: '請選擇路線',
-        searchingText: '尋找路線中...', // Optional - Will show during ajax request
-        searchPlaceholder: '請輸入路線名稱',
-        searchText: '查無此路線',
-        ajax: function (search, callback) {
-            // Check search value. If you dont like it callback(false) or callback('Message String')
-            if (search.length < 1) {
-                callback('請至少輸入一個字')
-                return
-            }
-
-            // Perform your own ajax request here
-            fetch('https://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/Taichung?$top=30&$format=JSON', {
-                headers: GetAuthorizationHeader(),
-            }).then(function (response) {
-                return response.json();
-            }).then(function (json) {
-                let data = []
-                json.forEach((item) => {
-                    console.log(item);
-                    data.push({
-                        text: '['+item.RouteID +'] '+ item.DepartureStopNameZh + ' - ' + item.DestinationStopNameZh
-                    })
-                })
-                // console.log(json);
-                // let data = []
-                // for (let i = 0; i < json.length; i++) {
-                //     data.push({
-                //         text: json[i].name
-                //     })
-                // }
-
-                // Upon successful fetch send data to callback function.
-                // Be sure to send data back in the proper format.
-                // Refer to the method setData for examples of proper format.
-                callback(data)
-            }).catch(function (error) {
-                // If any erros happened send false back through the callback
-                callback(false)
-            })
-        }
     })
 
     // 防止區域元素觸發 leaflet map event
@@ -102,20 +58,8 @@ $(document).ready(function () {
 
     // 縣市選單
     getCounty();
-
-    $('.county-btn').each(function () {
-        // console.log($(this));
-        $(this).on('click', function () {
-            var city = $.trim($(this).find('p').text())
-            // console.log(city);
-            $('.select-county').text(city); // 顯示縣市
-            $('.county-list').removeClass('active');
-            // console.log(searchBus);
-            // searchBus.ajax({
-
-            // })
-        })
-    })
+    // 獲取路線
+    getRoute();
 });
 
 function countyListCreate() {
@@ -151,11 +95,9 @@ listBtn.addEventListener('click', function () {
     listBtn.classList.add('list-btn-active')
     countyList.classList.remove('active')
 
-    var activeList = document.querySelector('.active-list')
     // 地圖縮放
     setTimeout(function () {
         window.map.invalidateSize();
-        // activeList.style.display = 'none';
     }, 600);
 })
 
@@ -179,7 +121,59 @@ function getCounty() {
     })
 }
 
-function changeCounty() {
-
+function clickCountyBtn() {
+    // 點擊縣市選單
+    $('.county-btn').each(function () {
+        $(this).on('click', function () {
+            var city = $(this).find('.county').val()
+            var cityName = $.trim($(this).find('p').text())
+            $('.select-county').text(cityName); // 顯示縣市
+            $('.county-list').removeClass('active');
+            City = city;
+        })
+    })
 }
+
+function getRoute() {
+    clickCountyBtn();
+    new SlimSelect({
+        select: '#search_bus',
+        placeholder: '請輸入路線',
+        searchingText: '尋找路線中...', // Optional - Will show during ajax request
+        searchPlaceholder: '請輸入路線號碼或起迄站',
+        searchText: '查無此路線',
+        ajax: function (search, callback) {
+            // Check search value. If you dont like it callback(false) or callback('Message String')
+            if (search.length < 1) {
+                callback('請至少輸入一個字')
+                return
+            }
+
+            // Perform your own ajax request here
+            var url = `https://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/${City}?$top=30&$format=JSON`;
+            fetch(url, {
+                headers: GetAuthorizationHeader(),
+            }).then(function (response) {
+                return response.json();
+            }).then(function (json) {
+                let data = []
+                json.forEach((item) => {
+                    console.log(item);
+                    data.push({
+                        text: '[' + item.RouteID + '] ' + item.DepartureStopNameZh + ' - ' + item.DestinationStopNameZh
+                    })
+                })
+
+                // Upon successful fetch send data to callback function.
+                // Be sure to send data back in the proper format.
+                // Refer to the method setData for examples of proper format.
+                callback(data)
+            }).catch(function (error) {
+                // If any erros happened send false back through the callback
+                callback(false)
+            });
+        }
+    });
+}
+
 
