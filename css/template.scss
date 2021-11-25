@@ -66,13 +66,16 @@ nav{
     top: 0px;
     z-index: 99;
     .nav-container{
-        width: calc(100% - 80px);
+        width: calc(100% - 132px);
 
         margin: 0px auto;
 
         display: flex;
         justify-content: space-between;
         position: relative;
+        @media screen and(max-width:768px) {
+            width: calc(100% - 60px);
+        }
         // logo
         .logo{
             width: max-content;
@@ -80,8 +83,24 @@ nav{
 
             display: flex;
             align-content: center;
+            @media screen and(max-width:768px) {
+                height: 50px;
+                width: auto;
+            }
+            @media screen and(max-width:550px) {
+                height: 29px;
+            }
             .logo-pic-text{
                 margin-left: 16px;
+                @media screen and(max-width:768px) {
+                    width: 100%;
+                    max-width: 121px;
+                    height: auto;
+                }
+                @media screen and(max-width:550px) {
+                    margin-left: 8px;
+                    max-width: 91px;
+                }
             }
         }
         .menu-btn{
@@ -103,6 +122,14 @@ nav{
             transition: all 0.5s ease-in-out;
 
             cursor: pointer;
+            @media screen and(max-width:768px) {
+                top: 3px;
+            }
+            @media screen and(max-width:550px) {
+                padding: 12px 0px;
+                right: 0px;
+                top: 0px;
+            }
             .menu-btn_burgir {
                 width: 50px;
                 height: 6px;
@@ -111,6 +138,12 @@ nav{
                 border-radius: 5px;
                 box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
                 transition: all 0.5s ease-in-out;
+                @media screen and(max-width:768px) {
+                    height: 4px;
+                }
+                @media screen and(max-width:550px) {
+                    width: 27px;
+                }
                 &::before{
                     content: "";
                     position: absolute;
@@ -123,6 +156,13 @@ nav{
                     box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
                     transition: all 0.5s ease-in-out;
                     transform: translateY(-16px);
+                    @media screen and(max-width:768px) {
+                        height: 4px;
+                    }
+                    @media screen and(max-width:550px) {
+                        transform: translateY(-12px);
+                        width: 27px;
+                    }
                 }
                 &::after{
                     content: "";
@@ -136,6 +176,13 @@ nav{
                     box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
                     transition: all 0.5s ease-in-out;
                     transform: translateY(16px);
+                    @media screen and(max-width:768px) {
+                        height: 4px;
+                    }
+                    @media screen and(max-width:550px) {
+                        transform: translateY(12px);
+                        width: 27px;
+                    }
                 }
             }
             &.open{
@@ -169,18 +216,32 @@ nav{
        
         background-color: transparent;
         z-index: -1;
+        @media screen and(max-width:768px) {
+            min-height:calc(100vh - 104px);
+            height:calc(100vh - 104px) ;
+            top: 66px;
+        }
+        @media screen and(max-width:550px) {
+            min-height:calc(100vh - 84px);
+            max-height:calc(100vh - 84px) ;
+
+            height:calc(100vh - 84px) ;
+            top: 45px;
+        }
         // 選單出現
         &.show{
             width: max-content;
             display: block;
             z-index: 99;
             .menu-links{
-                max-width: 593px;
                 width: 593px;
                 transform: translateX(0%);
                 opacity: 1;
                 display: block;
                 transition: .6s ease-in;
+                @media screen and(max-width:768px) {
+                    width: 100vw;
+                }
             }
         }
         // 選單消失
@@ -190,7 +251,9 @@ nav{
             z-index: -1;
 
             transition: 1.5s ease-in-out;
-        
+            @media screen and(max-width:768px) {
+                width: 100%;
+            }
             .menu-links{
                 width: max-content;
                 opacity: 0;
@@ -210,12 +273,23 @@ nav{
             padding: 0px;
             margin: 0px;
             margin-left: auto;
+            @media screen and(max-width:768px) {
+                min-height:calc(100vh - 104px);
+                max-height:calc(100vh - 104px) ;
+                height:calc(100vh - 104px) ;
+            }
+            @media screen and(max-width:550px) {
+                min-height:calc(100vh - 84px);
+                max-height:calc(100vh - 84px) ;
+                height:calc(100vh - 84px) ;
+            }
+           
             // 單個連結
             li{ 
-                width: 593px;
-                // width: 100%;
+                max-width: 593px;
+                width: 100%;
                 min-height: 60px;
-                height:calc(20vh - 19.6px);
+                height:calc((100vh - 98px)/5);
 
                 display: flex;
                 justify-content: center;
@@ -233,9 +307,22 @@ nav{
 
                     transition: .6s ease-out;
                 }
+                @media screen and(max-width:768px) {
+                    min-height: unset;
+                    height:calc((100vh - 104px)/5);
+                    max-width: 100%;
+                }
+                @media screen and(max-width:550px) {
+                    height:calc((100vh - 84px)/5);
+                    font-size: 28px;
+                }
                 i{
                     font-size: 80px;
                     margin-right: 45px;
+                    @media screen and(max-width:550px) {
+                        font-size: 48px;
+                        margin-right: 32px;
+                    }
                 }
             }
         }
@@ -245,6 +332,13 @@ nav{
 main{
     height: max-content;
     min-height:calc(100vh - 136px);
+    @media screen and(max-width:768px) {
+        min-height:calc(100vh - 104px);
+    }
+   
+    @media screen and(max-width:550px) {
+        min-height:calc(100vh - 84px);
+    }
 }
 
 footer{
