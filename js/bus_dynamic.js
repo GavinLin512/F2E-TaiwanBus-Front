@@ -188,7 +188,7 @@ function getRoute() {
             }).then(function (response) {
                 return response.json();
             }).then(function (json) {
-                console.log(json);
+                // console.log(json);
 
                 let data = []
                 json.forEach((item) => {
@@ -223,6 +223,54 @@ function setSlimStyle(select) {
     $(select.slim.container).find('.ss-main').css('color', '#666666');
     $(select.slim.container).find('.ss-disabled').css('color', '#666666');
     $(select.slim.container).find('.ss-option').css('padding', '6px 20px');
+}
+
+getRouteData();
+
+function getRouteData() {
+    var StopData = [];
+    // var StopNameData=[];
+    fetch('https://ptx.transportdata.tw/MOTC/v2/Bus/StopOfRoute/City/Taipei/1?$format=JSON',{
+        headers:GetAuthorizationHeader(),
+        method:'GET',
+    }).then(function(response){
+        // console.log(response);
+        return response.json();
+    }).then(function(routeData){
+        // 判斷去返程
+        var goStops = routeData.filter((item)=>{ 
+            return item.Direction == 1;
+        })
+
+        var backStops = routeData.filter((item)=>{ 
+            return item.Direction == 0;
+        })
+
+        // 取得去返程資料
+        var goBusStops = goStops.filter((item)=>{ 
+            return item.RouteID == 10142;
+        })
+
+        var backBusStops = backStops.filter((item)=>{ 
+            return item.RouteID == 10142;
+        })
+
+        // 去程的站序站名
+        goBusStops[0].Stops.forEach((item) => {
+            StopData.push({
+                StopSequence:item.StopSequence,
+                StopName:item.StopName.Zh_tw,
+            });
+        })  
+        
+        // 返程的站序站名
+        backBusStops[0].Stops.forEach((item) => {
+            StopData.push({
+                StopSequence:item.StopSequence,
+                StopName:item.StopName.Zh_tw,
+            });
+        }) 
+    });
 }
 
 
