@@ -1,26 +1,26 @@
 const cityData = [
-    { "CityName": "臺北市", "City": "Taipei", "Location": "25.049315, 121.556350" },
-    { "CityName": "新北市", "City": "NewTaipei", "Location": "25.020454, 121.463417" },
-    { "CityName": "桃園市", "City": "Taoyuan", "Location": "24.995623, 121.302609" },
-    { "CityName": "臺中市", "City": "Taichung", "Location": "24.141403, 120.672468" },
-    { "CityName": "臺南市", "City": "Tainan", "Location": "23.004630, 120.233226" },
-    { "CityName": "高雄市", "City": "Kaohsiung", "Location": "22.629321, 120.305139" },
-    { "CityName": "基隆市", "City": "Keelung", "Location": "25.120467, 121.735318" },
-    { "CityName": "新竹市", "City": "Hsinchu", "Location": "" },
-    { "CityName": "新竹縣", "City": "HsinchuCounty", "Location": "" },
-    { "CityName": "苗栗縣", "City": "MiaoliCounty", "Location": "" },
-    { "CityName": "彰化縣", "City": "ChanghuaCounty", "Location": "" },
-    { "CityName": "南投縣", "City": "NantouCounty", "Location": "" },
-    { "CityName": "雲林縣", "City": "YunlinCounty", "Location": "" },
-    { "CityName": "嘉義縣", "City": "ChiayiCounty", "Location": "" },
-    { "CityName": "嘉義市", "City": "Chiayi", "Location": "" },
-    { "CityName": "屏東縣", "City": "PingtungCounty", "Location": "" },
-    { "CityName": "宜蘭縣", "City": "YilanCounty", "Location": "" },
-    { "CityName": "花蓮縣", "City": "HualienCounty", "Location": "" },
-    { "CityName": "臺東縣", "City": "TaitungCounty", "Location": "" },
-    { "CityName": "金門縣", "City": "KinmenCounty", "Location": "" },
-    { "CityName": "澎湖縣", "City": "PenghuCounty", "Location": "" },
-    { "CityName": "連江縣", "City": "LienchiangCounty", "Location": "" }
+    { "CityName": "臺北市", "City": "Taipei", "Latitude": "25.049315", "Longitude": "121.556350" },
+    { "CityName": "新北市", "City": "NewTaipei", "Latitude": "25.020454", "Longitude": "121.463417" },
+    { "CityName": "桃園市", "City": "Taoyuan", "Latitude": "24.995623", "Longitude": "121.302609" },
+    { "CityName": "臺中市", "City": "Taichung", "Latitude": "24.141403", "Longitude": "120.672468" },
+    { "CityName": "臺南市", "City": "Tainan", "Latitude": "23.004630", "Longitude": "120.233226" },
+    { "CityName": "高雄市", "City": "Kaohsiung", "Latitude": "22.629321", "Longitude": "120.305139" },
+    { "CityName": "基隆市", "City": "Keelung", "Latitude": "25.120467", "Longitude": "121.735318" },
+    { "CityName": "新竹市", "City": "Hsinchu", "Latitude": "24.813644", "Longitude": "120.967638" },
+    { "CityName": "新竹縣", "City": "HsinchuCounty", "Latitude": "24.733504", "Longitude": "121.009000" },
+    { "CityName": "苗栗縣", "City": "MiaoliCounty", "Latitude": "24.504408", "Longitude": "120.825374" },
+    { "CityName": "彰化縣", "City": "ChanghuaCounty", "Latitude": "23.957887", "Longitude": "120.554625" },
+    { "CityName": "南投縣", "City": "NantouCounty", "Latitude": "23.955956", "Longitude": "120.960558" },
+    { "CityName": "雲林縣", "City": "YunlinCounty", "Latitude": "23.700432", "Longitude": "120.531036" },
+    { "CityName": "嘉義縣", "City": "ChiayiCounty", "Latitude": "23.461176", "Longitude": "120.244460" },
+    { "CityName": "嘉義市", "City": "Chiayi", "Latitude": "23.477156", "Longitude": "120.448815" },
+    { "CityName": "屏東縣", "City": "PingtungCounty", "Latitude": "22.556303", "Longitude": "120.544269" },
+    { "CityName": "宜蘭縣", "City": "YilanCounty", "Latitude": "24.748737", "Longitude": "121.755861" },
+    { "CityName": "花蓮縣", "City": "HualienCounty", "Latitude": "23.980801", "Longitude": "121.583050" },
+    { "CityName": "臺東縣", "City": "TaitungCounty", "Latitude": "22.770456", "Longitude": "121.139405" },
+    { "CityName": "金門縣", "City": "KinmenCounty", "Latitude": "24.450398", "Longitude": "118.382263" },
+    { "CityName": "澎湖縣", "City": "PenghuCounty", "Latitude": "23.574348", "Longitude": "119.604932" },
+    { "CityName": "連江縣", "City": "LienchiangCounty", "Latitude": "26.196468", "Longitude": "119.968823" }
 ]
 var map = L.map('map', {
     zoomControl: false
@@ -28,6 +28,8 @@ var map = L.map('map', {
 var City = '';
 var searchBus;
 var tempCity = '';
+var tempLatitude = '';
+var tempLongitude = '';
 
 $(document).ready(function () {
     // 公車類別
@@ -137,10 +139,17 @@ function clickCountyBtn() {
             var city = $(this).find('.county').val()
             var cityName = $.trim($(this).find('p').text())
             tempCity = cityName;
-            $('.select-county').text(cityName); // 顯示縣市
+            $('.select-county').text('目前選擇：'+cityName); // 顯示縣市
             $('.county-list').removeClass('active');
             City = city; // 切換縣市路線
             searchBus.enable();
+            cityData.forEach((item) => {
+                if (item.City == city) {
+                    tempLatitude = item.Latitude;
+                    tempLongitude = item.Longitude;
+                }
+            });
+            map.setView(new L.LatLng(parseFloat(tempLatitude),parseFloat(tempLongitude)), 13);
         })
     })
 }
