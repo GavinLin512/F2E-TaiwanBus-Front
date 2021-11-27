@@ -153,23 +153,39 @@ main .main-container .bus-dynamic-list .info table thead {
 }
 
 main .main-container .bus-dynamic-list .info table thead tr th:nth-child(1) {
-  width: 10%;
+  width: 8%;
 }
 
 main .main-container .bus-dynamic-list .info table thead tr th:nth-child(2) {
-  width: 30%;
+  width: 37%;
 }
 
 main .main-container .bus-dynamic-list .info table thead tr th:nth-child(3) {
-  width: 20%;
+  width: 15%;
 }
 
 main .main-container .bus-dynamic-list .info table thead tr th:nth-child(4) {
-  width: 19%;
+  width: 20%;
 }
 
 main .main-container .bus-dynamic-list .info table tbody tr {
   width: 100%;
+}
+
+main .main-container .bus-dynamic-list .info table tbody tr td:nth-child(1) {
+  width: 8%;
+}
+
+main .main-container .bus-dynamic-list .info table tbody tr td:nth-child(2) {
+  width: 37%;
+}
+
+main .main-container .bus-dynamic-list .info table tbody tr td:nth-child(3) {
+  width: 15%;
+}
+
+main .main-container .bus-dynamic-list .info table tbody tr td:nth-child(4) {
+  width: 20%;
 }
 
 main .main-container .bus-dynamic-list .info table tbody .arrive-time {
