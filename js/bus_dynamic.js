@@ -230,14 +230,7 @@ function getRoute() {
             });
         },
         onChange: (info) => {
-            // console.log($('.routeID').val());
-            console.log(123);
-            // $(searchBus.slim.container).find('.roueID').val();
-            // console.log($(searchBus.slim.container).find('.routeID'));
-            $(searchBus.slim.container).find('.roueID').each(function() {
-                console.log(345);
-            })
-            // tempRouteID = $(searchBus.slim.container).find('.roueID').val();;
+            tempRouteID = $(searchBus.slim.container).find('.ss-single-selected').children('.placeholder').children('.routeID').val();
         }
     });
     // 自定樣式
@@ -252,18 +245,6 @@ function setSlimStyle(select) {
     $(select.slim.container).find('.ss-disabled').css('color', '#666666');
     $(select.slim.container).find('.ss-option').css('padding', '6px 20px');
 }
-
-// function getStationLocation() {
-//     // 取得指定[縣市]的市區公車站位資料
-//     var url = `https://ptx.transportdata.tw/MOTC/v2/Bus/Station/City/Taichung?$top=30&$format=JSON`
-//     fetch(url,{
-//         headers: GetAuthorizationHeader()
-//     }).then(function (response) {
-//         return response.json();
-//     }).then(function (result) {
-//         console.log(result);
-//     })
-// }
 function getStationData(direction, city) {
     // var StopData = [];
     // console.log(direction, city);
@@ -288,35 +269,6 @@ function getStationData(direction, city) {
                 return item.RouteID == tempRouteID;
             })
             // console.log(busStops);
-
-            // var backStops = routeData.filter((item) => {
-            //     return item.Direction == 0;
-            // })
-
-           
-
-            // 去程的站序站名
-            // goBusStops[0].Stops.forEach((item) => {
-            //     StopData.push({
-            //         StopSequence: item.StopSequence,
-            //         StopName: item.StopName.Zh_tw,
-            //         StopPosition: {
-            //             PositionLat: item.StopPosition.PositionLat,
-            //             PositionLon: item.StopPosition.PositionLon
-            //         }
-            //     });
-            // })
-            // console.log(goBusStops[0].Stops);
-
-            // 返程的站序站名
-            // backBusStops[0].Stops.forEach((item) => {
-            //     StopData.push({
-            //         StopSequence: item.StopSequence,
-            //         StopName: item.StopName.Zh_tw,
-            //     });
-            // })
-
-            // console.log(StopData);
         });
     }
 }

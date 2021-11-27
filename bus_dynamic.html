@@ -19,7 +19,8 @@
     <!-- nav css -->
     <link rel="stylesheet" href="./css/template.css">
     <!-- slim select -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.css" rel="stylesheet"></link>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.css" rel="stylesheet">
+    </link>
 
     <link rel="stylesheet" href="./css/03-bus-dynamic.css">
     <!-- leaflet -->
@@ -105,9 +106,10 @@
                     </select>
                 </div>
                 <div class="tabs d-flex justify-content-between">
-                    <button class="tab d-flex justify-content-center align-items-center active"
+                    <button id="go" class="tab d-flex justify-content-center align-items-center active"
                         onclick="tab(this)">去程</button>
-                    <button class="tab d-flex justify-content-center align-items-center" onclick="tab(this)">回程</button>
+                    <button id="back" class="tab d-flex justify-content-center align-items-center" onclick="tab(this)">回程</button>
+                    <input id="direction" type="hidden" value="0">
                 </div>
                 <div class="w-100 position-relative">
                     <div class="info">
