@@ -91,7 +91,7 @@ nav {
 }
 
 nav .nav-container {
-  width: calc(100% - 80px);
+  width: calc(100% - 132px);
   margin: 0px auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -100,6 +100,12 @@ nav .nav-container {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  nav .nav-container {
+    width: calc(100% - 60px);
+  }
 }
 
 nav .nav-container .logo {
@@ -114,8 +120,36 @@ nav .nav-container .logo {
       align-content: center;
 }
 
+@media screen and (max-width: 768px) {
+  nav .nav-container .logo {
+    height: 50px;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  nav .nav-container .logo {
+    height: 29px;
+  }
+}
+
 nav .nav-container .logo .logo-pic-text {
   margin-left: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  nav .nav-container .logo .logo-pic-text {
+    width: 100%;
+    max-width: 121px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  nav .nav-container .logo .logo-pic-text {
+    margin-left: 8px;
+    max-width: 91px;
+  }
 }
 
 nav .nav-container .menu-btn {
@@ -142,6 +176,20 @@ nav .nav-container .menu-btn {
   cursor: pointer;
 }
 
+@media screen and (max-width: 768px) {
+  nav .nav-container .menu-btn {
+    top: 3px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  nav .nav-container .menu-btn {
+    padding: 12px 0px;
+    right: 0px;
+    top: 0px;
+  }
+}
+
 nav .nav-container .menu-btn .menu-btn_burgir {
   width: 50px;
   height: 6px;
@@ -151,6 +199,18 @@ nav .nav-container .menu-btn .menu-btn_burgir {
           box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  nav .nav-container .menu-btn .menu-btn_burgir {
+    height: 4px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  nav .nav-container .menu-btn .menu-btn_burgir {
+    width: 27px;
+  }
 }
 
 nav .nav-container .menu-btn .menu-btn_burgir::before {
@@ -169,6 +229,20 @@ nav .nav-container .menu-btn .menu-btn_burgir::before {
           transform: translateY(-16px);
 }
 
+@media screen and (max-width: 768px) {
+  nav .nav-container .menu-btn .menu-btn_burgir::before {
+    height: 4px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  nav .nav-container .menu-btn .menu-btn_burgir::before {
+    -webkit-transform: translateY(-12px);
+            transform: translateY(-12px);
+    width: 27px;
+  }
+}
+
 nav .nav-container .menu-btn .menu-btn_burgir::after {
   content: "";
   position: absolute;
@@ -183,6 +257,20 @@ nav .nav-container .menu-btn .menu-btn_burgir::after {
   transition: all 0.5s ease-in-out;
   -webkit-transform: translateY(16px);
           transform: translateY(16px);
+}
+
+@media screen and (max-width: 768px) {
+  nav .nav-container .menu-btn .menu-btn_burgir::after {
+    height: 4px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  nav .nav-container .menu-btn .menu-btn_burgir::after {
+    -webkit-transform: translateY(12px);
+            transform: translateY(12px);
+    width: 27px;
+  }
 }
 
 nav .nav-container .menu-btn.open .menu-btn_burgir {
@@ -221,6 +309,23 @@ nav .hamburger-menu {
   z-index: -1;
 }
 
+@media screen and (max-width: 768px) {
+  nav .hamburger-menu {
+    min-height: calc(100vh - 104px);
+    height: calc(100vh - 104px);
+    top: 66px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  nav .hamburger-menu {
+    min-height: calc(100vh - 84px);
+    max-height: calc(100vh - 84px);
+    height: calc(100vh - 84px);
+    top: 45px;
+  }
+}
+
 nav .hamburger-menu.show {
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -230,7 +335,6 @@ nav .hamburger-menu.show {
 }
 
 nav .hamburger-menu.show .menu-links {
-  max-width: 593px;
   width: 593px;
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
@@ -240,6 +344,12 @@ nav .hamburger-menu.show .menu-links {
   transition: .6s ease-in;
 }
 
+@media screen and (max-width: 768px) {
+  nav .hamburger-menu.show .menu-links {
+    width: 100vw;
+  }
+}
+
 nav .hamburger-menu.remove {
   width: 593px;
   -webkit-transform: translateX(100%);
@@ -247,6 +357,12 @@ nav .hamburger-menu.remove {
   z-index: -1;
   -webkit-transition: 1.5s ease-in-out;
   transition: 1.5s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  nav .hamburger-menu.remove {
+    width: 100%;
+  }
 }
 
 nav .hamburger-menu.remove .menu-links {
@@ -271,10 +387,27 @@ nav .hamburger-menu .menu-links {
   margin-left: auto;
 }
 
+@media screen and (max-width: 768px) {
+  nav .hamburger-menu .menu-links {
+    min-height: calc(100vh - 104px);
+    max-height: calc(100vh - 104px);
+    height: calc(100vh - 104px);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  nav .hamburger-menu .menu-links {
+    min-height: calc(100vh - 84px);
+    max-height: calc(100vh - 84px);
+    height: calc(100vh - 84px);
+  }
+}
+
 nav .hamburger-menu .menu-links li {
-  width: 593px;
+  max-width: 593px;
+  width: 100%;
   min-height: 60px;
-  height: calc(20vh - 19.6px);
+  height: calc((100vh - 98px)/5);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -298,9 +431,31 @@ nav .hamburger-menu .menu-links li:hover {
   transition: .6s ease-out;
 }
 
+@media screen and (max-width: 768px) {
+  nav .hamburger-menu .menu-links li {
+    min-height: unset;
+    height: calc((100vh - 104px)/5);
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  nav .hamburger-menu .menu-links li {
+    height: calc((100vh - 84px)/5);
+    font-size: 28px;
+  }
+}
+
 nav .hamburger-menu .menu-links li i {
   font-size: 80px;
   margin-right: 45px;
+}
+
+@media screen and (max-width: 550px) {
+  nav .hamburger-menu .menu-links li i {
+    font-size: 48px;
+    margin-right: 32px;
+  }
 }
 
 main {
@@ -308,6 +463,18 @@ main {
   height: -moz-max-content;
   height: max-content;
   min-height: calc(100vh - 136px);
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    min-height: calc(100vh - 104px);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  main {
+    min-height: calc(100vh - 84px);
+  }
 }
 
 footer {
