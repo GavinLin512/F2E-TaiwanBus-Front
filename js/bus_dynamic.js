@@ -139,6 +139,9 @@ var searchBus;
 var tempCity = '';
 var tempLatitude = '';
 var tempLongitude = '';
+var tempRouteID = '';
+var StopData = [];
+var StopLocation = [];
 
 $(document).ready(function () {
     // 公車類別
@@ -179,6 +182,8 @@ $(document).ready(function () {
     getRoute();
     // 站點
     getStop();
+    console.log(searchBus.selected());
+    // getStationData('0', '');
 });
 
 function countyListCreate() {
@@ -231,8 +236,18 @@ listBtnMap.addEventListener('click', function () {
 
 // 切換去回程
 function tab(btn) {
-    btn.classList.add('active')
-    $(btn).siblings('.tab').removeClass('active')
+    btn.classList.add('active');
+    $(btn).siblings('.tab').removeClass('active');
+    if (City != '') {
+        if ($('#go').hasClass('active')) {
+            $('#direction').val('0');
+            getStationData('0', City);
+        };
+        if ($('#back').hasClass('active')) {
+            $('#direction').val('1');
+            getStationData('1', City);
+        };
+    }
 }
 
 
@@ -254,6 +269,7 @@ function clickCountyBtn() {
             $('.county-list').removeClass('active');
             City = city; // 切換縣市路線
             searchBus.enable();
+            // map 定位
             cityData.forEach((item) => {
                 if (item.City == city) {
                     tempLatitude = item.Latitude;
@@ -293,6 +309,7 @@ function getRoute() {
             }
 
             // Perform your own ajax request here
+            // 取得指定[縣市]的市區公車路線資料
             var url = `https://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/${City}?$format=JSON`;
             fetch(url, {
                 headers: GetAuthorizationHeader(),
@@ -305,7 +322,8 @@ function getRoute() {
                 json.forEach((item) => {
                     // console.log(item);
                     data.push({
-                        text: '[' + item.RouteID + '] ' + item.DepartureStopNameZh + ' - ' + item.DestinationStopNameZh
+                        text: '[' + item.RouteName.Zh_tw + '] ' + item.DepartureStopNameZh + ' - ' + item.DestinationStopNameZh 
+                        + `<input class="routeID" type="hidden" value="${item.RouteID}">`
                     })
 
                 })
@@ -322,6 +340,16 @@ function getRoute() {
                 // If any erros happened send false back through the callback
                 callback(false)
             });
+        },
+        onChange: (info) => {
+            // console.log($('.routeID').val());
+            console.log(123);
+            // $(searchBus.slim.container).find('.roueID').val();
+            // console.log($(searchBus.slim.container).find('.routeID'));
+            $(searchBus.slim.container).find('.roueID').each(function() {
+                console.log(345);
+            })
+            // tempRouteID = $(searchBus.slim.container).find('.roueID').val();;
         }
     });
     // 自定樣式
@@ -335,6 +363,74 @@ function setSlimStyle(select) {
     $(select.slim.container).find('.ss-main').css('color', '#666666');
     $(select.slim.container).find('.ss-disabled').css('color', '#666666');
     $(select.slim.container).find('.ss-option').css('padding', '6px 20px');
+}
+
+// function getStationLocation() {
+//     // 取得指定[縣市]的市區公車站位資料
+//     var url = `https://ptx.transportdata.tw/MOTC/v2/Bus/Station/City/Taichung?$top=30&$format=JSON`
+//     fetch(url,{
+//         headers: GetAuthorizationHeader()
+//     }).then(function (response) {
+//         return response.json();
+//     }).then(function (result) {
+//         console.log(result);
+//     })
+// }
+function getStationData(direction, city) {
+    // var StopData = [];
+    // console.log(direction, city);
+    if (direction != '') {
+        fetch(`https://ptx.transportdata.tw/MOTC/v2/Bus/StopOfRoute/City/${city}/1?$format=JSON`, {
+            headers: GetAuthorizationHeader(),
+            method: 'GET',
+        }).then(function (response) {
+            return response.json();
+        }).then(function (routeData) {
+            // 所有路線站牌資料
+            var stops = routeData.filter((item) => {
+                return item.Direction == direction;
+            })
+            // console.log(stops);
+            // 指定路線站牌資料
+            console.log(tempRouteID,stops);
+            if (tempRouteID == '') {
+                alert('請選擇路線');
+            }
+            var busStops = stops.filter((item) => {
+                return item.RouteID == tempRouteID;
+            })
+            // console.log(busStops);
+
+            // var backStops = routeData.filter((item) => {
+            //     return item.Direction == 0;
+            // })
+
+           
+
+            // 去程的站序站名
+            // goBusStops[0].Stops.forEach((item) => {
+            //     StopData.push({
+            //         StopSequence: item.StopSequence,
+            //         StopName: item.StopName.Zh_tw,
+            //         StopPosition: {
+            //             PositionLat: item.StopPosition.PositionLat,
+            //             PositionLon: item.StopPosition.PositionLon
+            //         }
+            //     });
+            // })
+            // console.log(goBusStops[0].Stops);
+
+            // 返程的站序站名
+            // backBusStops[0].Stops.forEach((item) => {
+            //     StopData.push({
+            //         StopSequence: item.StopSequence,
+            //         StopName: item.StopName.Zh_tw,
+            //     });
+            // })
+
+            // console.log(StopData);
+        });
+    }
 }
 
 
