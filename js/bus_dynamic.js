@@ -68,6 +68,8 @@ $(document).ready(function () {
     getCounty();
     // 獲取路線
     getRoute();
+
+    getStationLocation();
 });
 
 function countyListCreate() {
@@ -143,6 +145,7 @@ function clickCountyBtn() {
             $('.county-list').removeClass('active');
             City = city; // 切換縣市路線
             searchBus.enable();
+            // map 定位
             cityData.forEach((item) => {
                 if (item.City == city) {
                     tempLatitude = item.Latitude;
@@ -182,6 +185,7 @@ function getRoute() {
             }
 
             // Perform your own ajax request here
+            // 取得指定[縣市]的市區公車路線資料
             var url = `https://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/${City}?$format=JSON`;
             fetch(url, {
                 headers: GetAuthorizationHeader(),
@@ -223,6 +227,18 @@ function setSlimStyle(select) {
     $(select.slim.container).find('.ss-main').css('color', '#666666');
     $(select.slim.container).find('.ss-disabled').css('color', '#666666');
     $(select.slim.container).find('.ss-option').css('padding', '6px 20px');
+}
+
+function getStationLocation() {
+    // 取得指定[縣市]的市區公車站位資料
+    var url = `https://ptx.transportdata.tw/MOTC/v2/Bus/Station/City/Taichung?$top=30&$format=JSON`
+    fetch(url,{
+        headers: GetAuthorizationHeader()
+    }).then(function (response) {
+        return response.json();
+    }).then(function (result) {
+        console.log(result);
+    });
 }
 
 
