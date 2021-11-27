@@ -1,4 +1,32 @@
 body {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+body {
   margin: 0px;
   padding: 0px;
   display: -webkit-box;
@@ -175,7 +203,7 @@ main .main-container .links {
 
 @media screen and (max-width: 768px) {
   main .main-container .links {
-    margin: 0px auto;
+    margin: unset;
     height: calc(100vh - 136px);
     padding: 0px;
   }
@@ -187,6 +215,12 @@ main .main-container .links {
     height: unset;
     padding: 0px;
     width: unset;
+  }
+}
+
+@media screen and (max-width: 435px) {
+  main .main-container .links {
+    margin: 0px auto;
   }
 }
 
@@ -589,7 +623,7 @@ main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i {
 
 main .main-container .links .link-groups .link .icon .icon-border .icon-pic .i svg {
   width: 60%;
-  height: 60%;
+  fill: #444444;
 }
 
 @media screen and (max-width: 768px) {
@@ -640,27 +674,27 @@ main .main-container .links .link-groups .link .icon .icon-border .icon-pic0 {
   top: 0px;
 }
 
-main .main-container .links .link-groups .link .icon .icon-border-1 svg {
+main .main-container .links .link-groups .link .icon .icon-border-1 > svg {
   fill: #FF734B;
 }
 
-main .main-container .links .link-groups .link .icon .icon-border-2 svg {
+main .main-container .links .link-groups .link .icon .icon-border-2 > svg {
   fill: #FFC32D;
 }
 
-main .main-container .links .link-groups .link .icon .icon-border-3 svg {
+main .main-container .links .link-groups .link .icon .icon-border-3 > svg {
   fill: #5F8BEE;
 }
 
-main .main-container .links .link-groups .link .icon .icon-border-4 svg {
+main .main-container .links .link-groups .link .icon .icon-border-4 > svg {
   fill: #ABDC45;
 }
 
-main .main-container .links .link-groups .link .icon .icon-border-5 svg {
+main .main-container .links .link-groups .link .icon .icon-border-5 > svg {
   fill: #FB8C3B;
 }
 
-main .main-container .links .link-groups .link .icon .icon-border-6 svg {
+main .main-container .links .link-groups .link .icon .icon-border-6 > svg {
   fill: #5DDFC7;
 }
 
