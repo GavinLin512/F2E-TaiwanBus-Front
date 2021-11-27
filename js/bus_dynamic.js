@@ -1,38 +1,46 @@
+const cityData = [
+    { "CityName": "臺北市", "City": "Taipei", "Latitude": "25.049315", "Longitude": "121.556350" },
+    { "CityName": "新北市", "City": "NewTaipei", "Latitude": "25.020454", "Longitude": "121.463417" },
+    { "CityName": "桃園市", "City": "Taoyuan", "Latitude": "24.995623", "Longitude": "121.302609" },
+    { "CityName": "臺中市", "City": "Taichung", "Latitude": "24.141403", "Longitude": "120.672468" },
+    { "CityName": "臺南市", "City": "Tainan", "Latitude": "23.004630", "Longitude": "120.233226" },
+    { "CityName": "高雄市", "City": "Kaohsiung", "Latitude": "22.629321", "Longitude": "120.305139" },
+    { "CityName": "基隆市", "City": "Keelung", "Latitude": "25.120467", "Longitude": "121.735318" },
+    { "CityName": "新竹市", "City": "Hsinchu", "Latitude": "24.813644", "Longitude": "120.967638" },
+    { "CityName": "新竹縣", "City": "HsinchuCounty", "Latitude": "24.733504", "Longitude": "121.009000" },
+    { "CityName": "苗栗縣", "City": "MiaoliCounty", "Latitude": "24.504408", "Longitude": "120.825374" },
+    { "CityName": "彰化縣", "City": "ChanghuaCounty", "Latitude": "23.957887", "Longitude": "120.554625" },
+    { "CityName": "南投縣", "City": "NantouCounty", "Latitude": "23.955956", "Longitude": "120.960558" },
+    { "CityName": "雲林縣", "City": "YunlinCounty", "Latitude": "23.700432", "Longitude": "120.531036" },
+    { "CityName": "嘉義縣", "City": "ChiayiCounty", "Latitude": "23.461176", "Longitude": "120.244460" },
+    { "CityName": "嘉義市", "City": "Chiayi", "Latitude": "23.477156", "Longitude": "120.448815" },
+    { "CityName": "屏東縣", "City": "PingtungCounty", "Latitude": "22.556303", "Longitude": "120.544269" },
+    { "CityName": "宜蘭縣", "City": "YilanCounty", "Latitude": "24.748737", "Longitude": "121.755861" },
+    { "CityName": "花蓮縣", "City": "HualienCounty", "Latitude": "23.980801", "Longitude": "121.583050" },
+    { "CityName": "臺東縣", "City": "TaitungCounty", "Latitude": "22.770456", "Longitude": "121.139405" },
+    { "CityName": "金門縣", "City": "KinmenCounty", "Latitude": "24.450398", "Longitude": "118.382263" },
+    { "CityName": "澎湖縣", "City": "PenghuCounty", "Latitude": "23.574348", "Longitude": "119.604932" },
+    { "CityName": "連江縣", "City": "LienchiangCounty", "Latitude": "26.196468", "Longitude": "119.968823" }
+]
 var map = L.map('map', {
     zoomControl: false
 })
-const cityData = [
-    { "CityName": "臺北市", "City": "Taipei", },
-    { "CityName": "新北市", "City": "NewTaipei", },
-    { "CityName": "桃園市", "City": "Taoyuan", },
-    { "CityName": "臺中市", "City": "Taichung", },
-    { "CityName": "臺南市", "City": "Tainan", },
-    { "CityName": "高雄市", "City": "Kaohsiung", },
-    { "CityName": "基隆市", "City": "Keelung", },
-    { "CityName": "新竹市", "City": "Hsinchu", },
-    { "CityName": "新竹縣", "City": "HsinchuCounty", },
-    { "CityName": "苗栗縣", "City": "MiaoliCounty", },
-    { "CityName": "彰化縣", "City": "ChanghuaCounty", },
-    { "CityName": "南投縣", "City": "NantouCounty", },
-    { "CityName": "雲林縣", "City": "YunlinCounty", },
-    { "CityName": "嘉義縣", "City": "ChiayiCounty", },
-    { "CityName": "嘉義市", "City": "Chiayi", },
-    { "CityName": "屏東縣", "City": "PingtungCounty", },
-    { "CityName": "宜蘭縣", "City": "YilanCounty", },
-    { "CityName": "花蓮縣", "City": "HualienCounty", },
-    { "CityName": "臺東縣", "City": "TaitungCounty", },
-    { "CityName": "金門縣", "City": "KinmenCounty", },
-    { "CityName": "澎湖縣", "City": "PenghuCounty", },
-    { "CityName": "連江縣", "City": "LienchiangCounty", }
-]
 var City = '';
+var searchBus;
+var tempCity = '';
+var tempLatitude = '';
+var tempLongitude = '';
+
 $(document).ready(function () {
-    new SlimSelect({
+    // 公車類別
+    var busType = new SlimSelect({
         select: '#bus-type',
         showSearch: false,
         placeholder: '請選擇類別',
         allowDeselectOption: true
     })
+    // 自定樣式
+    setSlimStyle(busType);
 
     // 防止區域元素觸發 leaflet map event
     L.DomEvent.disableClickPropagation(L.DomUtil.get('county-list'));
@@ -76,10 +84,6 @@ function countyListCreate() {
     })
 }
 
-function toggleList() {
-    $('.county-list').toggleClass('active');
-}
-
 // 側邊選單消失
 var BusDynamicList = document.querySelector('.bus-dynamic-list')
 var listBtn = document.querySelector('.list-btn')
@@ -119,32 +123,51 @@ function tab(btn) {
     btn.classList.add('active')
     $(btn).siblings('.tab').removeClass('active')
 }
- 
+
 
 function getCounty() {
     countyListCreate();
     $('.select-county').on('click', function () {
-        toggleList();
+        $('.county-list').toggleClass('active');
     })
 }
 
+// 點擊縣市選單
 function clickCountyBtn() {
-    // 點擊縣市選單
     $('.county-btn').each(function () {
         $(this).on('click', function () {
             var city = $(this).find('.county').val()
             var cityName = $.trim($(this).find('p').text())
-            $('.select-county').text(cityName); // 顯示縣市
+            tempCity = cityName;
+            $('.select-county').text('目前選擇：'+cityName); // 顯示縣市
             $('.county-list').removeClass('active');
-            City = city;
+            City = city; // 切換縣市路線
+            searchBus.enable();
+            cityData.forEach((item) => {
+                if (item.City == city) {
+                    tempLatitude = item.Latitude;
+                    tempLongitude = item.Longitude;
+                }
+            });
+            map.setView(new L.LatLng(parseFloat(tempLatitude),parseFloat(tempLongitude)), 13);
         })
     })
 }
 
+function defaultSelectBus() {
+    searchBus.disable();
+    $('.bus-search').on('click', function () {
+        if (tempCity == '') {
+            searchBus.disable();
+            alert('請先選擇縣市');
+        }
+    });
+}
+
 function getRoute() {
     clickCountyBtn();
-    new SlimSelect({
-        select: '#search_bus',
+    searchBus = new SlimSelect({
+        select: '#search-bus',
         placeholder: '請輸入路線',
         searchingText: '尋找路線中...', // Optional - Will show during ajax request
         searchPlaceholder: '請輸入路線號碼或起迄站',
@@ -152,35 +175,54 @@ function getRoute() {
         ajax: function (search, callback) {
             // Check search value. If you dont like it callback(false) or callback('Message String')
             if (search.length < 1) {
-                callback('請至少輸入一個字')
+                callback('請至少輸入一個字');
+                $(searchBus.slim.container).find('.ss-disabled').css('color', '#666666');
+                $(searchBus.slim.container).find('.ss-option').css('padding', '6px 20px');
                 return
             }
 
             // Perform your own ajax request here
-            var url = `https://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/${City}?$top=30&$format=JSON`;
+            var url = `https://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/${City}?$format=JSON`;
             fetch(url, {
                 headers: GetAuthorizationHeader(),
             }).then(function (response) {
                 return response.json();
             }).then(function (json) {
+                console.log(json);
+
                 let data = []
                 json.forEach((item) => {
-                    console.log(item);
+                    // console.log(item);
                     data.push({
                         text: '[' + item.RouteID + '] ' + item.DepartureStopNameZh + ' - ' + item.DestinationStopNameZh
                     })
+
                 })
+                // console.log(searchBus);
 
                 // Upon successful fetch send data to callback function.
                 // Be sure to send data back in the proper format.
                 // Refer to the method setData for examples of proper format.
                 callback(data)
+                // 自定樣式
+                setSlimStyle(searchBus);
             }).catch(function (error) {
                 // If any erros happened send false back through the callback
                 callback(false)
             });
         }
     });
+    // 自定樣式
+    setSlimStyle(searchBus);
+    // 預設防呆
+    defaultSelectBus();
+}
+
+function setSlimStyle(select) {
+    $(select.slim.container).find('.ss-single-selected').css('height', '40px');
+    $(select.slim.container).find('.ss-main').css('color', '#666666');
+    $(select.slim.container).find('.ss-disabled').css('color', '#666666');
+    $(select.slim.container).find('.ss-option').css('padding', '6px 20px');
 }
 
 
