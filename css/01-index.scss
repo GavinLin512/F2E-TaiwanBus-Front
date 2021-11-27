@@ -122,7 +122,7 @@ main{
 
             }
             @media screen and(max-width:768px) {
-                margin: 0px auto;
+                margin: unset;
                 height: calc(100vh - 136px);
                 padding: 0px;
             }
@@ -131,6 +131,10 @@ main{
                 height: unset;
                 padding: 0px;
                 width: unset;
+                // margin: 0px auto;
+            }
+            @media screen and(max-width:435px) {
+                margin: 0px auto;
             }
           
             .link-groups{
@@ -170,6 +174,7 @@ main{
                     margin: 0px auto;
                     width: unset;
                 }
+
                 
                 .link{
                     max-width: 452px;

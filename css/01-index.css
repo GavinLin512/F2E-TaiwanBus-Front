@@ -163,7 +163,7 @@ main .main-container .links {
 
 @media screen and (max-width: 768px) {
   main .main-container .links {
-    margin: 0px auto;
+    margin: unset;
     height: calc(100vh - 136px);
     padding: 0px;
   }
@@ -175,6 +175,12 @@ main .main-container .links {
     height: unset;
     padding: 0px;
     width: unset;
+  }
+}
+
+@media screen and (max-width: 435px) {
+  main .main-container .links {
+    margin: 0px auto;
   }
 }
 
