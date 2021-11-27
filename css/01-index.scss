@@ -110,43 +110,27 @@ main{
             height: max-content;
             display: flex;
             flex-direction: column;
-            // background-color: chocolate;
-            // justify-content: center;
-            // @media screen and(max-width:1920px) {
-            //     // max-width: 100%;
-            //     width: 100%;
-
-            // }
             @media screen and(max-width:1920px) {
-                // max-width: 1920px;
-                width: 100%;
                 margin: 0px auto;
-                // background-color: wheat;
                 padding: 0px 7.3958vw;
 
             }
             @media screen and(max-width:1000px) {
-                // max-width: 1920px;
                 flex-direction: row-reverse;
                 width: 768px;
                 justify-content: space-between;
-                // background-color: khaki;
 
             }
             @media screen and(max-width:768px) {
-                width: 100%;
                 margin: 0px auto;
                 height: calc(100vh - 136px);
-                // margin: 0px auto;
                 padding: 0px;
             }
             @media screen and(max-width:550px) {
                 position: relative;
                 height: unset;
-                // background-color: lawngreen;
                 padding: 0px;
-                // background-color: lawngreen;
-
+                width: unset;
             }
           
             .link-groups{
@@ -156,15 +140,11 @@ main{
                 height: max-content;
                 display: flex;
                 justify-content: space-between;
-                // background-color: chartreuse;
                 padding-bottom: 56px;
                 @media screen and(max-width:1920px) {
                     max-width: unset;
                     width: 100%;
                     margin: 0px auto;
-
-                    // background-color: coral;
-
                 }
                 @media screen and(max-width:1600px) {
                     padding-bottom: 1.3vw;
@@ -173,16 +153,13 @@ main{
                     padding-bottom: 1.5vw;
                 }
                 @media screen and(max-width:1000px) {
-                    // max-width: 1920px;
                     flex-direction: column;
-                    // width: 45%;
                     width: max-content;
                     height: calc(100vh - 82px);
                 }
                 @media screen and(max-width:768px) {
                     width: 202px;
                     height: 733px;
-                    // background-color: #5BEE;  
                     justify-content: space-between;  
                     
                     padding: 0px;
@@ -190,8 +167,8 @@ main{
                 @media screen and(max-width:550px) {
                     height: unset;
                     height: max-content;  
-                    // margin-left: auto;
                     margin: 0px auto;
+                    width: unset;
                 }
                 
                 .link{
@@ -215,7 +192,7 @@ main{
                     }
                     @media screen and(max-width:550px) {
                         transform: scale(.7);
-                        
+                        width: unset;
                     }
                   
                     a{
