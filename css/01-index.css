@@ -30,11 +30,6 @@ img {
 main {
   max-width: 1920px;
   width: 100%;
-  min-height: calc(100vh - 136px);
-  max-height: calc(100vh - 136px);
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
   background-color: #F9FCDE;
   margin: 0px auto;
 }
@@ -89,6 +84,22 @@ main .main-container {
   main .main-container {
     height: 100%;
     max-height: unset;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main .main-container {
+    min-height: calc(100vh - 104px);
+    max-height: calc(100vh - 104px);
+    height: calc(100vh - 104px);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  main .main-container {
+    min-height: calc(100vh - 56px);
+    max-height: calc(100vh - 56px);
+    height: calc(100vh - 56px);
   }
 }
 
