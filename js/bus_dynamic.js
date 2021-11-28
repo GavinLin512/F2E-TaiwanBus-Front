@@ -524,7 +524,7 @@ function getMapMarker(stopData, i) {
             title: '跟 <a> 的 title 一樣',
             opacity: 1.0
         }).addTo(map);
-        marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+        marker.bindPopup("<b>開發中</b><br>").openPopup();
 
         // L.marker([Latitude,Longitude], {icon: jobMarkerIcon}).addTo(map);
     })
