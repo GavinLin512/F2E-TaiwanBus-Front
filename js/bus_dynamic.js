@@ -139,6 +139,7 @@ var searchBus;
 var tempCity = '';
 var tempLatitude = '';
 var tempLongitude = '';
+var tempRouteName = '';
 var tempRouteID = '';
 var direction = '0'; // 預設去程
 var StopData = [];
@@ -160,7 +161,6 @@ $(document).ready(function () {
     L.DomEvent.disableScrollPropagation(L.DomUtil.get('county-list'));
 
     // 原始點定位及縮放大小
-    // mapbox://styles/graysonlin512/ckw8gvwxpaeph15rz66cxjm09
     map.setView(new L.LatLng(23.794082453027436, 120.97790316609922), 8);
     var accessToken = 'pk.eyJ1IjoiZ3JheXNvbmxpbjUxMiIsImEiOiJja3c3emlhMGE3aWsyMm5tdHo5bjA3ZmV5In0.JL6wR5AnmWuiWlVEzBoB2w';
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -181,8 +181,6 @@ $(document).ready(function () {
     getCounty();
     // 獲取路線
     getRoute();
-    // console.log(searchBus.selected());
-    // getStationData('0', '');
 });
 
 function countyListCreate() {
@@ -222,8 +220,6 @@ listBtn.addEventListener('click', function () {
 
 // 側邊選單出現
 listBtnMap.addEventListener('click', function () {
-    // var activeList = document.querySelector('.active-list')
-
     BusDynamicList.classList.remove('active-list')
     listBtnMap.classList.remove('list-btn-map-active')
     listBtn.classList.remove('list-btn-active')
@@ -238,19 +234,20 @@ function tab(btn) {
     btn.classList.add('active');
     $(btn).siblings('.tab').removeClass('active');
     if (cityEn != '') {
-        // StopData = []; // 先清空另一邊的資料
+        StopData = []; // 先清空另一邊的資料
         $('.stop').each(function () {
             $(this).remove();
         });
         // 去程資料
         if ($('#go').hasClass('active')) {
             direction = '0';
+            getStationData(direction, cityEn);
         };
         // 返程資料
         if ($('#back').hasClass('active')) {
             direction = '1';
+            getStationData(direction, cityEn);
         };
-        getStationData(direction, cityEn);
     }
 }
 
@@ -289,7 +286,7 @@ function clickCountyBtn() {
             $('.stop').each(function () {
                 $(this).remove();
             });
-            $('.noResult').css('display','table-cell');
+            $('.noResult').css('display', 'table-cell');
         })
     })
 }
@@ -334,24 +331,23 @@ function getRoute() {
             }).then(function (response) {
                 return response.json();
             }).then(function (json) {
-                // console.log(json);
 
-                let data = []
+                var data = []
                 json.forEach((item) => {
-                    // console.log(item);
                     if (item.DepartureStopNameZh == undefined) {
                         data.push({
                             text: '[' + item.RouteName.Zh_tw + '] ' + item.SubRoutes[0].Headsign
+                                + `<input class="routeName" type="hidden" value="${item.RouteName.Zh_tw}">`
                                 + `<input class="routeID" type="hidden" value="${item.RouteID}">`
                         })
                     } else {
                         data.push({
                             text: '[' + item.RouteName.Zh_tw + '] ' + item.DepartureStopNameZh + ' - ' + item.DestinationStopNameZh
+                                + `<input class="routeName" type="hidden" value="${item.RouteName.Zh_tw}">`
                                 + `<input class="routeID" type="hidden" value="${item.RouteID}">`
                         })
                     }
                 })
-                // console.log(searchBus);
 
                 // Upon successful fetch send data to callback function.
                 // Be sure to send data back in the proper format.
@@ -366,14 +362,15 @@ function getRoute() {
         },
         onChange: (info) => {
             // 取得路線ID
+            tempRouteName = $(searchBus.slim.container).find('.ss-single-selected').children('.placeholder').children('.routeName').val();
             tempRouteID = $(searchBus.slim.container).find('.ss-single-selected').children('.placeholder').children('.routeID').val();
             // 清除上一個搜尋的資料
             $('.stop').each(function () {
                 $(this).remove();
             });
+            searchBus.search('');
             StopData = []; // 不重複獲取站牌資料
             getStationData('0', cityEn); // 預設取得去程資料
-            // getStopTime('0',cityEn, StopData);
         }
     });
     // 自定樣式
@@ -389,41 +386,35 @@ function setSlimStyle(select) {
     $(select.slim.container).find('.ss-option').css('padding', '6px 20px');
 }
 function getStationData(direction, city) {
-    // console.log(direction, city);
     if (direction != '') {
-        fetch(`https://ptx.transportdata.tw/MOTC/v2/Bus/StopOfRoute/City/${city}/1?$format=JSON`, {
+        fetch(`https://ptx.transportdata.tw/MOTC/v2/Bus/StopOfRoute/City/${city}/${tempRouteName}?$format=JSON`, {
             headers: GetAuthorizationHeader(),
             method: 'GET',
         }).then(function (response) {
             return response.json();
         }).then(function (routeData) {
             // 所有路線站牌資料
-            var stopsDataAll = routeData.filter((item) => {
+            var stopsData = routeData.filter((item) => {
                 return item.Direction == direction;
             })
-            // console.log(stops);
             // 指定路線站牌資料
-            // console.log(tempRouteID,stops);
             if (tempRouteID == '') {
                 alert('請選擇路線');
             }
-            // console.log(tempRouteID);
-            var busStopsData = stopsDataAll.filter((item) => {
-                // console.log(item.RouteID,typeof item.RouteID);
+            var busStopsData = stopsData.filter((item) => {
                 return item.RouteID == tempRouteID;
             })
-            // 過濾重複的資料
+            // 過濾資料?
             if (busStopsData.length == 2) {
                 var busStops_repeat = busStopsData.filter((item) => {
-                    // console.log(item.RouteID, item.SubRouteID);
                     return item.RouteID == item.SubRouteID;
                 })
-                busStopsData = busStops_repeat
+
+                busStopsData = busStops_repeat;
             }
             // 過濾後站牌資料為空不觸發
             if (busStopsData.length != 0) {
                 busStopsData[0].Stops.forEach((item) => {
-                    // console.log(item);
                     StopData.push({
                         StopID: item.StopID,
                         StopSequence: item.StopSequence,
@@ -435,71 +426,72 @@ function getStationData(direction, city) {
                     });
                 })
             }
-            pushStopData(StopData);
-            getStopTime('0',cityEn,StopData);
+            getStopTime(direction, cityEn);
         });
     }
 }
 
-function pushStopData(data) {
-    // console.log(data);
-    $('.noResult').css('display','none');
-    
-    data.forEach((item) => {
-        // console.log(item);
-        var stopHTML = `
-        <tr class="stop">
-            <td>${item.StopSequence}</td>
-            <td>${item.StopName}</td>
-            <td>555-AAA</td>
-            <td>
-                <div class="btn btn-primary w-75 arrive-time">15:30</div>
-            </td>
-        </tr>
-        `
-        // console.log($('tbody'));
-        $('tbody').append(stopHTML);
-    })
-}
-
-
-
 // 預估到站資料，預估到站時間和車牌號碼
-function getStopTime(direction, city, stopData) {
-    // console.log(direction,city,stopData);
-
-    var StopURL = `https://ptx.transportdata.tw/MOTC/v2/Bus/EstimatedTimeOfArrival/City/${city}/1?$format=JSON`
-    // var StopURL = 'https://ptx.transportdata.tw/MOTC/v2/Bus/EstimatedTimeOfArrival/Streaming/City/Taipei/1?$format=JSON'
-    let busData = []
+function getStopTime(direction, city) {
+    var StopURL = `https://ptx.transportdata.tw/MOTC/v2/Bus/EstimatedTimeOfArrival/City/${city}/${tempRouteName}?$format=JSON`;
     fetch(StopURL, {
         headers: GetAuthorizationHeader(),
     }).then(function (response) {
         return response.json();
     }).then(function (json) {
         // 所有路線預估時間資料
-        const stopsTimeDataAll = json.filter((item) => {
+        var stopsTimeDataAll = json.filter((item) => {
             return item.Direction == direction;
         })
         // 單筆路線預估時間資料
         var busStopsTimeData = stopsTimeDataAll.filter((item) => {
             return item.RouteID == tempRouteID;
         })
-        console.log(busStopsTimeData,stopData);
-        // for (var i=0; i<busStopsTimeData.length; i++) {
-        //     console.log(busStopsTimeData[i],stopData[i]);
-        //     // if (busStopsTimeData[i].StopID == stopData[i].StopID) {
-        //     // }
-        // }
-        // var tempBusStopsTimeData = '';
-        // busStopsTimeData.forEach((item) => {
-        //     // console.log(item);
-        //     tempBusStopsTimeData = item.StopID;
-        // })
-        // var tempStopData = '';
-        // StopData.forEach((stop) => {
-        //     tempStopData
-        // })
-        // console.log(busStopsTimeData);
-
+        pushStopTimeData(busStopsTimeData);
     })
+}
+
+function pushStopTimeData(data) {
+    data.forEach((item) => {
+        const indexOfItem = StopData.map(stop => stop.StopID).indexOf(item.StopID);
+        if (item.EstimateTime == undefined) {
+            Object.assign(StopData[indexOfItem], { EstimateTime: '尚未發車' });
+        } else {
+            if (item.EstimateTime >= 60) {
+                var minute = parseInt(Math.floor(item.EstimateTime / 60));
+                if (minute < 3) {
+                    Object.assign(StopData[indexOfItem], { EstimateTime: '即將進站' });
+                } else {
+                    Object.assign(StopData[indexOfItem], { EstimateTime: minute.toString() + '分鐘' });
+                }
+            } else {
+                Object.assign(StopData[indexOfItem], { EstimateTime: '即將進站' });
+            }
+        }
+        pushStopData(StopData[indexOfItem]);
+    })
+}
+
+function pushStopData(item) {
+    $('.noResult').css('display', 'none');
+    var stopHTML = `
+    <tr class="stop">
+        <td>${item.StopSequence}</td>
+        <td>${item.StopName}</td>
+        <td>開發中</td>
+        <td>
+            <div class="btn btn-primary w-75 arrive-time">${item.EstimateTime}</div>
+        </td>
+    </tr>
+    `
+    $('tbody').append(stopHTML);
+    $('.arrive-time').each(function () {
+        if ($(this).text() == '尚未發車') {
+            $(this).css('background-color', '#5C636A');
+        };
+        if ($(this).text() == '即將進站') {
+            $(this).css('background-color', '#F08080')
+        }
+    })
+
 }

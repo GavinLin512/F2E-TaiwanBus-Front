@@ -1,4 +1,32 @@
 body {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+body {
   width: 100%;
   max-width: 1920px;
   position: relative;
@@ -193,7 +221,7 @@ main .main-container .bus-dynamic-list .info table tbody .arrive-time {
   border-radius: 20px;
   padding: 4px 0;
   cursor: unset;
-  background-color: #f08080;
+  background-color: #3E8380;
   color: #f9fcde;
   border: 0;
 }
