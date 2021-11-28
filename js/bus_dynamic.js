@@ -348,7 +348,7 @@ function getRoute() {
                         })
                     } else {
                         data.push({
-                            text: '[' + item.RouteName.Zh_tw + '] ' + (item.DepartureStopNameZh == undefined ? '' : item.DepartureStopNameZh) + ' - ' + item.DestinationStopNameZh
+                            text: '[' + item.RouteName.Zh_tw + '] ' + item.DepartureStopNameZh + ' - ' + item.DestinationStopNameZh
                                 + `<input class="routeID" type="hidden" value="${item.RouteID}">`
                         })
                     }
