@@ -422,8 +422,9 @@ function getStationData(direction, city) {
                 busStopsData = busStops_repeat
             }
             busStopsData[0].Stops.forEach((item) => {
-                // console.log(item);
+                console.log(item);
                 StopData.push({
+                    StopID: item.StopID,
                     StopSequence: item.StopSequence,
                     StopName: item.StopName.Zh_tw,
                     StopPosition: {
