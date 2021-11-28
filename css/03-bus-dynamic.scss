@@ -1,3 +1,4 @@
+@import "00-styleguide.scss";
 body {
     width: 100%;
     max-width: 1920px;
@@ -148,7 +149,7 @@ main {
                             border-radius: 20px;
                             padding: 4px 0;
                             cursor: unset;
-                            background-color: #f08080;
+                            background-color: $map-green;
                             color: #f9fcde;
                             border: 0;
                         }
