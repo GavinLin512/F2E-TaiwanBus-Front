@@ -181,9 +181,7 @@ $(document).ready(function () {
     getCounty();
     // 獲取路線
     getRoute();
-    // 站點
-    getStop();
-    console.log(searchBus.selected());
+    // console.log(searchBus.selected());
     // getStationData('0', '');
 });
 
@@ -375,6 +373,7 @@ function getRoute() {
             });
             StopData = []; // 不重複獲取站牌資料
             getStationData('0', cityEn); // 預設取得去程資料
+            // getStopTime('0',cityEn, StopData);
         }
     });
     // 自定樣式
@@ -416,30 +415,34 @@ function getStationData(direction, city) {
             // 過濾重複的資料
             if (busStopsData.length == 2) {
                 var busStops_repeat = busStopsData.filter((item) => {
-                    console.log(item.RouteID, item.SubRouteID);
+                    // console.log(item.RouteID, item.SubRouteID);
                     return item.RouteID == item.SubRouteID;
                 })
                 busStopsData = busStops_repeat
             }
-            busStopsData[0].Stops.forEach((item) => {
-                console.log(item);
-                StopData.push({
-                    StopID: item.StopID,
-                    StopSequence: item.StopSequence,
-                    StopName: item.StopName.Zh_tw,
-                    StopPosition: {
-                        PositionLat: item.StopPosition.PositionLat,
-                        PositionLon: item.StopPosition.PositionLon
-                    }
-                });
-            })
+            // 過濾後站牌資料為空不觸發
+            if (busStopsData.length != 0) {
+                busStopsData[0].Stops.forEach((item) => {
+                    // console.log(item);
+                    StopData.push({
+                        StopID: item.StopID,
+                        StopSequence: item.StopSequence,
+                        StopName: item.StopName.Zh_tw,
+                        StopPosition: {
+                            PositionLat: item.StopPosition.PositionLat,
+                            PositionLon: item.StopPosition.PositionLon
+                        }
+                    });
+                })
+            }
             pushStopData(StopData);
+            getStopTime('0',cityEn,StopData);
         });
     }
 }
 
 function pushStopData(data) {
-    console.log(data);
+    // console.log(data);
     $('.noResult').css('display','none');
     
     data.forEach((item) => {
@@ -462,43 +465,41 @@ function pushStopData(data) {
 
 
 // 預估到站資料，預估到站時間和車牌號碼
+function getStopTime(direction, city, stopData) {
+    // console.log(direction,city,stopData);
 
-function getStop() {
-    var StopURL = 'https://ptx.transportdata.tw/MOTC/v2/Bus/EstimatedTimeOfArrival/City/Taipei/1?$format=JSON'
+    var StopURL = `https://ptx.transportdata.tw/MOTC/v2/Bus/EstimatedTimeOfArrival/City/${city}/1?$format=JSON`
+    // var StopURL = 'https://ptx.transportdata.tw/MOTC/v2/Bus/EstimatedTimeOfArrival/Streaming/City/Taipei/1?$format=JSON'
     let busData = []
     fetch(StopURL, {
         headers: GetAuthorizationHeader(),
     }).then(function (response) {
         return response.json();
     }).then(function (json) {
-        // 去程
-        const go = json.filter((item) => {
-            return item.Direction == 0
+        // 所有路線預估時間資料
+        const stopsTimeDataAll = json.filter((item) => {
+            return item.Direction == direction;
         })
-        // 返程            
-        const back = json.filter((item) => {
-            return item.Direction == 1
+        // 單筆路線預估時間資料
+        var busStopsTimeData = stopsTimeDataAll.filter((item) => {
+            return item.RouteID == tempRouteID;
         })
+        console.log(busStopsTimeData,stopData);
+        // for (var i=0; i<busStopsTimeData.length; i++) {
+        //     console.log(busStopsTimeData[i],stopData[i]);
+        //     // if (busStopsTimeData[i].StopID == stopData[i].StopID) {
+        //     // }
+        // }
+        // var tempBusStopsTimeData = '';
+        // busStopsTimeData.forEach((item) => {
+        //     // console.log(item);
+        //     tempBusStopsTimeData = item.StopID;
+        // })
+        // var tempStopData = '';
+        // StopData.forEach((stop) => {
+        //     tempStopData
+        // })
+        // console.log(busStopsTimeData);
 
-        go.forEach(item => bus(item));
-        // back
-
-        function bus(item) {
-            const index = busData.map(item => item.plateNumb).indexOf(item.PlateNumb)
-            if (index === -1) { // 代表沒找到
-                busData.push({
-                    plateNumb: item.PlateNumb, //車牌號碼
-                    stops: [{
-                        estimateTime: item.EstimateTime, //到站時間預估(秒) 
-                        stopUID: item.StopUID //站牌唯一識別代碼
-                    }]
-                })
-            } else { // 有找到
-                busData[index].stops.push({
-                    estimateTime: item.EstimateTime, //到站時間預估(秒)
-                    stopUID: item.StopUID //站牌唯一識別代碼
-                });
-            }
-        }
     })
 }
