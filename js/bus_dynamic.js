@@ -494,7 +494,7 @@ function getStop() {
                 })
             } else { // 有找到
                 busData[index].stops.push({
-                    estimateTime: item.EstimateTime, //到站時間預估(秒) 
+                    estimateTime: item.EstimateTime, //到站時間預估(秒)
                     stopUID: item.StopUID //站牌唯一識別代碼
                 });
             }
