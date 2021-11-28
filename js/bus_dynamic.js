@@ -509,7 +509,7 @@ function getStopTime(direction, city, stopData) {
 
 function getMapMarker(stopData, i) {
     // 客製化圖示
-    this.clearLayers()
+    // this.clearLayers()
     stopData.forEach(item => {
         const customIcon = L.ExtraMarkers.icon({
             icon: 'fa-number',
