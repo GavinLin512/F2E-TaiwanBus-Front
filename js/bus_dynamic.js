@@ -437,6 +437,7 @@ function getStationData(direction, city) {
             }
             pushStopData(StopData);
             getStopTime('0',cityEn,StopData);
+            getMapMarker(StopData);
         });
     }
 }
@@ -484,7 +485,7 @@ function getStopTime(direction, city, stopData) {
         var busStopsTimeData = stopsTimeDataAll.filter((item) => {
             return item.RouteID == tempRouteID;
         })
-        console.log(busStopsTimeData,stopData);
+        // console.log(busStopsTimeData,stopData);
         // for (var i=0; i<busStopsTimeData.length; i++) {
         //     console.log(busStopsTimeData[i],stopData[i]);
         //     // if (busStopsTimeData[i].StopID == stopData[i].StopID) {
@@ -502,4 +503,8 @@ function getStopTime(direction, city, stopData) {
         // console.log(busStopsTimeData);
 
     })
+}
+
+function getMapMarker(stopData) {
+    console.log(stopData);
 }
