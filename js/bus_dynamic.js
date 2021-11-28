@@ -507,4 +507,21 @@ function getStopTime(direction, city, stopData) {
 
 function getMapMarker(stopData) {
     console.log(stopData);
+    // 客製化圖示
+    const customIcon = L.icon({
+        iconUrl: 'image/marker.svg',
+        iconSize: [42, 42],
+    });
+    stopData.forEach(item => {
+
+        let Latitude = item.StopPosition.PositionLat
+        let Longitude = item.StopPosition.PositionLon
+        const center = [Latitude, Longitude];
+        const marker = L.marker(center, {
+        icon: customIcon,
+        title: '跟 <a> 的 title 一樣', // 跟 <a> 的 title 一樣
+        opacity: 1.0
+        }).addTo(map);
+        marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+    })
 }
