@@ -150,7 +150,7 @@ $(document).ready(function () {
     var busType = new SlimSelect({
         select: '#bus-type',
         showSearch: false,
-        placeholder: '請選擇類別',
+        placeholder: '類別(開發中)',
         allowDeselectOption: true
     })
     // 自定樣式
