@@ -1,145 +1,146 @@
 const cityData = [{
-        "CityName": "臺北市",
-        "City": "Taipei",
-        "Latitude": "25.049315",
-        "Longitude": "121.556350"
-    },
-    {
-        "CityName": "新北市",
-        "City": "NewTaipei",
-        "Latitude": "25.020454",
-        "Longitude": "121.463417"
-    },
-    {
-        "CityName": "桃園市",
-        "City": "Taoyuan",
-        "Latitude": "24.995623",
-        "Longitude": "121.302609"
-    },
-    {
-        "CityName": "臺中市",
-        "City": "Taichung",
-        "Latitude": "24.141403",
-        "Longitude": "120.672468"
-    },
-    {
-        "CityName": "臺南市",
-        "City": "Tainan",
-        "Latitude": "23.004630",
-        "Longitude": "120.233226"
-    },
-    {
-        "CityName": "高雄市",
-        "City": "Kaohsiung",
-        "Latitude": "22.629321",
-        "Longitude": "120.305139"
-    },
-    {
-        "CityName": "基隆市",
-        "City": "Keelung",
-        "Latitude": "25.120467",
-        "Longitude": "121.735318"
-    },
-    {
-        "CityName": "新竹市",
-        "City": "Hsinchu",
-        "Latitude": "24.813644",
-        "Longitude": "120.967638"
-    },
-    {
-        "CityName": "新竹縣",
-        "City": "HsinchuCounty",
-        "Latitude": "24.733504",
-        "Longitude": "121.009000"
-    },
-    {
-        "CityName": "苗栗縣",
-        "City": "MiaoliCounty",
-        "Latitude": "24.504408",
-        "Longitude": "120.825374"
-    },
-    {
-        "CityName": "彰化縣",
-        "City": "ChanghuaCounty",
-        "Latitude": "23.957887",
-        "Longitude": "120.554625"
-    },
-    {
-        "CityName": "南投縣",
-        "City": "NantouCounty",
-        "Latitude": "23.955956",
-        "Longitude": "120.960558"
-    },
-    {
-        "CityName": "雲林縣",
-        "City": "YunlinCounty",
-        "Latitude": "23.700432",
-        "Longitude": "120.531036"
-    },
-    {
-        "CityName": "嘉義縣",
-        "City": "ChiayiCounty",
-        "Latitude": "23.461176",
-        "Longitude": "120.244460"
-    },
-    {
-        "CityName": "嘉義市",
-        "City": "Chiayi",
-        "Latitude": "23.477156",
-        "Longitude": "120.448815"
-    },
-    {
-        "CityName": "屏東縣",
-        "City": "PingtungCounty",
-        "Latitude": "22.556303",
-        "Longitude": "120.544269"
-    },
-    {
-        "CityName": "宜蘭縣",
-        "City": "YilanCounty",
-        "Latitude": "24.748737",
-        "Longitude": "121.755861"
-    },
-    {
-        "CityName": "花蓮縣",
-        "City": "HualienCounty",
-        "Latitude": "23.980801",
-        "Longitude": "121.583050"
-    },
-    {
-        "CityName": "臺東縣",
-        "City": "TaitungCounty",
-        "Latitude": "22.770456",
-        "Longitude": "121.139405"
-    },
-    {
-        "CityName": "金門縣",
-        "City": "KinmenCounty",
-        "Latitude": "24.450398",
-        "Longitude": "118.382263"
-    },
-    {
-        "CityName": "澎湖縣",
-        "City": "PenghuCounty",
-        "Latitude": "23.574348",
-        "Longitude": "119.604932"
-    },
-    {
-        "CityName": "連江縣",
-        "City": "LienchiangCounty",
-        "Latitude": "26.196468",
-        "Longitude": "119.968823"
-    }
+    "CityName": "臺北市",
+    "City": "Taipei",
+    "Latitude": "25.049315",
+    "Longitude": "121.556350"
+},
+{
+    "CityName": "新北市",
+    "City": "NewTaipei",
+    "Latitude": "25.020454",
+    "Longitude": "121.463417"
+},
+{
+    "CityName": "桃園市",
+    "City": "Taoyuan",
+    "Latitude": "24.995623",
+    "Longitude": "121.302609"
+},
+{
+    "CityName": "臺中市",
+    "City": "Taichung",
+    "Latitude": "24.141403",
+    "Longitude": "120.672468"
+},
+{
+    "CityName": "臺南市",
+    "City": "Tainan",
+    "Latitude": "23.004630",
+    "Longitude": "120.233226"
+},
+{
+    "CityName": "高雄市",
+    "City": "Kaohsiung",
+    "Latitude": "22.629321",
+    "Longitude": "120.305139"
+},
+{
+    "CityName": "基隆市",
+    "City": "Keelung",
+    "Latitude": "25.120467",
+    "Longitude": "121.735318"
+},
+{
+    "CityName": "新竹市",
+    "City": "Hsinchu",
+    "Latitude": "24.813644",
+    "Longitude": "120.967638"
+},
+{
+    "CityName": "新竹縣",
+    "City": "HsinchuCounty",
+    "Latitude": "24.733504",
+    "Longitude": "121.009000"
+},
+{
+    "CityName": "苗栗縣",
+    "City": "MiaoliCounty",
+    "Latitude": "24.504408",
+    "Longitude": "120.825374"
+},
+{
+    "CityName": "彰化縣",
+    "City": "ChanghuaCounty",
+    "Latitude": "23.957887",
+    "Longitude": "120.554625"
+},
+{
+    "CityName": "南投縣",
+    "City": "NantouCounty",
+    "Latitude": "23.955956",
+    "Longitude": "120.960558"
+},
+{
+    "CityName": "雲林縣",
+    "City": "YunlinCounty",
+    "Latitude": "23.700432",
+    "Longitude": "120.531036"
+},
+{
+    "CityName": "嘉義縣",
+    "City": "ChiayiCounty",
+    "Latitude": "23.461176",
+    "Longitude": "120.244460"
+},
+{
+    "CityName": "嘉義市",
+    "City": "Chiayi",
+    "Latitude": "23.477156",
+    "Longitude": "120.448815"
+},
+{
+    "CityName": "屏東縣",
+    "City": "PingtungCounty",
+    "Latitude": "22.556303",
+    "Longitude": "120.544269"
+},
+{
+    "CityName": "宜蘭縣",
+    "City": "YilanCounty",
+    "Latitude": "24.748737",
+    "Longitude": "121.755861"
+},
+{
+    "CityName": "花蓮縣",
+    "City": "HualienCounty",
+    "Latitude": "23.980801",
+    "Longitude": "121.583050"
+},
+{
+    "CityName": "臺東縣",
+    "City": "TaitungCounty",
+    "Latitude": "22.770456",
+    "Longitude": "121.139405"
+},
+{
+    "CityName": "金門縣",
+    "City": "KinmenCounty",
+    "Latitude": "24.450398",
+    "Longitude": "118.382263"
+},
+{
+    "CityName": "澎湖縣",
+    "City": "PenghuCounty",
+    "Latitude": "23.574348",
+    "Longitude": "119.604932"
+},
+{
+    "CityName": "連江縣",
+    "City": "LienchiangCounty",
+    "Latitude": "26.196468",
+    "Longitude": "119.968823"
+}
 ]
 var map = L.map('map', {
     zoomControl: false
 })
-var City = '';
+var cityEn = '';
 var searchBus;
 var tempCity = '';
 var tempLatitude = '';
 var tempLongitude = '';
 var tempRouteID = '';
+var direction = '0'; // 預設去程
 var StopData = [];
 var StopLocation = [];
 
@@ -223,7 +224,7 @@ listBtn.addEventListener('click', function () {
 
 // 側邊選單出現
 listBtnMap.addEventListener('click', function () {
-    var activeList = document.querySelector('.active-list')
+    // var activeList = document.querySelector('.active-list')
 
     BusDynamicList.classList.remove('active-list')
     listBtnMap.classList.remove('list-btn-map-active')
@@ -238,15 +239,20 @@ listBtnMap.addEventListener('click', function () {
 function tab(btn) {
     btn.classList.add('active');
     $(btn).siblings('.tab').removeClass('active');
-    if (City != '') {
+    if (cityEn != '') {
+        // StopData = []; // 先清空另一邊的資料
+        $('.stop').each(function () {
+            $(this).remove();
+        });
+        // 去程資料
         if ($('#go').hasClass('active')) {
-            $('#direction').val('0');
-            getStationData('0', City);
+            direction = '0';
         };
+        // 返程資料
         if ($('#back').hasClass('active')) {
-            $('#direction').val('1');
-            getStationData('1', City);
+            direction = '1';
         };
+        getStationData(direction, cityEn);
     }
 }
 
@@ -267,7 +273,7 @@ function clickCountyBtn() {
             tempCity = cityName;
             $('.select-county').text('目前選擇：' + cityName); // 顯示縣市
             $('.county-list').removeClass('active');
-            City = city; // 切換縣市路線
+            cityEn = city; // 切換縣市路線
             searchBus.enable();
             // map 定位
             cityData.forEach((item) => {
@@ -277,6 +283,15 @@ function clickCountyBtn() {
                 }
             });
             map.setView(new L.LatLng(parseFloat(tempLatitude), parseFloat(tempLongitude)), 13);
+            // 初始化select
+            searchBus.set('');
+            searchBus.search('');
+            $(searchBus.slim.container).find('.ss-disabled').css('color', '#666666');
+            // 初始化 table
+            $('.stop').each(function () {
+                $(this).remove();
+            });
+            $('.noResult').css('display','table-cell');
         })
     })
 }
@@ -287,6 +302,11 @@ function defaultSelectBus() {
         if (tempCity == '') {
             searchBus.disable();
             alert('請先選擇縣市');
+        }
+        // 修改搜尋 bug
+        if ($('.ss-content').hasClass('ss-open')) {
+            searchBus.set('');
+            $(searchBus.slim.container).find('.ss-disabled').css('color', '#666666');
         }
     });
 }
@@ -310,7 +330,7 @@ function getRoute() {
 
             // Perform your own ajax request here
             // 取得指定[縣市]的市區公車路線資料
-            var url = `https://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/${City}?$format=JSON`;
+            var url = `https://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/${cityEn}?$format=JSON`;
             fetch(url, {
                 headers: GetAuthorizationHeader(),
             }).then(function (response) {
@@ -321,11 +341,17 @@ function getRoute() {
                 let data = []
                 json.forEach((item) => {
                     // console.log(item);
-                    data.push({
-                        text: '[' + item.RouteName.Zh_tw + '] ' + item.DepartureStopNameZh + ' - ' + item.DestinationStopNameZh 
-                        + `<input class="routeID" type="hidden" value="${item.RouteID}">`
-                    })
-
+                    if (item.DepartureStopNameZh == undefined) {
+                        data.push({
+                            text: '[' + item.RouteName.Zh_tw + '] ' + item.SubRoutes[0].Headsign
+                                + `<input class="routeID" type="hidden" value="${item.RouteID}">`
+                        })
+                    } else {
+                        data.push({
+                            text: '[' + item.RouteName.Zh_tw + '] ' + (item.DepartureStopNameZh == undefined ? '' : item.DepartureStopNameZh) + ' - ' + item.DestinationStopNameZh
+                                + `<input class="routeID" type="hidden" value="${item.RouteID}">`
+                        })
+                    }
                 })
                 // console.log(searchBus);
 
@@ -335,14 +361,20 @@ function getRoute() {
                 callback(data)
                 // 自定樣式
                 setSlimStyle(searchBus);
-                getRouteData()
             }).catch(function (error) {
                 // If any erros happened send false back through the callback
                 callback(false)
             });
         },
         onChange: (info) => {
+            // 取得路線ID
             tempRouteID = $(searchBus.slim.container).find('.ss-single-selected').children('.placeholder').children('.routeID').val();
+            // 清除上一個搜尋的資料
+            $('.stop').each(function () {
+                $(this).remove();
+            });
+            StopData = []; // 不重複獲取站牌資料
+            getStationData('0', cityEn); // 預設取得去程資料
         }
     });
     // 自定樣式
@@ -358,7 +390,6 @@ function setSlimStyle(select) {
     $(select.slim.container).find('.ss-option').css('padding', '6px 20px');
 }
 function getStationData(direction, city) {
-    // var StopData = [];
     // console.log(direction, city);
     if (direction != '') {
         fetch(`https://ptx.transportdata.tw/MOTC/v2/Bus/StopOfRoute/City/${city}/1?$format=JSON`, {
@@ -368,22 +399,65 @@ function getStationData(direction, city) {
             return response.json();
         }).then(function (routeData) {
             // 所有路線站牌資料
-            var stops = routeData.filter((item) => {
+            var stopsDataAll = routeData.filter((item) => {
                 return item.Direction == direction;
             })
             // console.log(stops);
             // 指定路線站牌資料
-            console.log(tempRouteID,stops);
+            // console.log(tempRouteID,stops);
             if (tempRouteID == '') {
                 alert('請選擇路線');
             }
-            var busStops = stops.filter((item) => {
+            // console.log(tempRouteID);
+            var busStopsData = stopsDataAll.filter((item) => {
+                // console.log(item.RouteID,typeof item.RouteID);
                 return item.RouteID == tempRouteID;
             })
-            // console.log(busStops);
+            // 過濾重複的資料
+            if (busStopsData.length == 2) {
+                var busStops_repeat = busStopsData.filter((item) => {
+                    console.log(item.RouteID, item.SubRouteID);
+                    return item.RouteID == item.SubRouteID;
+                })
+                busStopsData = busStops_repeat
+            }
+            busStopsData[0].Stops.forEach((item) => {
+                // console.log(item);
+                StopData.push({
+                    StopSequence: item.StopSequence,
+                    StopName: item.StopName.Zh_tw,
+                    StopPosition: {
+                        PositionLat: item.StopPosition.PositionLat,
+                        PositionLon: item.StopPosition.PositionLon
+                    }
+                });
+            })
+            pushStopData(StopData);
         });
     }
 }
+
+function pushStopData(data) {
+    console.log(data);
+    $('.noResult').css('display','none');
+    
+    data.forEach((item) => {
+        // console.log(item);
+        var stopHTML = `
+        <tr class="stop">
+            <td>${item.StopSequence}</td>
+            <td>${item.StopName}</td>
+            <td>555-AAA</td>
+            <td>
+                <div class="btn btn-primary w-75 arrive-time">15:30</div>
+            </td>
+        </tr>
+        `
+        // console.log($('tbody'));
+        $('tbody').append(stopHTML);
+    })
+}
+
 
 
 // 預估到站資料，預估到站時間和車牌號碼

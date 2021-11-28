@@ -109,11 +109,10 @@
                     <button id="go" class="tab d-flex justify-content-center align-items-center active"
                         onclick="tab(this)">去程</button>
                     <button id="back" class="tab d-flex justify-content-center align-items-center" onclick="tab(this)">回程</button>
-                    <input id="direction" type="hidden" value="0">
                 </div>
                 <div class="w-100 position-relative">
                     <div class="info">
-                        <table class="w-100">
+                        <table class="w-100 stop-table">
                             <thead class="position-absolute w-100">
                                 <tr>
                                     <th>站序</th>
@@ -123,20 +122,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>39</td>
-                                    <td>with two columns</td>
-                                    <td>555-AAA</td>
-                                    <td>
-                                        <div class="btn btn-primary w-75 arrive-time">15:30</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>39</td>
-                                    <td>with two columns</td>
-                                    <td>555-AAA</td>
-                                    <td>
-                                        <div class="btn btn-primary w-75 arrive-time">15:30</div>
+                                <tr class="noResult" colspan="4" style="height: 60px;">
+                                    <td class="align-items">
+                                        <h3 class="mb-0">查無更多資料</h3>
                                     </td>
                                 </tr>
                             </tbody>
