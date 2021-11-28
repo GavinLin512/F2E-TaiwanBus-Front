@@ -1,135 +1,135 @@
 const cityData = [{
-        "CityName": "臺北市",
-        "City": "Taipei",
-        "Latitude": "25.049315",
-        "Longitude": "121.556350"
-    },
-    {
-        "CityName": "新北市",
-        "City": "NewTaipei",
-        "Latitude": "25.020454",
-        "Longitude": "121.463417"
-    },
-    {
-        "CityName": "桃園市",
-        "City": "Taoyuan",
-        "Latitude": "24.995623",
-        "Longitude": "121.302609"
-    },
-    {
-        "CityName": "臺中市",
-        "City": "Taichung",
-        "Latitude": "24.141403",
-        "Longitude": "120.672468"
-    },
-    {
-        "CityName": "臺南市",
-        "City": "Tainan",
-        "Latitude": "23.004630",
-        "Longitude": "120.233226"
-    },
-    {
-        "CityName": "高雄市",
-        "City": "Kaohsiung",
-        "Latitude": "22.629321",
-        "Longitude": "120.305139"
-    },
-    {
-        "CityName": "基隆市",
-        "City": "Keelung",
-        "Latitude": "25.120467",
-        "Longitude": "121.735318"
-    },
-    {
-        "CityName": "新竹市",
-        "City": "Hsinchu",
-        "Latitude": "24.813644",
-        "Longitude": "120.967638"
-    },
-    {
-        "CityName": "新竹縣",
-        "City": "HsinchuCounty",
-        "Latitude": "24.733504",
-        "Longitude": "121.009000"
-    },
-    {
-        "CityName": "苗栗縣",
-        "City": "MiaoliCounty",
-        "Latitude": "24.504408",
-        "Longitude": "120.825374"
-    },
-    {
-        "CityName": "彰化縣",
-        "City": "ChanghuaCounty",
-        "Latitude": "23.957887",
-        "Longitude": "120.554625"
-    },
-    {
-        "CityName": "南投縣",
-        "City": "NantouCounty",
-        "Latitude": "23.955956",
-        "Longitude": "120.960558"
-    },
-    {
-        "CityName": "雲林縣",
-        "City": "YunlinCounty",
-        "Latitude": "23.700432",
-        "Longitude": "120.531036"
-    },
-    {
-        "CityName": "嘉義縣",
-        "City": "ChiayiCounty",
-        "Latitude": "23.461176",
-        "Longitude": "120.244460"
-    },
-    {
-        "CityName": "嘉義市",
-        "City": "Chiayi",
-        "Latitude": "23.477156",
-        "Longitude": "120.448815"
-    },
-    {
-        "CityName": "屏東縣",
-        "City": "PingtungCounty",
-        "Latitude": "22.556303",
-        "Longitude": "120.544269"
-    },
-    {
-        "CityName": "宜蘭縣",
-        "City": "YilanCounty",
-        "Latitude": "24.748737",
-        "Longitude": "121.755861"
-    },
-    {
-        "CityName": "花蓮縣",
-        "City": "HualienCounty",
-        "Latitude": "23.980801",
-        "Longitude": "121.583050"
-    },
-    {
-        "CityName": "臺東縣",
-        "City": "TaitungCounty",
-        "Latitude": "22.770456",
-        "Longitude": "121.139405"
-    },
-    {
-        "CityName": "金門縣",
-        "City": "KinmenCounty",
-        "Latitude": "24.450398",
-        "Longitude": "118.382263"
-    },
-    {
-        "CityName": "澎湖縣",
-        "City": "PenghuCounty",
-        "Latitude": "23.574348",
-        "Longitude": "119.604932"
-    },
-    {
-        "CityName": "連江縣",
-        "City": "LienchiangCounty",
-        "Latitude": "26.196468",
-        "Longitude": "119.968823"
-    }
+    "CityName": "臺北市",
+    "City": "Taipei",
+    "Latitude": "25.049315",
+    "Longitude": "121.556350"
+},
+{
+    "CityName": "新北市",
+    "City": "NewTaipei",
+    "Latitude": "25.020454",
+    "Longitude": "121.463417"
+},
+{
+    "CityName": "桃園市",
+    "City": "Taoyuan",
+    "Latitude": "24.995623",
+    "Longitude": "121.302609"
+},
+{
+    "CityName": "臺中市",
+    "City": "Taichung",
+    "Latitude": "24.141403",
+    "Longitude": "120.672468"
+},
+{
+    "CityName": "臺南市",
+    "City": "Tainan",
+    "Latitude": "23.004630",
+    "Longitude": "120.233226"
+},
+{
+    "CityName": "高雄市",
+    "City": "Kaohsiung",
+    "Latitude": "22.629321",
+    "Longitude": "120.305139"
+},
+{
+    "CityName": "基隆市",
+    "City": "Keelung",
+    "Latitude": "25.120467",
+    "Longitude": "121.735318"
+},
+{
+    "CityName": "新竹市",
+    "City": "Hsinchu",
+    "Latitude": "24.813644",
+    "Longitude": "120.967638"
+},
+{
+    "CityName": "新竹縣",
+    "City": "HsinchuCounty",
+    "Latitude": "24.733504",
+    "Longitude": "121.009000"
+},
+{
+    "CityName": "苗栗縣",
+    "City": "MiaoliCounty",
+    "Latitude": "24.504408",
+    "Longitude": "120.825374"
+},
+{
+    "CityName": "彰化縣",
+    "City": "ChanghuaCounty",
+    "Latitude": "23.957887",
+    "Longitude": "120.554625"
+},
+{
+    "CityName": "南投縣",
+    "City": "NantouCounty",
+    "Latitude": "23.955956",
+    "Longitude": "120.960558"
+},
+{
+    "CityName": "雲林縣",
+    "City": "YunlinCounty",
+    "Latitude": "23.700432",
+    "Longitude": "120.531036"
+},
+{
+    "CityName": "嘉義縣",
+    "City": "ChiayiCounty",
+    "Latitude": "23.461176",
+    "Longitude": "120.244460"
+},
+{
+    "CityName": "嘉義市",
+    "City": "Chiayi",
+    "Latitude": "23.477156",
+    "Longitude": "120.448815"
+},
+{
+    "CityName": "屏東縣",
+    "City": "PingtungCounty",
+    "Latitude": "22.556303",
+    "Longitude": "120.544269"
+},
+{
+    "CityName": "宜蘭縣",
+    "City": "YilanCounty",
+    "Latitude": "24.748737",
+    "Longitude": "121.755861"
+},
+{
+    "CityName": "花蓮縣",
+    "City": "HualienCounty",
+    "Latitude": "23.980801",
+    "Longitude": "121.583050"
+},
+{
+    "CityName": "臺東縣",
+    "City": "TaitungCounty",
+    "Latitude": "22.770456",
+    "Longitude": "121.139405"
+},
+{
+    "CityName": "金門縣",
+    "City": "KinmenCounty",
+    "Latitude": "24.450398",
+    "Longitude": "118.382263"
+},
+{
+    "CityName": "澎湖縣",
+    "City": "PenghuCounty",
+    "Latitude": "23.574348",
+    "Longitude": "119.604932"
+},
+{
+    "CityName": "連江縣",
+    "City": "LienchiangCounty",
+    "Latitude": "26.196468",
+    "Longitude": "119.968823"
+}
 ]
 var map = L.map('map', {
     zoomControl: false
@@ -428,34 +428,10 @@ function getStationData(direction, city) {
                 })
             }
             getStopTime(direction, cityEn);
-            pushStopData(StopData);
-            getMapMarker(StopData,1);
+            getMapMarker(StopData, 1);
         });
     }
 }
-
-// function pushStopData(data) {
-//     // console.log(data);
-//     $('.noResult').css('display', 'none');
-
-//     data.forEach((item) => {
-//         // console.log(item);
-//         var stopHTML = `
-//         <tr class="stop">
-//             <td>${item.StopSequence}</td>
-//             <td>${item.StopName}</td>
-//             <td>555-AAA</td>
-//             <td>
-//                 <div class="btn btn-primary w-75 arrive-time">15:30</div>
-//             </td>
-//         </tr>
-//         `
-//         // console.log($('tbody'));
-//         $('tbody').append(stopHTML);
-//     })
-// }
-
-
 
 // 預估到站資料，預估到站時間和車牌號碼
 function getStopTime(direction, city) {
@@ -478,6 +454,7 @@ function getStopTime(direction, city) {
 }
 
 function pushStopTimeData(data) {
+    console.log(455);
     data.forEach((item) => {
         const indexOfItem = StopData.map(stop => stop.StopID).indexOf(item.StopID);
         if (item.EstimateTime == undefined) {
@@ -494,29 +471,33 @@ function pushStopTimeData(data) {
                 Object.assign(StopData[indexOfItem], { EstimateTime: '即將進站' });
             }
         }
-        pushStopData(StopData[indexOfItem]);
     })
+    pushStopData(StopData);
 }
 
-function pushStopData(item) {
-    $('.noResult').css('display', 'none');
-    var stopHTML = `
-    <tr class="stop">
-        <td>${item.StopSequence}</td>
-        <td>${item.StopName}</td>
-        <td>開發中</td>
-        <td>
-            <div class="btn btn-primary w-75 arrive-time">${item.EstimateTime}</div>
-        </td>
-    </tr>
-    `
-    $('tbody').append(stopHTML);
-    $('.arrive-time').each(function () {
-        if ($(this).text() == '尚未發車') {
-            $(this).css('background-color', '#5C636A');
-        };
-        if ($(this).text() == '即將進站') {
-            $(this).css('background-color', '#F08080')
+function pushStopData(data) {
+    data.forEach((item) => {
+        if (item.length != 0) {
+            $('.noResult').css('display', 'none');
+            var stopHTML = `
+            <tr class="stop">
+                <td>${item.StopSequence}</td>
+                <td>${item.StopName}</td>
+                <td>開發中</td>
+                <td>
+                    <div class="btn btn-primary w-75 arrive-time">${item.EstimateTime}</div>
+                </td>
+            </tr>
+            `
+            $('tbody').append(stopHTML);
+            $('.arrive-time').each(function () {
+                if ($(this).text() == '尚未發車') {
+                    $(this).css('background-color', '#5C636A');
+                };
+                if ($(this).text() == '即將進站') {
+                    $(this).css('background-color', '#F08080')
+                }
+            })
         }
     })
 }
