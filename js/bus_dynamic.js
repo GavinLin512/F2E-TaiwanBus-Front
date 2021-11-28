@@ -438,7 +438,7 @@ function getStationData(direction, city) {
             }
             pushStopData(StopData);
             getStopTime('0', cityEn, StopData);
-            getMapMarker(StopData);
+            getMapMarker(StopData,1);
         });
     }
 }
@@ -507,14 +507,9 @@ function getStopTime(direction, city, stopData) {
 }
 
 
-function getMapMarker(stopData) {
-    console.log(stopData);
+function getMapMarker(stopData, i) {
     // 客製化圖示
-    // const customIcon = L.icon({
-    //     iconUrl: 'image/marker.svg',
-    //     iconSize: [42, 42],
-    // });
-    let i = 1
+    this.clearLayers()
     stopData.forEach(item => {
         const customIcon = L.ExtraMarkers.icon({
             icon: 'fa-number',
@@ -530,8 +525,6 @@ function getMapMarker(stopData) {
             opacity: 1.0
         }).addTo(map);
         marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-
-
 
         // L.marker([Latitude,Longitude], {icon: jobMarkerIcon}).addTo(map);
     })
